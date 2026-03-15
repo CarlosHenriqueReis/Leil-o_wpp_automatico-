@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéAuction - Dashboard TCG</title>
+
+    <!-- Tailwind CSS (CDN para rápida integração e setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Toastify CSS para Feedback Visual (Alerts Modernos) -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
+    <!-- Configuração Customizada do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        wapp: '#25D366',       // Verde WhatsApp Main
+                        'wapp-hover': '#1DA851', // Hover mais escuro
+                        'off-white': '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        
+        /* Tab CSS Utilities */
+        .tab-active { border-bottom: 2px solid #25D366; color: #25D366; font-weight: 600; }
+        .tab-inactive { color: #64748b; font-weight: 500; }
+        .tab-inactive:hover { color: #334155; }
+        
+        /* Smooth Fade In */
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Oculta scrollbar mas permite rolar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col pt-16">
+
+    <!-- HEADER: Navegação Fixa -->
+    <header class="bg-white shadow-sm border-b border-slate-200 fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo e Título -->
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-wapp rounded-md bg-opacity-10 flex items-center justify-center text-wapp font-bold text-xl shadow-inner">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="font-bold text-xl tracking-tight text-slate-800 leading-tight">PokéAuction</h1>
+                    <p class="text-[10px] text-slate-400 font-medium tracking-wide uppercase">WhatsApp n8n Dashboard</p>
+                </div>
+            </div>
+            
+            <!-- Abas (Tabs) -->
+            <nav class="flex space-x-6 h-full text-sm">
+                <button id="tab-setup" class="h-full px-2 tab-active flex items-center transition-colors" onclick="switchTab('setup')">
+                    <svg class="w-4 h-4 mr-1.5 mb-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    Setup de Lotes
+                </button>
+                <button id="tab-results" class="h-full px-2 tab-inactive flex items-center transition-colors" onclick="switchTab('results')">
+                    <svg class="w-4 h-4 mr-1.5 mb-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Resultados & Cobrança
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        
+        <!-- SEÇÃO 1: SETUP DO LEILÃO -->
+        <section id="section-setup" class="fade-in block">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4 border-b border-slate-200 pb-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Novo Leilão</h2>
+                    <p class="text-slate-500 mt-1.5 text-sm">Cadastre lotes dinâmicos para iniciar enquetes no grupo do WhatsApp.</p>
+                </div>
+                <div>
+                    <button class="bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:text-wapp font-medium py-2 px-4 rounded-lg shadow-sm transition-colors text-sm flex items-center gap-2" onclick="addCardForm()">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        Adicionar Carta
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contêiner dinâmico onde os cards vão aparecer -->
+            <div id="cards-container" class="space-y-6"></div>
+
+            <!-- Botão de Ação: Inicia integração com N8N -->
+            <div class="mt-8 pt-6 flex justify-end">
+                <button id="btn-start" class="bg-wapp hover:bg-wapp-hover text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg shadow-green-500/30 transition-all flex items-center gap-2 text-base transform hover:-translate-y-0.5" onclick="startLeilao()">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Iniciar Leilão no Sistema
+                </button>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: RESULTADOS E COBRANÇAS -->
+        <section id="section-results" class="fade-in hidden">
+            <div class="mb-8 border-b border-slate-200 pb-4">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Resultados & Cobrança</h2>
+                <p class="text-slate-500 mt-1.5 text-sm">Visualização de ganhadores agrupados e disparo de mensagens via painel.</p>
+            </div>
+
+            <!-- Loading Skeleton (mostrado ao simular busca de ganhadores) -->
+            <div id="results-loading" class="hidden flex justify-center py-10">
+                <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-wapp"></div>
+            </div>
+
+            <!-- Contêiner de Cards de Ganhadores -->
+            <div id="winners-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </section>
+
+    </main>
+
+    <!-- ==============================================
+         TEMPLATES (HTML não renderizado direto na tela)
+         ============================================== -->
+         
+    <!-- Template para Adição de Nova Carta (Setup) -->
+    <template id="card-template">
+        <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm relative group transition-all hover:shadow-md h-full">
+            
+            <!-- Botão Excluir -->
+            <button class="absolute top-4 right-4 bg-red-50 text-red-400 p-2 rounded-lg hover:bg-red-500 hover:text-white transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100" onclick="removeCard(this)" title="Remover Geração">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+            </button>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Coluna 1: Imagem -->
+                <div class="lg:col-span-3 flex flex-col">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide">Imagem</label>
+                        <!-- Botão mágico Upload -->
+                        <button type="button" class="text-[11px] font-bold text-wapp hover:text-wapp-hover flex items-center gap-1 uppercase transition-colors" onclick="this.closest('.flex-col').querySelector('input[type=file]').click()">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                            Fazer Upload
+                        </button>
+                    </div>
+                    <!-- File escondido -->
+                    <input type="file" accept="image/*" class="hidden" onchange="uploadImage(this)">
+                    <input type="url" class="card-img-url text-sm w-full border border-slate-300 rounded-lg py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-wapp/50 focus:border-wapp transition-shadow bg-slate-50 focus:bg-white" placeholder="Cole a URL ou faça Upload" oninput="updatePreview(this)">
+                    
+                    <div class="mt-3 flex-grow min-h-[140px] bg-slate-100 cursor-pointer hover:bg-slate-50 rounded-xl border border-slate-200 border-dashed flex items-center justify-center overflow-hidden relative group" onclick="if(event.target.tagName !== 'IMG') this.closest('.flex-col').querySelector('input[type=file]').click()" title="Clique para enviar arquivo">
+                        <span class="text-slate-400 text-xs font-medium img-placeholder flex flex-col items-center gap-1">
+                            <svg class="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            Preview
+                        </span>
+                        <img src="" class="card-img-preview hidden w-full h-full object-contain absolute inset-0 rounded-xl p-1 bg-white">
+                        
+                        <!-- Upload overlay no hover -->
+                        <div class="absolute inset-0 bg-black/40 hidden opacity-0 group-hover:opacity-100 group-hover:flex items-center justify-center transition-all cursor-pointer rounded-xl">
+                            <span class="text-white text-xs font-semibold drop-shadow-md">Trocar Imagem</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coluna 2: Dados da Carta -->
+                <div class="lg:col-span-4 flex flex-col justify-center">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">Nome da Carta</label>
+                        <input type="text" class="card-name text-sm w-full border border-slate-300 rounded-lg py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-wapp/50 focus:border-wapp transition-shadow" placeholder="Ex: Mega Gengar ex [NM]">
+                    </div>
+                    
+                    <div class="mt-5">
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">Valor Base</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <span class="text-slate-400 font-medium sm:text-sm">R$</span>
+                            </div>
+                            <input type="number" step="0.01" min="0.01" class="card-value text-base font-semibold text-slate-900 w-full border border-slate-300 rounded-lg py-2.5 pl-10 pr-3 focus:outline-none focus:ring-2 focus:ring-wapp/50 focus:border-wapp transition-shadow bg-green-50/30" placeholder="0.00" oninput="calculateOptions(this)">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coluna 3: Preview de Opções -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-slate-50 to-slate-100 p-5 rounded-xl border border-slate-200">
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3 flex items-center gap-2">
+                        <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.183-.573c.978.58 1.711.927 3.15.927 3.199 0 5.765-2.586 5.765-5.766s-2.566-5.769-5.767-5.769zM12.031 16.5c-1.025 0-1.782-.284-2.559-.72l-.183-.102-1.282.336.342-1.251-.112-.178c-.461-.734-.73-1.545-.73-2.418 0-2.486 2.023-4.51 4.51-4.51 2.486 0 4.512 2.024 4.512 4.51s-2.026 4.51-4.51 4.51zm2.463-3.15c-.135-.068-.8-.396-.924-.442-.124-.045-.215-.068-.305.068-.09.135-.35.442-.429.532-.079.09-.158.102-.293.033-.135-.068-.572-.211-1.09-.675-.403-.361-.675-.807-.754-.942-.079-.135-.008-.208.06-.276.061-.061.135-.158.203-.238.068-.079.09-.135.135-.226.045-.09.023-.17-.011-.238-.034-.068-.305-.735-.418-1.006-.111-.264-.223-.228-.305-.232-.079-.004-.17-.005-.26-.005s-.238.034-.362.17c-.124.135-.474.463-.474 1.131 0 .667.485 1.312.553 1.402.068.09 1.005 1.54 2.433 2.152.34.146.605.233.813.298.342.108.653.093.899.056.273-.041.8-.396.912-.78.113-.384.113-.712.079-.78-.033-.068-.124-.102-.259-.17z"/></svg>
+                        Preview Enquete WhatsApp
+                    </label>
+                    <div class="space-y-2 card-options opacity-50 grayscale transition-all duration-300">
+                        <div class="flex items-center text-sm bg-white p-2.5 rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+                            <span class="w-12 text-slate-400 font-mono text-xs font-bold bg-slate-100 rounded px-1 py-0.5 text-center mr-3">85%</span>
+                            <span class="opt-85 text-slate-700 font-medium">É minha por R$ --</span>
+                        </div>
+                        <div class="flex items-center text-sm bg-white p-2.5 rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] border-l-2 border-l-blue-400">
+                            <span class="w-12 text-blue-500 font-mono text-xs font-bold bg-blue-50 rounded px-1 py-0.5 text-center mr-3">100%</span>
+                            <span class="opt-100 text-slate-800 font-semibold">É minha por R$ --</span>
+                        </div>
+                        <div class="flex items-center text-sm bg-white p-2.5 rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] text-wapp">
+                            <span class="w-12 text-green-600 font-mono text-xs font-bold bg-green-50 rounded px-1 py-0.5 text-center mr-3">120%</span>
+                            <span class="opt-120 font-medium">É minha por R$ --</span>
+                        </div>
+                        <div class="flex items-center text-sm bg-white p-2.5 rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] text-orange-500">
+                            <span class="w-12 font-mono text-xs font-bold bg-orange-50 rounded px-1 py-0.5 text-center mr-3">140%</span>
+                            <span class="opt-140 font-medium">É minha por R$ --</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </template>
+
+    <!-- Toastify JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+    <!-- Lógica da Aplicação -->
+    <script src="app.js"></script>
+</body>
+</html>

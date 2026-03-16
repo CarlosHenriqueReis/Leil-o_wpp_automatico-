@@ -6,6 +6,7 @@ const fs = require('fs');
 const multer = require('multer');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const cron = require('node-cron');
 require('dotenv').config();
 
 // Inicializa a base de usuários (cria o primeiro admin se não existir)
@@ -169,6 +170,52 @@ app.post('/api/upload', authenticateToken, upload.single('imagem'), (req, res) =
 });
 
 // ==========================================
+// LIMPEZA AUTOMÁTICA DE IMAGENS (TODO DOMINGO 00:00)
+// ==========================================
+cron.schedule('0 0 * * 0', () => {
+    console.log('[CRON] 🗑️  Iniciando limpeza semanal de imagens...');
+    try {
+        const files = fs.readdirSync(uploadDir);
+        let count = 0;
+        files.forEach(file => {
+            const filePath = path.join(uploadDir, file);
+            if (fs.statSync(filePath).isFile()) {
+                fs.unlinkSync(filePath);
+                count++;
+            }
+        });
+        console.log(`[CRON] ✅ Limpeza concluída: ${count} imagem(ns) removida(s).`);
+    } catch (err) {
+        console.error('[CRON] ❌ Erro na limpeza de imagens:', err.message);
+    }
+}, {
+    timezone: 'America/Sao_Paulo'
+});
+
+// ==========================================
+// ROTA MANUAL: Limpar imagens (só admin)
+// ==========================================
+app.delete('/api/clear-uploads', authenticateToken, (req, res) => {
+    if (req.user.role !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Apenas administradores podem executar esta ação.' });
+    }
+    try {
+        const files = fs.readdirSync(uploadDir);
+        let count = 0;
+        files.forEach(file => {
+            const filePath = path.join(uploadDir, file);
+            if (fs.statSync(filePath).isFile()) {
+                fs.unlinkSync(filePath);
+                count++;
+            }
+        });
+        res.json({ success: true, message: `${count} imagem(ns) removida(s) com sucesso.` });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Erro ao limpar imagens.' });
+    }
+});
+
+// ==========================================
 // INICIA O SERVIDOR
 // ==========================================
 app.listen(PORT, () => {
@@ -178,5 +225,6 @@ app.listen(PORT, () => {
     console.log(`📝 Webhooks N8N configurados:`);
     console.log(`   Start: ${process.env.WEBHOOK_START_LEILAO || 'NÃO CONFIGURADO'}`);
     console.log(`   Cobranca: ${process.env.WEBHOOK_COBRANCA || 'NÃO CONFIGURADO'}`);
+    console.log(`🗑️  Limpeza de imagens: Todo Domingo 00:00 (São Paulo)`);
     console.log(`===========================================`);
 });

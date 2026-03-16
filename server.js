@@ -4,7 +4,37 @@ const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 require('dotenv').config();
+
+// Inicializa a base de usuários (cria o primeiro admin se não existir)
+const USERS_FILE = path.join(__dirname, 'users.json');
+if (!fs.existsSync(USERS_FILE)) {
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync('admin123', salt);
+    const initialUsers = [
+        { username: 'admin', passwordHash: hash, role: 'admin' },
+        { username: 'operador', passwordHash: bcrypt.hashSync('operador123', salt), role: 'operador' }
+    ];
+    fs.writeFileSync(USERS_FILE, JSON.stringify(initialUsers, null, 2));
+}
+
+const JWT_SECRET = process.env.JWT_SECRET || 'super-key-pokemon-leilao-secret';
+
+// Middleware de Autenticação
+function authenticateToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    
+    if (!token) return res.status(401).json({ success: false, message: 'Acesso negado: Token não fornecido.' });
+    
+    jwt.verify(token, JWT_SECRET, (err, user) => {
+        if (err) return res.status(403).json({ success: false, message: 'Sessão expirada ou token inválido.' });
+        req.user = user;
+        next();
+    });
+}
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -38,14 +68,39 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ==========================================
-// ROTAS DO BACKEND / INTEGRAÇÃO N8N
+// ROTAS DO BACKEND / INTEGRAÇÃO N8N E LOGIN
 // ==========================================
+
+/**
+ * ROTA: Login de Usuários
+ */
+app.post('/api/login', (req, res) => {
+    const { username, password } = req.body;
+    if (!username || !password) return res.status(400).json({ success: false, message: 'Usuário e senha obrigatórios.' });
+    
+    try {
+        const users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
+        const user = users.find(u => u.username === username);
+        
+        if (!user) return res.status(401).json({ success: false, message: 'Credenciais inválidas.' });
+        
+        const validPassword = bcrypt.compareSync(password, user.passwordHash);
+        if (!validPassword) return res.status(401).json({ success: false, message: 'Credenciais inválidas.' });
+        
+        const token = jwt.sign({ username: user.username, role: user.role }, JWT_SECRET, { expiresIn: '12h' });
+        
+        res.json({ success: true, token, username: user.username, role: user.role });
+    } catch (error) {
+        console.error('Erro no login:', error);
+        res.status(500).json({ success: false, message: 'Erro interno no servidor.' });
+    }
+});
 
 /**
  * ROTA 1: Setup do Leilão
  * Recebe o JSON com os dados das cartas e dispara o n8n para iniciar o leilão.
  */
-app.post('/api/start-leilao', async (req, res) => {
+app.post('/api/start-leilao', authenticateToken, async (req, res) => {
     try {
         const payload = req.body;
         const webhookUrl = process.env.WEBHOOK_START_LEILAO;
@@ -72,7 +127,7 @@ app.post('/api/start-leilao', async (req, res) => {
  * ROTA 2: Cobrança dos Lances Vencedores
  * Recebe o JSON agrupado do cliente (telefone, cartas e total) e dispara a cobrança.
  */
-app.post('/api/send-cobranca', async (req, res) => {
+app.post('/api/send-cobranca', authenticateToken, async (req, res) => {
     try {
         const payload = req.body;
         const webhookUrl = process.env.WEBHOOK_COBRANCA;
@@ -98,7 +153,7 @@ app.post('/api/send-cobranca', async (req, res) => {
 /**
  * ROTA 3: Upload de Imagens Direto no Servidor
  */
-app.post('/api/upload', upload.single('imagem'), (req, res) => {
+app.post('/api/upload', authenticateToken, upload.single('imagem'), (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ success: false, message: 'Nenhuma imagem enviada.' });

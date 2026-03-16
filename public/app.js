@@ -1,4 +1,90 @@
 /* =======================================================
+   AUTENTICAÇÃO E SEGURANÇA
+   ======================================================= */
+function checkAuth() {
+    const token = localStorage.getItem('poke_token');
+    const username = localStorage.getItem('poke_user');
+    const loginScreen = document.getElementById('login-screen');
+    const appContent = document.getElementById('app-content');
+    const userDisplay = document.getElementById('user-display');
+    const body = document.body;
+
+    if (token) {
+        loginScreen.classList.add('hidden');
+        appContent.classList.remove('hidden');
+        appContent.classList.add('flex');
+        body.classList.remove('overflow-hidden');
+        if (userDisplay && username) userDisplay.textContent = `User: ${username}`;
+    } else {
+        loginScreen.classList.remove('hidden');
+        appContent.classList.add('hidden');
+        appContent.classList.remove('flex');
+        body.classList.add('overflow-hidden');
+    }
+}
+
+async function handleLogin(e) {
+    e.preventDefault();
+    const btn = document.getElementById('btn-login');
+    const originalContent = btn.innerHTML;
+    const user = document.getElementById('login-user').value;
+    const pass = document.getElementById('login-pass').value;
+
+    btn.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline block" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Validando...`;
+    btn.disabled = true;
+
+    try {
+        const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: user, password: pass })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok && data.success) {
+            localStorage.setItem('poke_token', data.token);
+            localStorage.setItem('poke_user', data.username);
+            showToast('Login efetuado com sucesso!', 'success');
+            checkAuth();
+        } else {
+            showToast(data.message || 'Credenciais inválidas.', 'error');
+        }
+    } catch (err) {
+        showToast('Erro ao conectar com o servidor.', 'error');
+    } finally {
+        btn.innerHTML = originalContent;
+        btn.disabled = false;
+    }
+}
+
+function handleLogout() {
+    localStorage.removeItem('poke_token');
+    localStorage.removeItem('poke_user');
+    checkAuth();
+    showToast('Sessão encerrada.', 'info');
+}
+
+/* =======================================================
+   PROTEÇÃO DE CÓDIGO BÁSICA (Evitar cópia)
+   ======================================================= */
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.addEventListener('keydown', function(e) {
+    // Bloqueia F12
+    if(e.key === 'F12') {
+        e.preventDefault();
+    }
+    // Bloqueia Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+U
+    if(e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) {
+        e.preventDefault();
+    }
+    if(e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+        e.preventDefault();
+    }
+});
+
+/* =======================================================
    GERENCIAMENTO DE ABAS (TABS)
    ======================================================= */
 function switchTab(tab) {
@@ -78,8 +164,12 @@ async function uploadImage(input) {
     formData.append('imagem', file);
 
     try {
+        const token = localStorage.getItem('poke_token');
         const response = await fetch('/api/upload', {
             method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
             body: formData
         });
 
@@ -209,9 +299,13 @@ async function startLeilao() {
 
     // Fetch API Node do servidor que fará repasse
     try {
+        const token = localStorage.getItem('poke_token');
         const response = await fetch('/api/start-leilao', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
             body: JSON.stringify({ arrayLotes: payload, timestamp: new Date().toISOString() })
         });
 
@@ -371,9 +465,13 @@ async function handleSendCobranca(e, clientData) {
             timestamp: new Date().toISOString()
         };
 
+        const token = localStorage.getItem('poke_token');
         const response = await fetch('/api/send-cobranca', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
             body: JSON.stringify(payload)
         });
 
@@ -428,6 +526,20 @@ function showToast(text, type = 'info') {
    INICIALIZAÇÃO (BOOTSTRAP)
    ======================================================= */
 document.addEventListener('DOMContentLoaded', () => {
+    // Verifica logado
+    checkAuth();
+    
+    // Proibe a seleção de texto pro corpo todo para evitar cópia simples
+    document.body.style.userSelect = 'none';
+    document.body.style.webkitUserSelect = 'none';
+    
+    // Libera text selection e copy só nos inputs q são precisos
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(el => {
+        el.style.userSelect = 'auto';
+        el.style.webkitUserSelect = 'auto';
+    });
+
     // Ao abrir a página, teremos pelo menos 1 slot vazio para carta
     addCardForm();
 });

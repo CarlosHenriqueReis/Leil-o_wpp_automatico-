@@ -1,7 +1,7 @@
 {
-  "name": "dashboard-leilao",
+  "name": "pokeleilao",
   "version": "1.0.0",
-  "description": "Dashboard de leilões Pokémon para o n8n",
+  "description": "PokéLeilão - Dashboard de Leilões TCG via WhatsApp + n8n",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

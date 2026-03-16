@@ -220,7 +220,7 @@ app.delete('/api/clear-uploads', authenticateToken, (req, res) => {
 // ==========================================
 app.listen(PORT, () => {
     console.log(`===========================================`);
-    console.log(`🚀 Servidor Dashboard TCG rodando`);
+    console.log(`🚀 Servidor PokéLeilão rodando`);
     console.log(`📍 URL Local: http://localhost:${PORT}`);
     console.log(`📝 Webhooks N8N configurados:`);
     console.log(`   Start: ${process.env.WEBHOOK_START_LEILAO || 'NÃO CONFIGURADO'}`);

@@ -21,6 +21,18 @@ if (!fs.existsSync(USERS_FILE)) {
     fs.writeFileSync(USERS_FILE, JSON.stringify(initialUsers, null, 2));
 }
 
+// Inicializa a base temporária de Lances (mini banco de dados)
+const LANCES_FILE = path.join(__dirname, 'lances.json');
+if (!fs.existsSync(LANCES_FILE)) {
+    fs.writeFileSync(LANCES_FILE, JSON.stringify({}, null, 2));
+}
+
+// Inicializa a base de Rascunhos de Leilão
+const RASCUNHOS_FILE = path.join(__dirname, 'rascunhos.json');
+if (!fs.existsSync(RASCUNHOS_FILE)) {
+    fs.writeFileSync(RASCUNHOS_FILE, JSON.stringify([], null, 2));
+}
+
 const JWT_SECRET = process.env.JWT_SECRET || 'super-key-pokemon-leilao-secret';
 
 // Middleware de Autenticação
@@ -152,7 +164,95 @@ app.post('/api/send-cobranca', authenticateToken, async (req, res) => {
 });
 
 /**
- * ROTA 3: Upload de Imagens Direto no Servidor
+ * ROTAS DE RASCUNHOS (SALVAR/CARREGAR)
+ */
+app.get('/api/rascunhos', authenticateToken, (req, res) => {
+    try {
+        const data = fs.readFileSync(RASCUNHOS_FILE, 'utf8');
+        res.status(200).json({ success: true, rascunhos: JSON.parse(data) });
+    } catch (error) {
+        console.error('Erro ao ler rascunhos:', error);
+        res.status(500).json({ success: false, message: 'Erro ao carregar rascunhos.' });
+    }
+});
+
+app.post('/api/rascunhos', authenticateToken, (req, res) => {
+    try {
+        const novoRascunho = req.body; // { id: 123, nome: 'Nome', cartas: [...] }
+        let rascunhos = JSON.parse(fs.readFileSync(RASCUNHOS_FILE, 'utf8'));
+        
+        // Verifica se já existe, se sim atualiza, se não cria novo
+        const existingIndex = rascunhos.findIndex(r => r.id === novoRascunho.id);
+        if (existingIndex >= 0) {
+            rascunhos[existingIndex] = novoRascunho;
+        } else {
+            rascunhos.unshift(novoRascunho);
+        }
+        
+        fs.writeFileSync(RASCUNHOS_FILE, JSON.stringify(rascunhos, null, 2));
+        res.status(200).json({ success: true, message: 'Rascunho salvo com sucesso.' });
+    } catch (error) {
+        console.error('Erro ao salvar rascunho:', error);
+        res.status(500).json({ success: false, message: 'Erro ao salvar rascunho.' });
+    }
+});
+
+/**
+ * ROTA 3: Finalizar Leilão e Trazer Resultados
+ * Varre o lances.json e calcula quem ganhou cada carta.
+ */
+app.get('/api/resultados-leilao', authenticateToken, (req, res) => {
+    try {
+        const lancesDB = JSON.parse(fs.readFileSync(LANCES_FILE, 'utf8'));
+        const resultados = {
+            ganhadores: [], // array flat de todas as cartas ganhas com seus respectivos vencedores
+            nao_vendidas: [] // nomes das cartas sem nenhum lance
+        };
+
+        // Entenda que lancesDB tem a chave como o pollId e os dados da carta
+        // Para cada carta/enquete...
+        for (const [pollId, dadosCarta] of Object.entries(lancesDB)) {
+            const nomeCarta = dadosCarta.nome_carta;
+            const votos = dadosCarta.votos || [];
+
+            if (votos.length === 0) {
+                // Ninguém votou nesta enquete
+                resultados.nao_vendidas.push(nomeCarta);
+            } else {
+                // Encontrar o maior lance
+                // Cada voto tem { telefone, opcaoStr, valorParsed, timestamp }
+                
+                // Ordenar por valor (decrescente) e depois por tempo (crescente - quem votou antes ganha em caso de empate)
+                votos.sort((a, b) => {
+                    if (b.valorParsed !== a.valorParsed) {
+                        return b.valorParsed - a.valorParsed;
+                    }
+                    return new Date(a.timestamp) - new Date(b.timestamp);
+                });
+
+                const vencedor = votos[0];
+                
+                resultados.ganhadores.push({
+                    id_carta: pollId,
+                    nome_carta: nomeCarta,
+                    valor_vencedor: vencedor.valorParsed,
+                    telefone_ganhador: vencedor.telefone
+                });
+            }
+        }
+
+        // Limpa o banco de lances para preparar para o próximo leilão
+        fs.writeFileSync(LANCES_FILE, JSON.stringify({}, null, 2));
+
+        return res.status(200).json({ success: true, data: resultados });
+    } catch (error) {
+        console.error('Erro ao finalizar leilão:', error.message);
+        return res.status(500).json({ success: false, message: 'Erro ao processar os resultados do leilão.' });
+    }
+});
+
+/**
+ * ROTA 4: Upload de Imagens Direto no Servidor
  */
 app.post('/api/upload', authenticateToken, upload.single('imagem'), (req, res) => {
     try {
@@ -170,21 +270,30 @@ app.post('/api/upload', authenticateToken, upload.single('imagem'), (req, res) =
 });
 
 // ==========================================
-// LIMPEZA AUTOMÁTICA DE IMAGENS (TODO DOMINGO 00:00)
+// LIMPEZA AUTOMÁTICA DE IMAGENS (> 7 DIAS)
 // ==========================================
-cron.schedule('0 0 * * 0', () => {
-    console.log('[CRON] 🗑️  Iniciando limpeza semanal de imagens...');
+// Roda todo dia às 03:00 da manhã
+cron.schedule('0 3 * * *', () => {
+    console.log('[CRON] 🗑️  Verificando imagens antigas (> 7 dias)...');
     try {
         const files = fs.readdirSync(uploadDir);
         let count = 0;
+        const now = Date.now();
+        const seteDiasEmMs = 7 * 24 * 60 * 60 * 1000;
+
         files.forEach(file => {
             const filePath = path.join(uploadDir, file);
-            if (fs.statSync(filePath).isFile()) {
-                fs.unlinkSync(filePath);
-                count++;
+            const stats = fs.statSync(filePath);
+            
+            if (stats.isFile()) {
+                const age = now - stats.mtimeMs;
+                if (age > seteDiasEmMs) {
+                    fs.unlinkSync(filePath);
+                    count++;
+                }
             }
         });
-        console.log(`[CRON] ✅ Limpeza concluída: ${count} imagem(ns) removida(s).`);
+        console.log(`[CRON] ✅ Verificação concluída: ${count} imagem(ns) antiga(s) removida(s).`);
     } catch (err) {
         console.error('[CRON] ❌ Erro na limpeza de imagens:', err.message);
     }
@@ -214,6 +323,130 @@ app.delete('/api/clear-uploads', authenticateToken, (req, res) => {
         res.status(500).json({ success: false, message: 'Erro ao limpar imagens.' });
     }
 });
+
+/**
+ * ==========================================
+ * ROTAS DE WHATSAPP (CAPTAR VOTOS DA ENQUETE)
+ * ==========================================
+ */
+app.post('/api/webhook/votos', (req, res) => {
+    // Retorna 200 rápido para a Evolution API não travar a fila
+    res.status(200).send('OK');
+
+    try {
+        const body = req.body;
+        // Salvar payload para debug
+        fs.appendFileSync('debug_webhook.log', JSON.stringify(body) + '\n');
+        console.log("[WEBHOOK EVOLUTION] Recebeu evento: ", body.event || body.event_type || 'Desconhecido');
+
+        // A Evolution dispara eventos 'messages.upsert' e dentro deles pode ter atualizações de enquete
+        if (body.event === 'messages.update' || body.event === 'messages.upsert' || body.event === 'MESSAGES_UPDATE' || body.event === 'MESSAGES_UPSERT') {
+            const msgData = body.data;
+            if (!msgData) return;
+
+            // Tratamento simplificado para capturar a estrutura da mensagem
+            // A estrutura exata do JSON varia dependendo da versão da API, vamos verificar a mais comum de "pollUpdates"
+            let pollUpdates = msgData.message?.pollUpdates;
+            
+            // Tratamento no formato Evolution API v1.x (onde vem como array no data ou dentro do message)
+            if (Array.isArray(msgData) && msgData[0]?.update?.pollUpdates) {
+                pollUpdates = msgData[0].update.pollUpdates;
+            } else if (msgData.pollUpdates) {
+                pollUpdates = msgData.pollUpdates;
+            }
+
+            if (pollUpdates && pollUpdates.length > 0) {
+                // É um voto numa enquete!
+                console.log(`[!] Voto de enquete detectado! Vamos registrá-lo.`);
+                
+                // Puxar banco de dados local
+                const lancesDB = JSON.parse(fs.readFileSync(LANCES_FILE, 'utf8'));
+                
+                // O pollUpdates é um array, vamos iterar sobre ele
+                for (const vote of pollUpdates) {
+                    const voterGid = vote.pollUpdateMessageKey?.participant || msgData.key?.participant || msgData.key?.remoteJid || body.sender;
+                    // Limpar numero do formato WhatsApp (ex: 5511999999999@s.whatsapp.net -> 5511999999999)
+                    const voterNumber = voterGid ? voterGid.split('@')[0] : 'Desconhecido';
+                    
+                    // Identificador da enquete (para sabermos de qual grupo e carta pertence o voto)
+                    const pollId = vote.pollUpdateMessageKey?.id || 'id_desconhecido';
+                    
+                    // Os nomes exatos das opções votadas
+                    const selectedOptions = vote.vote?.selectedOptions || [];
+                    
+                    if (!lancesDB[pollId]) {
+                        lancesDB[pollId] = {
+                            nome_carta: "Carta Desconhecida", // Depois faremos o cruzamento reverso
+                            votos: []
+                        };
+                    }
+
+                    // Se a pessoa desmarcou todas as opções e o selectedOptions for vazio, removemos votos passados da pessoa
+                    if (selectedOptions.length === 0) {
+                        lancesDB[pollId].votos = lancesDB[pollId].votos.filter(v => v.telefone !== voterNumber);
+                    } else {
+                        // Filtramos o voto antigo dessa pessoa nesta mesma enquete (caso ela tenha mudado de ideia e votado de novo)
+                        lancesDB[pollId].votos = lancesDB[pollId].votos.filter(v => v.telefone !== voterNumber);
+                        
+                        // Registramos o novo voto (assumindo a primeira opcao pra simplificar, ou percorrendo todas se houver votos multiplos)
+                        for (const opt of selectedOptions) {
+                            lancesDB[pollId].votos.push({
+                                telefone: voterNumber,
+                                opcaoStr: opt, // ex: "R$ 100" ou "É minha por R$ 140"
+                                valorParsed: parseFloat(opt.replace(/[^0-9,.]/g, '').replace(',', '.')) || 0,
+                                timestamp: new Date().toISOString()
+                            });
+                        }
+                    }
+                }
+                
+                // Salva no pseudo-banco de dados
+                fs.writeFileSync(LANCES_FILE, JSON.stringify(lancesDB, null, 2));
+                console.log(`[!] Banco de lances temporário atualizado.`);
+            }
+        }
+
+    } catch (e) {
+        console.error('[ERRO WEBHOOK] Falha ao processar voto da Evolution: ', e);
+    }
+});
+
+/**
+ * ==========================================
+ * ROTA N8N -> SALVAR ID E NOME DA ENQUETE
+ * ==========================================
+ * O n8n vai bater aqui para nos dizer qual o nome real do
+ * lote cujo mensagem acabou de enviar para a Evolution API
+ */
+app.post('/api/webhook/registra-enquete', (req, res) => {
+    try {
+        const payload = req.body;
+        // Esperamos um JSON no formato: {"pollId": "BA3F92X8", "nomeDaCarta": "Leafeon-V"}
+        if (!payload || !payload.pollId || !payload.nomeDaCarta) {
+            return res.status(400).json({ success: false, message: 'Dados insuficientes. Faltam pollId ou nomeDaCarta.' });
+        }
+
+        const lancesDB = JSON.parse(fs.readFileSync(LANCES_FILE, 'utf8'));
+
+        // Se essa enquete já tinha votos fantasmas captados antes dessa rota ser chamada, não apaga. Só atualiza nome.
+        if (!lancesDB[payload.pollId]) {
+            lancesDB[payload.pollId] = { "nome_carta": payload.nomeDaCarta, "votos": [] };
+        } else {
+            lancesDB[payload.pollId].nome_carta = payload.nomeDaCarta;
+        }
+
+        fs.writeFileSync(LANCES_FILE, JSON.stringify(lancesDB, null, 2));
+
+        console.log(`[!] Enquete registrada com nome. ID: ${payload.pollId} = ${payload.nomeDaCarta}`);
+        return res.status(200).json({ success: true, message: 'Enquete mapeada internamente.' });
+
+    } catch (e) {
+        console.error('[ERRO REGISTRA] Falha ao parear nome e enquete via n8n:', e);
+        return res.status(500).json({ success: false, message: 'Erro interno.' });
+    }
+});
+
+
 
 // ==========================================
 // INICIA O SERVIDOR

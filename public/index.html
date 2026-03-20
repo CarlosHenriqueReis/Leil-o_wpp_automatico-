@@ -110,6 +110,10 @@
                     <svg class="w-4 h-4 mr-1.5 mb-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     Resultados & Cobrança
                 </button>
+                <button id="tab-config" class="h-full px-2 tab-inactive flex items-center transition-colors" onclick="switchTab('config')">
+                    <svg class="w-4 h-4 mr-1.5 mb-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Configurações
+                </button>
                 
                 <div class="pl-4 ml-2 border-l border-slate-200 flex items-center gap-3">
                     <span id="user-display" class="hidden sm:inline text-slate-500 font-medium text-xs px-2 py-1 bg-slate-100 rounded-md"></span>
@@ -131,9 +135,17 @@
                 <div>
                     <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Novo Leilão</h2>
                     <p class="text-slate-500 mt-1.5 text-sm">Cadastre lotes dinâmicos para iniciar enquetes no grupo do WhatsApp.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:items-center gap-2">
+                        <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Alvo (WhatsApp):</label>
+                        <input type="text" id="target-number" class="text-sm border border-slate-300 rounded-lg py-1.5 px-3 focus:outline-none focus:ring-2 focus:border-wapp w-full sm:max-w-[180px]" placeholder="553183693473" value="553183693473">
+                    </div>
                 </div>
                 <div>
-                    <button class="bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:text-wapp font-medium py-2 px-4 rounded-lg shadow-sm transition-colors text-sm flex items-center gap-2" onclick="addCardForm()">
+                    <button class="bg-white border text-xs border-slate-300 text-slate-700 hover:bg-slate-50 hover:text-blue-500 font-medium py-2 px-3 rounded-lg shadow-sm transition-colors flex items-center gap-1.5 mr-2 inline-flex" onclick="addMultiCards()">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        +10 Cartas
+                    </button>
+                    <button class="bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:text-wapp font-medium py-2 px-4 rounded-lg shadow-sm transition-colors text-sm items-center gap-2 inline-flex" onclick="addCardForm()">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                         Adicionar Carta
                     </button>
@@ -143,9 +155,19 @@
             <!-- Contêiner dinâmico onde os cards vão aparecer -->
             <div id="cards-container" class="space-y-6"></div>
 
-            <!-- Botão de Ação: Inicia integração com N8N -->
-            <div class="mt-8 pt-6 flex justify-end">
-                <button id="btn-start" class="bg-wapp hover:bg-wapp-hover text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg shadow-green-500/30 transition-all flex items-center gap-2 text-base transform hover:-translate-y-0.5" onclick="startLeilao()">
+            <!-- Botão de Ação: Inicia integração com N8N e Rascunhos -->
+            <div class="mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-slate-200">
+                <div class="flex gap-2 w-full sm:w-auto">
+                    <button class="bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-medium py-3 px-5 rounded-xl shadow-sm transition-colors text-sm flex items-center justify-center gap-2 flex-1" onclick="loadDraftModal()">
+                        <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"></path></svg>
+                        Carregar Rascunho
+                    </button>
+                    <button class="bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-medium py-3 px-5 rounded-xl shadow-sm transition-colors text-sm flex items-center justify-center gap-2 flex-1" onclick="saveDraft()">
+                        <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+                        Salvar Rascunho
+                    </button>
+                </div>
+                <button id="btn-start" class="w-full sm:w-auto bg-wapp hover:bg-wapp-hover text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg shadow-green-500/30 transition-all flex items-center justify-center gap-2 text-base transform hover:-translate-y-0.5" onclick="startLeilao()">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     Iniciar Leilão no Sistema
                 </button>
@@ -154,9 +176,17 @@
 
         <!-- SEÇÃO 2: RESULTADOS E COBRANÇAS -->
         <section id="section-results" class="fade-in hidden">
-            <div class="mb-8 border-b border-slate-200 pb-4">
-                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Resultados & Cobrança</h2>
-                <p class="text-slate-500 mt-1.5 text-sm">Visualização de ganhadores agrupados e disparo de mensagens via painel.</p>
+            <div class="mb-8 border-b border-slate-200 pb-4 flex items-start sm:items-end justify-between flex-col sm:flex-row gap-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Resultados & Cobrança</h2>
+                    <p class="text-slate-500 mt-1.5 text-sm">Visualização de ganhadores agrupados e resumo de cartas não vendidas.</p>
+                </div>
+                <div>
+                    <button id="btn-finalizar" class="bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 font-bold py-2.5 px-5 rounded-lg shadow-sm transition-colors text-sm flex items-center gap-2" onclick="finalizarLeilao()">
+                        <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        Finalizar e Apurar Resultados
+                    </button>
+                </div>
             </div>
 
             <!-- Loading Skeleton (mostrado ao simular busca de ganhadores) -->
@@ -165,11 +195,95 @@
             </div>
 
             <!-- Contêiner de Cards de Ganhadores -->
-            <div id="winners-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            <div id="winners-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"></div>
+            
+            <!-- Contêiner de Não Vendidas -->
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hidden mt-4" id="nao-vendidas-container">
+                <div class="flex items-center gap-2 mb-3">
+                    <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="font-bold text-slate-700">Cartas que Não Renderam Lances</h3>
+                </div>
+                <div class="flex flex-wrap gap-2" id="nao-vendidas-tags">
+                    <!-- Dinamic -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: CONFIGURAÇÕES -->
+        <section id="section-config" class="fade-in hidden">
+            <div class="mb-8 border-b border-slate-200 pb-4">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Configurações</h2>
+                <p class="text-slate-500 mt-1.5 text-sm">Defina as 5 opções de porcentagem que gerarão os lances automaticamente das cartas do leilão.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm max-w-lg">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">Configurações de Enquete</h3>
+                <form id="settings-form" class="space-y-4" onsubmit="saveSettings(event)">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">Quantidade de Opções de Lance</label>
+                        <select id="cfg-num-options" required class="w-full border border-slate-300 rounded-lg py-2.5 px-3 focus:outline-none focus:ring-2 focus:border-wapp text-sm bg-white" onchange="toggleConfigOptions()">
+                            <option value="2">2 Opções</option>
+                            <option value="3">3 Opções</option>
+                            <option value="4">4 Opções</option>
+                            <option value="5" selected>5 Opções (Recomendado)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="pt-2 border-t border-slate-100">
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-4">Porcentagens dos Lances (em %)</label>
+                        <div class="space-y-3">
+                            <div id="cfg-wrap-1" class="flex items-center gap-3">
+                                <span class="text-sm font-semibold w-20 whitespace-nowrap text-slate-600">Opção 1</span>
+                                <input type="number" id="cfg-opt1" required class="w-full border border-slate-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:border-wapp text-sm" placeholder="Ex: 80">
+                            </div>
+                            <div id="cfg-wrap-2" class="flex items-center gap-3">
+                                <span class="text-sm font-semibold w-20 whitespace-nowrap text-slate-600">Opção 2</span>
+                                <input type="number" id="cfg-opt2" required class="w-full border border-slate-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:border-wapp text-sm" placeholder="Ex: 105">
+                            </div>
+                            <div id="cfg-wrap-3" class="flex items-center gap-3">
+                                <span class="text-sm font-semibold w-20 whitespace-nowrap text-slate-600">Opção 3</span>
+                                <input type="number" id="cfg-opt3" required class="w-full border border-slate-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:border-wapp text-sm" placeholder="Ex: 120">
+                            </div>
+                            <div id="cfg-wrap-4" class="flex items-center gap-3">
+                                <span class="text-sm font-semibold w-20 whitespace-nowrap text-slate-600">Opção 4</span>
+                                <input type="number" id="cfg-opt4" required class="w-full border border-slate-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:border-wapp text-sm" placeholder="Ex: 140">
+                            </div>
+                            <div id="cfg-wrap-5" class="flex items-center gap-3">
+                                <span class="text-sm font-semibold w-20 whitespace-nowrap text-slate-600">Opção 5</span>
+                                <input type="number" id="cfg-opt5" required class="w-full border border-slate-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:border-wapp text-sm" placeholder="Ex: 160">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 flex justify-end">
+                        <button type="submit" class="bg-wapp hover:bg-wapp-hover text-white font-semibold py-2.5 px-6 rounded-lg text-sm transition-colors shadow-sm">Salvar Configurações</button>
+                    </div>
+                </form>
+            </div>
         </section>
 
     </main>
     </div> <!-- END APP CONTENT -->
+
+    <!-- MODAL DE RASCUNHOS -->
+    <div id="draft-modal" class="fixed inset-0 z-[100] bg-slate-900/50 hidden items-center justify-center fade-in">
+        <div class="bg-white p-6 rounded-2xl shadow-xl w-[90%] max-w-lg border border-slate-200">
+            <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-3">
+                <h3 class="text-lg font-bold text-slate-800">Meus Rascunhos</h3>
+                <button class="text-slate-400 hover:text-slate-600" onclick="closeDraftModal()">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <!-- Loading Skeleton -->
+            <div id="draft-loading" class="hidden flex justify-center py-6">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-wapp"></div>
+            </div>
+            
+            <div id="draft-list" class="space-y-3 max-h-64 overflow-y-auto pr-2">
+                <!-- Injetado dinamicamente via JS -->
+            </div>
+        </div>
+    </div>
 
     <!-- ==============================================
          TEMPLATES (HTML não renderizado direto na tela)
@@ -239,21 +353,30 @@
                         Preview Enquete WhatsApp
                     </label>
                     <div class="space-y-2 card-options opacity-50 grayscale transition-all duration-300">
-                        <div class="flex items-center text-sm bg-white p-2.5 rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
-                            <span class="w-12 text-slate-400 font-mono text-xs font-bold bg-slate-100 rounded px-1 py-0.5 text-center mr-3">85%</span>
-                            <span class="opt-85 text-slate-700 font-medium">É minha por R$ --</span>
+                        <div class="wrap-opt1 flex items-center text-sm bg-white rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden">
+                            <span class="w-12 text-slate-400 font-mono text-xs font-bold bg-slate-100 px-1 py-2.5 text-center label-opt1">80%</span>
+                            <div class="flex items-center px-2 text-slate-400 whitespace-nowrap flex-shrink-0 text-[11px] sm:text-xs font-semibold hint-opt1">R$</div>
+                            <input type="number" step="0.01" class="opt-1 w-full text-slate-700 font-medium py-2.5 pr-3 focus:outline-none bg-transparent placeholder-slate-300" placeholder="--">
                         </div>
-                        <div class="flex items-center text-sm bg-white p-2.5 rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] border-l-2 border-l-blue-400">
-                            <span class="w-12 text-blue-500 font-mono text-xs font-bold bg-blue-50 rounded px-1 py-0.5 text-center mr-3">100%</span>
-                            <span class="opt-100 text-slate-800 font-semibold">É minha por R$ --</span>
+                        <div class="wrap-opt2 flex items-center text-sm bg-white rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] border-l-2 border-l-blue-400 overflow-hidden">
+                            <span class="w-12 text-blue-500 font-mono text-xs font-bold bg-blue-50 px-1 py-2.5 text-center label-opt2">105%</span>
+                            <div class="flex items-center px-2 text-slate-400 whitespace-nowrap flex-shrink-0 text-[11px] sm:text-xs font-semibold hint-opt2">R$</div>
+                            <input type="number" step="0.01" class="opt-2 w-full text-slate-800 font-semibold py-2.5 pr-3 focus:outline-none bg-transparent placeholder-slate-300" placeholder="--">
                         </div>
-                        <div class="flex items-center text-sm bg-white p-2.5 rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] text-wapp">
-                            <span class="w-12 text-green-600 font-mono text-xs font-bold bg-green-50 rounded px-1 py-0.5 text-center mr-3">120%</span>
-                            <span class="opt-120 font-medium">É minha por R$ --</span>
+                        <div class="wrap-opt3 flex items-center text-sm bg-white rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] text-wapp overflow-hidden">
+                            <span class="w-12 text-green-600 font-mono text-xs font-bold bg-green-50 px-1 py-2.5 text-center label-opt3">120%</span>
+                            <div class="flex items-center px-2 text-green-400 whitespace-nowrap flex-shrink-0 text-[11px] sm:text-xs font-semibold hint-opt3">R$</div>
+                            <input type="number" step="0.01" class="opt-3 w-full text-wapp font-medium py-2.5 pr-3 focus:outline-none bg-transparent placeholder-green-200" placeholder="--">
                         </div>
-                        <div class="flex items-center text-sm bg-white p-2.5 rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] text-orange-500">
-                            <span class="w-12 font-mono text-xs font-bold bg-orange-50 rounded px-1 py-0.5 text-center mr-3">140%</span>
-                            <span class="opt-140 font-medium">É minha por R$ --</span>
+                        <div class="wrap-opt4 flex items-center text-sm bg-white rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] text-purple-600 border-l-2 border-l-purple-500 overflow-hidden">
+                            <span class="w-12 text-purple-600 font-mono text-xs font-bold bg-purple-50 px-1 py-2.5 text-center label-opt4">140%</span>
+                            <div class="flex items-center px-2 text-purple-400 whitespace-nowrap flex-shrink-0 text-[11px] sm:text-xs font-semibold hint-opt4">R$</div>
+                            <input type="number" step="0.01" class="opt-4 w-full text-purple-600 font-medium py-2.5 pr-3 focus:outline-none bg-transparent placeholder-purple-200" placeholder="--">
+                        </div>
+                        <div class="wrap-opt5 flex items-center text-sm bg-white rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] text-orange-500 overflow-hidden">
+                            <span class="w-12 font-mono text-xs font-bold bg-orange-50 px-1 py-2.5 text-center label-opt5">160%</span>
+                            <div class="flex items-center px-2 text-orange-300 whitespace-nowrap flex-shrink-0 text-[11px] sm:text-xs font-semibold hint-opt5">R$</div>
+                            <input type="number" step="0.01" class="opt-5 w-full text-orange-500 font-bold py-2.5 pr-3 focus:outline-none bg-transparent placeholder-orange-200" placeholder="--">
                         </div>
                     </div>
                 </div>

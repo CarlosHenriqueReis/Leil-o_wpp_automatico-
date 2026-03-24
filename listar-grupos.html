@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Grupos e Contatos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: white; padding: 2rem; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem; margin-bottom: 1rem; }
+        .copy-btn { cursor: pointer; background: #3b82f6; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.8rem; margin-left: 1rem; display: inline-block; }
+        .copy-btn:active { background: #2563eb; }
+    </style>
+</head>
+<body>
+
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6">📱 Seus Chats do WhatsApp</h1>
+        <p class="text-slate-300 mb-6">Abaixo estão os IDs dos últimos grupos e pessoas que você conversou. Copie o ID daquele que você quer testar o leilão e cole no n8n!</p>
+        
+        <div id="loading" class="text-xl text-blue-400">Carregando seus chats... aguarde...</div>
+        <div id="listaChats"></div>
+    </div>
+
+    <script>
+        const API_KEY = 'leilao-evolution-key-2026';
+        
+        async function fetchChats() {
+            try {
+                // Buscando grupos
+                const resGroups = await fetch('http://localhost:8080/group/fetchAllGroups/leilaobot?getParticipants=false', {
+                    headers: { 'apikey': API_KEY }
+                });
+                
+                let groups = [];
+                try { groups = await resGroups.json(); } catch(e){}
+
+                document.getElementById('loading').style.display = 'none';
+                const container = document.getElementById('listaChats');
+
+                if (groups && groups.length > 0) {
+                    let html = '<h2 class="text-xl font-bold mb-4 mt-6 text-green-400">👥 Seus Grupos:</h2>';
+                    groups.forEach(g => {
+                        html += `
+                        <div class="glass-card flex justify-between items-center">
+                            <div>
+                                <h3 class="text-lg font-bold">${g.subject || 'Grupo sem nome'}</h3>
+                                <p class="text-slate-400 font-mono text-sm mt-1">${g.id}</p>
+                            </div>
+                            <div class="copy-btn" onclick="navigator.clipboard.writeText('${g.id}'); alert('Copiado: ${g.id}')">
+                                COPIAR ID
+                            </div>
+                        </div>`;
+                    });
+                    container.innerHTML += html;
+                } else {
+                    container.innerHTML += `<div class="glass-card">Nenhum grupo encontrado ainda. O Whatsapp está sincronizando. Mande uma mensagem no grupo que quer usar e atualize a página.</div>`;
+                }
+
+                container.innerHTML += `
+                    <h2 class="text-xl font-bold mb-4 mt-8 text-blue-400">📲 Mandar pra você mesmo (Teste):</h2>
+                    <div class="glass-card">
+                        <p class="mb-4">Para testar com SEU número (ou de outra pessoa), o ID é o celular com DDI (55) + DDD + Número acompanhado de @s.whatsapp.net</p>
+                        <p class="text-slate-400 font-mono text-sm p-3 bg-slate-900 rounded">Exemplo: 5511999998888@s.whatsapp.net</p>
+                    </div>
+                `;
+
+            } catch (error) {
+                document.getElementById('loading').innerText = "Erro ao buscar chats. O robô está conectado?";
+                document.getElementById('loading').className = "text-red-400 text-xl font-bold";
+            }
+        }
+
+        fetchChats();
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Acessos - Sistema de Leilão</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+  .card { background: #1e293b; border-radius: 1rem; padding: 2rem; max-width: 620px; width: 100%; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
+  h1 { text-align: center; font-size: 1.4rem; margin-bottom: 1.5rem; color: #38bdf8; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.5rem 0.75rem; }
+  td { padding: 0.9rem 0.75rem; border-top: 1px solid #334155; vertical-align: middle; }
+  .service { font-weight: 600; color: #f1f5f9; }
+  a { color: #38bdf8; text-decoration: none; font-family: monospace; font-size: 0.95rem; }
+  a:hover { text-decoration: underline; }
+  .badge { display: inline-block; background: #0f172a; border: 1px solid #334155; border-radius: 0.4rem; padding: 0.25rem 0.6rem; font-size: 0.8rem; font-family: monospace; color: #94a3b8; }
+  .key-section { margin-top: 1.5rem; background: #0f172a; border-radius: 0.5rem; padding: 1rem 1.25rem; border: 1px solid #334155; }
+  .key-section label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+  .key-value { font-family: monospace; color: #34d399; font-size: 1rem; margin-top: 0.25rem; }
+  .copy-tip { text-align: center; margin-top: 1.5rem; font-size: 0.75rem; color: #475569; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>🚀 Acessos — Sistema de Leilão</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Serviço</th>
+        <th>URL</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="service">📊 Dashboard</td>
+        <td><a href="http://localhost:3000" target="_blank">localhost:3000</a></td>
+        <td><span class="badge">Painel principal</span></td>
+      </tr>
+      <tr>
+        <td class="service">📡 Evolution API</td>
+        <td><a href="http://localhost:8080" target="_blank">localhost:8080</a></td>
+        <td><span class="badge">API WhatsApp</span></td>
+      </tr>
+      <tr>
+        <td class="service">🖥️ Manager</td>
+        <td><a href="http://localhost:8080/manager" target="_blank">localhost:8080/manager</a></td>
+        <td><span class="badge">QR Code / Instâncias</span></td>
+      </tr>
+      <tr>
+        <td class="service">⚙️ n8n</td>
+        <td><a href="http://localhost:5678" target="_blank">localhost:5678</a></td>
+        <td><span class="badge">Automações</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="key-section">
+    <label>🔑 API Key — Evolution API</label>
+    <div class="key-value">leilao-evolution-key-2026</div>
+  </div>
+
+  <div class="key-section" style="margin-top:0.75rem">
+    <label>📁 Instância WhatsApp</label>
+    <div class="key-value">leilaobot</div>
+  </div>
+
+  <p class="copy-tip">Clique nos links para abrir diretamente no navegador</p>
+</div>
+</body>
+</html>

@@ -18,6 +18,7 @@ services:
       - RABBITMQ_ENABLED=false
       - AUTHENTICATION_API_KEY=leilao-evolution-key-2026
       - AUTHENTICATION_EXPOSE_IN_FETCH_INSTANCES=true
+      - CONFIG_SESSION_PHONE_VERSION=2.3000.1032750324
     depends_on:
       - postgres
       - redis

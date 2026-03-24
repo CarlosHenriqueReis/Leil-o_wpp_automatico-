@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectar WhatsApp do Leilão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: white; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); padding: 2.5rem; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+        .qr-placeholder { width: 300px; height: 300px; background-color: white; border-radius: 0.5rem; margin: 1.5rem auto; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .loader { border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid #3b82f6; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <div class="glass-card">
+        <h1 class="text-3xl font-bold mb-2">Conectar Robô do Leilão 🤖</h1>
+        <p class="text-slate-300 text-sm mb-6">Abra seu WhatsApp e escaneie o código abaixo</p>
+        
+        <div class="qr-placeholder" id="qr-container">
+            <div class="loader" id="loader"></div>
+            <img id="qr-img" style="display: none; width: 100%; height: 100%; object-fit: contain;">
+        </div>
+
+        <div id="status" class="mt-4 text-sm font-semibold text-blue-400">Gerando QR Code...</div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8080/instance/connect/leilaobot';
+        const API_KEY = 'leilao-evolution-key-2026';
+        
+        async function fetchQRCode() {
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'GET',
+                    headers: { 'apikey': API_KEY }
+                });
+                const data = await response.json();
+                
+                if (data.base64) {
+                    document.getElementById('loader').style.display = 'none';
+                    document.getElementById('qr-img').src = data.base64;
+                    document.getElementById('qr-img').style.display = 'block';
+                    document.getElementById('status').innerText = "QR Code pronto! Escaneie agora.";
+                    document.getElementById('status').className = "mt-4 text-sm font-semibold text-green-400";
+                } else {
+                    document.getElementById('status').innerText = "Aguardando geração do QR Code ou já conectado...";
+                }
+            } catch (error) {
+                console.error("Erro:", error);
+                document.getElementById('status').innerText = "Erro ao tentar conectar na Evolution API";
+                document.getElementById('status').className = "mt-4 text-sm font-semibold text-red-400";
+            }
+        }
+
+        fetchQRCode();
+        setInterval(fetchQRCode, 10000); // Tentar novamente a cada 10s caso expire
+    </script>
+</body>
+</html>

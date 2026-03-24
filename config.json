@@ -1,0 +1,31 @@
+{
+  "secretKey": "leilao-wpp-2026",
+  "port": "21465",
+  "frontend": true,
+  "createOptions": {
+    "browserArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-accelerated-2d-canvas",
+      "--no-first-run",
+      "--no-zygote",
+      "--disable-gpu"
+    ]
+  },
+  "webhook": {
+    "url": "http://host.docker.internal:3000/api/webhook/wpp",
+    "autoDownload": true,
+    "uploadS3": false,
+    "readMessage": true,
+    "allUnreadOnStart": false,
+    "listenAcks": true,
+    "onPresenceChanged": true,
+    "onParticipantsChanged": true,
+    "onReactionMessage": true,
+    "onPollResponse": true,
+    "onRevokedMessage": true,
+    "onLabelUpdated": true
+  }
+}
+

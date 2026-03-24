@@ -93,7 +93,7 @@ app.post('/api/login', (req, res) => {
     
     try {
         const users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
-        const user = users.find(u => u.username === username);
+        const user = users.find(u => u.username.toLowerCase() === username.toLowerCase());
         
         if (!user) return res.status(401).json({ success: false, message: 'Credenciais inválidas.' });
         

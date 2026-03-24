@@ -33,6 +33,12 @@ if (!fs.existsSync(RASCUNHOS_FILE)) {
     fs.writeFileSync(RASCUNHOS_FILE, JSON.stringify([], null, 2));
 }
 
+// Inicializa a base de Histórico de Cobranças
+const COBRANCAS_FILE = path.join(__dirname, 'cobrancas.json');
+if (!fs.existsSync(COBRANCAS_FILE)) {
+    fs.writeFileSync(COBRANCAS_FILE, JSON.stringify([], null, 2));
+}
+
 const JWT_SECRET = process.env.JWT_SECRET || 'super-key-pokemon-leilao-secret';
 
 // Middleware de Autenticação
@@ -199,39 +205,29 @@ app.post('/api/rascunhos', authenticateToken, (req, res) => {
 
 /**
  * ROTA 3: Finalizar Leilão e Trazer Resultados
- * Varre o lances.json e calcula quem ganhou cada carta.
+ * Varre o lances.json e calcula quem ganhou cada carta, e salva no histórico.
  */
-app.get('/api/resultados-leilao', authenticateToken, (req, res) => {
+app.post('/api/resultados-leilao', authenticateToken, (req, res) => {
     try {
+        const { nome_leilao } = req.body || {};
         const lancesDB = JSON.parse(fs.readFileSync(LANCES_FILE, 'utf8'));
         const resultados = {
-            ganhadores: [], // array flat de todas as cartas ganhas com seus respectivos vencedores
-            nao_vendidas: [] // nomes das cartas sem nenhum lance
+            ganhadores: [],
+            nao_vendidas: []
         };
 
-        // Entenda que lancesDB tem a chave como o pollId e os dados da carta
-        // Para cada carta/enquete...
         for (const [pollId, dadosCarta] of Object.entries(lancesDB)) {
             const nomeCarta = dadosCarta.nome_carta;
             const votos = dadosCarta.votos || [];
 
             if (votos.length === 0) {
-                // Ninguém votou nesta enquete
                 resultados.nao_vendidas.push(nomeCarta);
             } else {
-                // Encontrar o maior lance
-                // Cada voto tem { telefone, opcaoStr, valorParsed, timestamp }
-                
-                // Ordenar por valor (decrescente) e depois por tempo (crescente - quem votou antes ganha em caso de empate)
                 votos.sort((a, b) => {
-                    if (b.valorParsed !== a.valorParsed) {
-                        return b.valorParsed - a.valorParsed;
-                    }
+                    if (b.valorParsed !== a.valorParsed) return b.valorParsed - a.valorParsed;
                     return new Date(a.timestamp) - new Date(b.timestamp);
                 });
-
                 const vencedor = votos[0];
-                
                 resultados.ganhadores.push({
                     id_carta: pollId,
                     nome_carta: nomeCarta,
@@ -241,13 +237,72 @@ app.get('/api/resultados-leilao', authenticateToken, (req, res) => {
             }
         }
 
-        // Limpa o banco de lances para preparar para o próximo leilão
+        // Agrupar cobrancas por cliente para salvar no historico
+        const grouped = {};
+        resultados.ganhadores.forEach(item => {
+            const phone = item.telefone_ganhador;
+            if (!grouped[phone]) {
+                grouped[phone] = { telefone: phone, status_pagamento: 'pendente', cartas: [], subtotal: 0 };
+            }
+            grouped[phone].cartas.push({ nome: item.nome_carta, valor: item.valor_vencedor });
+            grouped[phone].subtotal += item.valor_vencedor;
+        });
+        const clientesArray = Object.values(grouped);
+
+        const cobrancaObj = {
+            id: Date.now().toString(),
+            nome_leilao: nome_leilao || `Leilão ${new Date().toLocaleDateString('pt-BR')}`,
+            data: new Date().toISOString(),
+            nao_vendidas: resultados.nao_vendidas,
+            clientes: clientesArray
+        };
+
+        // Salvar no historico
+        const cobrancasDB = JSON.parse(fs.readFileSync(COBRANCAS_FILE, 'utf8'));
+        cobrancasDB.unshift(cobrancaObj);
+        fs.writeFileSync(COBRANCAS_FILE, JSON.stringify(cobrancasDB, null, 2));
+
+        // Limpa o banco de lances para o proximo leilao
         fs.writeFileSync(LANCES_FILE, JSON.stringify({}, null, 2));
 
-        return res.status(200).json({ success: true, data: resultados });
+        return res.status(200).json({ success: true, data: cobrancaObj });
     } catch (error) {
         console.error('Erro ao finalizar leilão:', error.message);
-        return res.status(500).json({ success: false, message: 'Erro ao processar os resultados do leilão.' });
+        return res.status(500).json({ success: false, message: 'Erro ao processar os resultados.' });
+    }
+});
+
+/**
+ * ROTAS DE HISTORICO DE COBRANÇAS
+ */
+app.get('/api/cobrancas', authenticateToken, (req, res) => {
+    try {
+        const data = fs.readFileSync(COBRANCAS_FILE, 'utf8');
+        res.status(200).json({ success: true, cobrancas: JSON.parse(data) });
+    } catch (e) {
+        res.status(500).json({ success: false, message: 'Erro ao ler cobranças.' });
+    }
+});
+
+app.post('/api/cobrancas/:leilaoId/pago', authenticateToken, (req, res) => {
+    try {
+        const { telefone, status } = req.body; // status: 'pago' ou 'pendente'
+        const leilaoId = req.params.leilaoId;
+        
+        let cobrancasDB = JSON.parse(fs.readFileSync(COBRANCAS_FILE, 'utf8'));
+        const idx = cobrancasDB.findIndex(c => c.id === leilaoId);
+        
+        if (idx === -1) return res.status(404).json({ success: false, message: 'Leilão não encontrado.' });
+        
+        const clientIdx = cobrancasDB[idx].clientes.findIndex(c => c.telefone === telefone);
+        if (clientIdx === -1) return res.status(404).json({ success: false, message: 'Cliente não encontrado.' });
+        
+        cobrancasDB[idx].clientes[clientIdx].status_pagamento = status;
+        fs.writeFileSync(COBRANCAS_FILE, JSON.stringify(cobrancasDB, null, 2));
+        
+        res.status(200).json({ success: true, message: 'Status atualizado com sucesso.' });
+    } catch (e) {
+        res.status(500).json({ success: false, message: 'Erro ao atualizar pagamento.' });
     }
 });
 

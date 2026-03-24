@@ -588,6 +588,9 @@ function formatPhoneDisplay(phone) {
 }
 
 async function finalizarLeilao() {
+    const nome_leilao = prompt("Dê um nome para identificar este leilão no histórico:", "Leilão " + new Date().toLocaleDateString('pt-BR'));
+    if (!nome_leilao) return; // Cancelado pelo usuario
+
     const btn = document.getElementById('btn-finalizar');
     const loading = document.getElementById('results-loading');
     const container = document.getElementById('winners-container');
@@ -606,17 +609,21 @@ async function finalizarLeilao() {
     try {
         const token = localStorage.getItem('poke_token');
         const response = await fetch('/api/resultados-leilao', {
-            method: 'GET',
-            headers: { 'Authorization': `Bearer ${token}` }
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
+            },
+            body: JSON.stringify({ nome_leilao })
         });
 
         const result = await response.json();
         
         if (response.ok && result.success) {
-            const data = result.data;
+            const data = result.data; // data é o objeto cobranca agora
             
-            // Renderiza ganhadores
-            renderWinners(data.ganhadores);
+            // Renderiza ganhadores passando clientes formatados e ID
+            renderWinners(data.clientes, data.id);
 
             // Renderiza não vendidas
             if (data.nao_vendidas && data.nao_vendidas.length > 0) {
@@ -657,21 +664,8 @@ function loadWinners() {
     }
 }
 
-function renderWinners(data) {
+function renderWinners(clientes, leilaoId) {
     const container = document.getElementById('winners-container');
-
-    // 1. Agrupar logicamente pelo Telefone do cliente
-    const grouped = {};
-    data.forEach(item => {
-        const phone = item.telefone_ganhador;
-        if (!grouped[phone]) {
-            grouped[phone] = { telefone: phone, cartas: [], subtotal: 0 };
-        }
-        grouped[phone].cartas.push({ nome: item.nome_carta, valor: item.valor_vencedor });
-        grouped[phone].subtotal += item.valor_vencedor;
-    });
-
-    const clientes = Object.values(grouped);
 
     if (clientes.length === 0) {
         container.innerHTML = `
@@ -685,18 +679,32 @@ function renderWinners(data) {
 
     // 2. Renderizar cards HTML
     clientes.forEach(cliente => {
+        const isPago = cliente.status_pagamento === 'pago';
+        const tagHTML = isPago ? 
+            `<button id="status-btn-${cliente.telefone}" onclick="togglePagamento('${leilaoId}', '${cliente.telefone}', 'pago')" class="text-[10px] font-extrabold uppercase bg-emerald-50 text-emerald-600 border border-emerald-200 px-2.5 py-1 rounded shadow-sm hover:bg-emerald-100 transition-colors">🟢 Pago</button>` : 
+            `<button id="status-btn-${cliente.telefone}" onclick="togglePagamento('${leilaoId}', '${cliente.telefone}', 'pendente')" class="text-[10px] font-extrabold uppercase bg-rose-50 text-rose-600 border border-rose-200 px-2.5 py-1 rounded shadow-sm hover:bg-rose-100 transition-colors">🔴 Pendente</button>`;
+            
+        const cobrarHTML = `<button id="cobrar-btn-${cliente.telefone}" class="${isPago ? 'hidden' : 'flex'} w-full bg-wapp hover:bg-wapp-hover text-white font-semibold py-3 px-4 rounded-xl shadow-sm transition-all items-center justify-center gap-2 transform active:scale-95" onclick='handleSendCobranca(event, ${JSON.stringify(cliente)})'>
+             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+             Disparar Cobrança (n8n)
+         </button>`;
+
         const cardHTML = `
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-shadow">
                 
                 <!-- Cabeçalho (Cliente) -->
-                <div class="bg-slate-50 border-b border-slate-200 px-6 py-5 flex items-center gap-4 relative overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 px-6 py-5 flex items-center justify-between relative overflow-hidden">
                     <div class="absolute -right-4 -top-4 w-16 h-16 bg-slate-100 rounded-full opacity-50"></div>
-                    <div class="bg-gradient-to-br from-indigo-100 to-indigo-200 text-indigo-700 w-11 h-11 rounded-full flex items-center justify-center font-bold shadow-sm z-10 shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 2a2 2 0 100 4 2 2 0 000-4z"></path></svg>
-                    </div>
-                    <div class="z-10 truncate">
-                        <p class="text-[10px] font-bold uppercase text-slate-400 tracking-wider">Novo Ganhador</p>
-                        <p class="font-bold text-slate-800 text-lg truncate" title="${cliente.telefone}">${formatPhoneDisplay(cliente.telefone)}</p>
+                    <div class="flex items-center gap-4 z-10 w-full">
+                        <div class="bg-gradient-to-br from-indigo-100 to-indigo-200 text-indigo-700 w-11 h-11 rounded-full flex items-center justify-center font-bold shadow-sm z-10 shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 2a2 2 0 100 4 2 2 0 000-4z"></path></svg>
+                        </div>
+                        <div class="z-10 truncate flex-grow">
+                            <p class="font-bold text-slate-800 text-lg truncate" title="${cliente.telefone}">${formatPhoneDisplay(cliente.telefone)}</p>
+                        </div>
+                        <div class="z-10 shrink-0 text-right">
+                            ${tagHTML}
+                        </div>
                     </div>
                 </div>
                 
@@ -726,11 +734,8 @@ function renderWinners(data) {
                         <span class="text-2xl font-black text-slate-900 tracking-tight">${formatCurrency(cliente.subtotal)}</span>
                     </div>
 
-                    <div class="p-4">
-                        <button class="w-full bg-wapp hover:bg-wapp-hover text-white font-semibold py-3 px-4 rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 transform active:scale-95" onclick='handleSendCobranca(event, ${JSON.stringify(cliente)})'>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-                            Disparar Cobrança (n8n)
-                        </button>
+                    <div class="p-4" id="cobrar-wrapper-${cliente.telefone}">
+                        ${cobrarHTML}
                     </div>
                 </div>
             </div>
@@ -787,7 +792,138 @@ async function handleSendCobranca(e, clientData) {
 }
 
 /* =======================================================
+   GERENCIAMENTO DE HISTÓRICO DE COBRANÇAS
+   ======================================================= */
+let LOCAL_COBRANCAS_CACHE = {};
+
+async function loadCobrancasModal() {
+    const modal = document.getElementById('cobrancas-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    const list = document.getElementById('cobrancas-list');
+    const loader = document.getElementById('cobrancas-loading');
+    
+    list.innerHTML = '';
+    loader.classList.remove('hidden');
+
+    try {
+        const token = localStorage.getItem('poke_token');
+        const res = await fetch('/api/cobrancas', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        const data = await res.json();
+        
+        loader.classList.add('hidden');
+        if(data.success && data.cobrancas.length > 0) {
+            LOCAL_COBRANCAS_CACHE = {};
+            data.cobrancas.forEach(cob => {
+                LOCAL_COBRANCAS_CACHE[cob.id] = cob;
+                const totalReceber = cob.clientes.reduce((acc, c) => acc + c.subtotal, 0);
+                const pagos = cob.clientes.filter(c => c.status_pagamento === 'pago').length;
+                const dateStr = new Date(cob.data).toLocaleString('pt-BR');
+                
+                list.innerHTML += `
+                    <div class="flex flex-col p-4 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors gap-3">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-slate-800 text-sm">${cob.nome_leilao}</h4>
+                            <span class="text-xs font-bold bg-indigo-50 text-indigo-600 px-2 py-1 rounded">R$ ${totalReceber.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+                        </div>
+                        <p class="text-xs text-slate-500">${cob.clientes.length} ganhadores (${pagos} pagos) • Finalizado em: ${dateStr}</p>
+                        <button onclick='applyCobranca(\"${cob.id}\")' class="w-full bg-white border border-slate-300 hover:border-wapp hover:text-wapp text-slate-600 text-xs font-bold py-2 px-4 rounded-lg transition-colors mt-1">
+                            Ver Faturas
+                        </button>
+                    </div>
+                `;
+            });
+        } else {
+            list.innerHTML = '<p class="text-sm text-slate-500 text-center py-4">Nenhum histórico encontrado.</p>';
+        }
+    } catch(e) {
+        loader.classList.add('hidden');
+        list.innerHTML = '<p class="text-sm text-red-500 text-center py-4">Erro ao buscar histórico.</p>';
+    }
+}
+
+function closeCobrancasModal() {
+    const modal = document.getElementById('cobrancas-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+}
+
+function applyCobranca(id) {
+    const cob = LOCAL_COBRANCAS_CACHE[id];
+    if(!cob) return;
+    
+    closeCobrancasModal();
+    
+    // Atualiza a tela de resultados com os clientes desse histórico
+    renderWinners(cob.clientes, cob.id);
+    
+    // Mostra as nãovendidas se existirem
+    const tagsContainer = document.getElementById('nao-vendidas-tags');
+    const secNaoVendidas = document.getElementById('nao-vendidas-container');
+    tagsContainer.innerHTML = '';
+    
+    if (cob.nao_vendidas && cob.nao_vendidas.length > 0) {
+        secNaoVendidas.classList.remove('hidden');
+        cob.nao_vendidas.forEach(nome => {
+            const tag = `<span class="bg-white text-slate-600 border border-slate-200 shadow-sm px-3 py-1.5 rounded-md text-sm font-medium">${nome} <span class="text-slate-400 font-normal ml-1">sem lances</span></span>`;
+            tagsContainer.insertAdjacentHTML('beforeend', tag);
+        });
+    } else {
+        secNaoVendidas.classList.add('hidden');
+    }
+    
+    showToast(`Visualizando faturas de "${cob.nome_leilao}"`, 'info');
+}
+
+async function togglePagamento(leilaoId, telefone, currentStatus) {
+    const newStatus = currentStatus === 'pago' ? 'pendente' : 'pago';
+    
+    try {
+        const token = localStorage.getItem('poke_token');
+        const res = await fetch(`/api/cobrancas/${leilaoId}/pago`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+            body: JSON.stringify({ telefone, status: newStatus })
+        });
+        
+        if (res.ok) {
+            showToast('Status de pagamento atualizado!', 'success');
+            const btnTag = document.getElementById(`status-btn-${telefone}`);
+            const btnCobrar = document.getElementById(`cobrar-btn-${telefone}`);
+            
+            if (newStatus === 'pago') {
+                btnTag.innerHTML = `🟢 Pago`;
+                btnTag.classList.remove('bg-rose-50', 'text-rose-600', 'border-rose-200');
+                btnTag.classList.add('bg-emerald-50', 'text-emerald-600', 'border-emerald-200');
+                btnTag.setAttribute('onclick', `togglePagamento('${leilaoId}', '${telefone}', 'pago')`);
+                if (btnCobrar) {
+                    btnCobrar.classList.remove('flex');
+                    btnCobrar.classList.add('hidden');
+                }
+            } else {
+                btnTag.innerHTML = `🔴 Pendente`;
+                btnTag.classList.remove('bg-emerald-50', 'text-emerald-600', 'border-emerald-200');
+                btnTag.classList.add('bg-rose-50', 'text-rose-600', 'border-rose-200');
+                btnTag.setAttribute('onclick', `togglePagamento('${leilaoId}', '${telefone}', 'pendente')`);
+                if (btnCobrar) {
+                    btnCobrar.classList.remove('hidden');
+                    btnCobrar.classList.add('flex');
+                }
+            }
+        } else {
+            // Revert on error
+            showToast('Falha ao atualizar no servidor.', 'error');
+        }
+    } catch(e) {
+        showToast('Erro ao atualizar status.', 'error');
+    }
+}
+
+/* =======================================================
    ALERTAS E FEEDBACK (Toastify)
+
    ======================================================= */
 function showToast(text, type = 'info') {
     let background = "linear-gradient(to right, #3b82f6, #2563eb)"; // Blue

@@ -449,7 +449,7 @@ async function saveDraft() {
     const container = document.getElementById('cards-container');
     const cardElements = container.querySelectorAll(':scope > .bg-white');
     if (cardElements.length === 0) {
-        showToast('Adicione pelo menos uma carta para salvar o rascunho.', 'error');
+        showToast('Adicione pelo menos uma carta para salvar o leilão.', 'error');
         return;
     }
 
@@ -462,7 +462,7 @@ async function saveDraft() {
         });
     });
 
-    const draftName = prompt("De um nome para este Rascunho:", "Leilão " + new Date().toLocaleDateString('pt-BR'));
+    const draftName = prompt("De um nome para este Leilão (para carregar depois):", "Leilão " + new Date().toLocaleDateString('pt-BR'));
     if (!draftName) return;
 
     const draft = {
@@ -479,13 +479,15 @@ async function saveDraft() {
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
             body: JSON.stringify(draft)
         });
-        if(res.ok) showToast('Rascunho salvo com sucesso!', 'success');
-        else showToast('Erro ao salvar rascunho.', 'error');
+        if(res.ok) showToast('Lotes do leilão salvos com sucesso!', 'success');
+        else showToast('Erro ao salvar leilão.', 'error');
     } catch(e) {
         console.error(e);
-        showToast('Erro de conexão ao salvar rascunho.', 'error');
+        showToast('Erro de conexão ao salvar leilão.', 'error');
     }
 }
+
+let LOCAL_DRAFTS_CACHE = {};
 
 async function loadDraftModal() {
     const modal = document.getElementById('draft-modal');
@@ -506,27 +508,28 @@ async function loadDraftModal() {
         
         loader.classList.add('hidden');
         if(data.success && data.rascunhos.length > 0) {
+            LOCAL_DRAFTS_CACHE = {};
             data.rascunhos.forEach(draft => {
+                LOCAL_DRAFTS_CACHE[draft.id] = draft;
                 const dateStr = new Date(draft.data).toLocaleString('pt-BR');
-                const safeDraftStr = JSON.stringify(draft).replace(/'/g, "&#39;").replace(/"/g, "&quot;");
                 list.innerHTML += `
                     <div class="flex flex-col sm:flex-row justify-between sm:items-center p-4 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors gap-3">
                         <div>
                             <h4 class="font-bold text-slate-800 text-sm">${draft.nome}</h4>
                             <p class="text-xs text-slate-500">${draft.cartas.length} cartas • Salvo em: ${dateStr}</p>
                         </div>
-                        <button onclick='applyDraft(JSON.parse("${safeDraftStr}"))' class="bg-white border border-slate-300 hover:border-wapp hover:text-wapp text-slate-600 text-xs font-bold py-2 px-4 rounded-lg transition-colors shrink-0">
+                        <button onclick='applyDraft("${draft.id}")' class="bg-white border border-slate-300 hover:border-wapp hover:text-wapp text-slate-600 text-xs font-bold py-2 px-4 rounded-lg transition-colors shrink-0">
                             Carregar
                         </button>
                     </div>
                 `;
             });
         } else {
-            list.innerHTML = '<p class="text-sm text-slate-500 text-center py-4">Nenhum rascunho salvo ainda.</p>';
+            list.innerHTML = '<p class="text-sm text-slate-500 text-center py-4">Nenhum leilão salvo ainda.</p>';
         }
     } catch(e) {
         loader.classList.add('hidden');
-        list.innerHTML = '<p class="text-sm text-red-500 text-center py-4">Erro ao buscar rascunhos.</p>';
+        list.innerHTML = '<p class="text-sm text-red-500 text-center py-4">Erro ao buscar lotes salvos.</p>';
     }
 }
 
@@ -536,7 +539,10 @@ function closeDraftModal() {
     modal.classList.remove('flex');
 }
 
-function applyDraft(draft) {
+function applyDraft(draftId) {
+    const draft = LOCAL_DRAFTS_CACHE[draftId];
+    if(!draft) return;
+    
     closeDraftModal();
     const container = document.getElementById('cards-container');
     container.innerHTML = ''; // Limpa as atuais
@@ -562,7 +568,7 @@ function applyDraft(draft) {
         }
     });
     
-    showToast(`Rascunho "${draft.nome}" carregado!`, 'success');
+    showToast(`Leilão "${draft.nome}" carregado com sucesso!`, 'success');
 }
 
 /* =======================================================

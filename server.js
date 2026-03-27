@@ -142,9 +142,7 @@ app.post('/api/start-leilao', authenticateToken, async (req, res) => {
                         
                         if (fs.existsSync(filePath)) {
                             const imgBuffer = fs.readFileSync(filePath);
-                            const ext = path.extname(filename).toLowerCase().replace('.', '');
-                            const mimeType = ext === 'png' ? 'image/png' : ext === 'gif' ? 'image/gif' : 'image/jpeg';
-                            lote.imagem = `data:${mimeType};base64,${imgBuffer.toString('base64')}`;
+                            lote.imagem = imgBuffer.toString('base64');
                         }
                     } catch (imgErr) {
                         console.error(`[start-leilao] ❌ Erro ao converter imagem: ${imgErr.message}`);

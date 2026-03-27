@@ -449,12 +449,11 @@ app.post('/api/upload', authenticateToken, upload.single('imagem'), (req, res) =
         if (!req.file) {
             return res.status(400).json({ success: false, message: 'Nenhuma imagem enviada.' });
         }
-        // URL para o browser exibir o preview
-        const fileUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
-        // URL para a Evolution API (Docker) buscar a imagem
-        const fileUrlDocker = `http://host.docker.internal:${PORT}/uploads/${req.file.filename}`;
+        // URL base em produção
+        const baseUrl = 'https://pokeleilao.com.br';
+        const fileUrl = `${baseUrl}/uploads/${req.file.filename}`;
         
-        res.status(200).json({ success: true, url: fileUrl, urlDocker: fileUrlDocker });
+        res.status(200).json({ success: true, url: fileUrl, urlDocker: fileUrl });
     } catch (error) {
         console.error('Erro no upload:', error.message);
         res.status(500).json({ success: false, message: 'Falha no upload.' });

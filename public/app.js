@@ -272,8 +272,9 @@ async function uploadImage(input) {
 
         const result = await response.json();
         if (response.ok && result.url) {
-            urlInput.value = result.url;
-            updatePreview(urlInput); // Usa a função acima para renderizar
+            urlInput.value = result.url; // URL local para preview no browser
+            urlInput.dataset.urlDocker = result.urlDocker || result.url; // URL para o Docker/n8n
+            updatePreview(urlInput);
             showToast('Imagem processada pelo servidor!', 'success');
         } else {
             showToast('Falha: ' + (result.message || response.statusText), 'error');
@@ -391,7 +392,7 @@ async function startLeilao() {
 
         payload.push({
             id_lote: index + 1,
-            imagem: imageUrl || null,
+            imagem: el.querySelector('.card-img-url').dataset.urlDocker || imageUrl || null,
             nome: nome,
             valorBase: valor,
             opcoes_enquete: options
@@ -925,6 +926,51 @@ async function togglePagamento(leilaoId, telefone, currentStatus) {
    ALERTAS E FEEDBACK (Toastify)
 
    ======================================================= */
+async function handleSendCobranca(e, clientData) {
+    const btn = e.currentTarget;
+    if (btn.disabled) return;
+    
+    // UI Loading state
+    const originalHtml = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = `<div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div> Enviando...`;
+    
+    try {
+        const token = localStorage.getItem('poke_token');
+        const res = await fetch('/api/send-cobranca', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(clientData)
+        });
+        
+        const result = await res.json();
+        if (res.ok && result.success) {
+            showToast(`Cobrança enviada para ${clientData.telefone}!`, 'success');
+            // Muda a cor do botão para verde indicando sucesso temporário
+            btn.classList.add('bg-emerald-500');
+            btn.classList.remove('bg-wapp', 'hover:bg-wapp-hover');
+            btn.innerHTML = `<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Sucesso`;
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.classList.remove('bg-emerald-500');
+                btn.classList.add('bg-wapp', 'hover:bg-wapp-hover');
+                btn.innerHTML = originalHtml;
+            }, 3000);
+        } else {
+            showToast('Erro ao disparar cobrança.', 'error');
+            btn.innerHTML = originalHtml;
+            btn.disabled = false;
+        }
+    } catch (error) {
+        showToast('Erro de conexão.', 'error');
+        btn.innerHTML = originalHtml;
+        btn.disabled = false;
+    }
+}
+
 function showToast(text, type = 'info') {
     let background = "linear-gradient(to right, #3b82f6, #2563eb)"; // Blue
     if (type === 'success') background = "linear-gradient(to right, #10b981, #059669)"; // Green

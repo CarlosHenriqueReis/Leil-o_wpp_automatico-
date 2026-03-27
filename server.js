@@ -39,6 +39,12 @@ if (!fs.existsSync(COBRANCAS_FILE)) {
     fs.writeFileSync(COBRANCAS_FILE, JSON.stringify([], null, 2));
 }
 
+// Inicializa o registro de enquetes ativas (pollId → cartaInfo)
+const ENQUETES_FILE = path.join(__dirname, 'enquetes.json');
+if (!fs.existsSync(ENQUETES_FILE)) {
+    fs.writeFileSync(ENQUETES_FILE, JSON.stringify([], null, 2));
+}
+
 const JWT_SECRET = process.env.JWT_SECRET || 'super-key-pokemon-leilao-secret';
 
 // Middleware de Autenticação
@@ -125,22 +131,43 @@ app.post('/api/start-leilao', authenticateToken, async (req, res) => {
         const webhookUrl = process.env.WEBHOOK_START_LEILAO;
         
         console.log('[POST /api/start-leilao] Início do leilão solicitado.');
-        console.log('Payload:', JSON.stringify(payload, null, 2));
 
-        // Dispara o Webhook se a URL estiver configurada corretamente
-        if (webhookUrl && webhookUrl.startsWith('http')) {
-            console.log(`Enviando dados ao n8n: ${webhookUrl}`);
-            await axios.post(webhookUrl, payload);
-        } else {
-            console.warn('Variável WEBHOOK_START_LEILAO não encontrada ou inválida. Simulando sucesso do servidor.');
+        // Converter imagens para base64 para o N8N não precisar fazer download
+        if (payload.arrayLotes && Array.isArray(payload.arrayLotes)) {
+            for (const lote of payload.arrayLotes) {
+                if (lote.imagem && lote.imagem.includes('/uploads/')) {
+                    try {
+                        const filename = lote.imagem.split('/uploads/').pop().split('?')[0];
+                        const filePath = path.join(uploadDir, filename);
+                        
+                        if (fs.existsSync(filePath)) {
+                            const imgBuffer = fs.readFileSync(filePath);
+                            const ext = path.extname(filename).toLowerCase().replace('.', '');
+                            const mimeType = ext === 'png' ? 'image/png' : ext === 'gif' ? 'image/gif' : 'image/jpeg';
+                            lote.imagem = `data:${mimeType};base64,${imgBuffer.toString('base64')}`;
+                        }
+                    } catch (imgErr) {
+                        console.error(`[start-leilao] ❌ Erro ao converter imagem: ${imgErr.message}`);
+                    }
+                }
+            }
         }
 
-        return res.status(200).json({ success: true, message: 'Leilão iniciado! Dados enviados ao n8n.' });
+        // Dispara o Webhook se a URL estiver configurada
+        if (webhookUrl && webhookUrl.startsWith('http')) {
+            console.log(`Enviando dados ao n8n: ${webhookUrl}`);
+            // Fire and forget so we don't timeout the frontend
+            axios.post(webhookUrl, payload, { timeout: 30000 }).catch(e => console.error('Erro no N8N webhook:', e.message));
+        }
+
+        return res.status(200).json({ success: true, message: 'Leilão enviado ao N8N para processamento em loop!' });
     } catch (error) {
         console.error('Erro na rota /api/start-leilao:', error.message);
         return res.status(500).json({ success: false, message: 'Erro de comunicação ao iniciar o leilão no servidor.' });
     }
 });
+
+
 
 /**
  * ROTA 2: Cobrança dos Lances Vencedores
@@ -166,6 +193,114 @@ app.post('/api/send-cobranca', authenticateToken, async (req, res) => {
     } catch (error) {
         console.error('Erro na rota /api/send-cobranca:', error.message);
         return res.status(500).json({ success: false, message: 'Erro de comunicação ao enviar a cobrança.' });
+    }
+});
+
+/**
+ * ROTA WEBHOOK: Registrar Enquete (chamada pelo N8N após enviar cada poll)
+ * Salva a associação pollId -> carta no enquetes.json
+ * Não requer autenticação pois é chamada pela rede interna do Docker
+ */
+app.post('/api/webhook/registra-enquete', async (req, res) => {
+    try {
+        const { pollId, nomeDaCarta, valorBase } = req.body;
+        if (!pollId || !nomeDaCarta) {
+            return res.status(400).json({ success: false, message: 'pollId e nomeDaCarta são obrigatórios.' });
+        }
+        const enquetes = JSON.parse(fs.readFileSync(ENQUETES_FILE, 'utf8'));
+        // Remove duplicata caso reenvie
+        const idx = enquetes.findIndex(e => e.pollId === pollId);
+        const entry = { pollId, nomeDaCarta, valorBase: valorBase || 0, criadoEm: new Date().toISOString() };
+        if (idx >= 0) enquetes[idx] = entry; else enquetes.push(entry);
+        fs.writeFileSync(ENQUETES_FILE, JSON.stringify(enquetes, null, 2));
+        console.log(`[ENQUETE REGISTRADA] ${nomeDaCarta} — pollId: ${pollId}`);
+        return res.status(200).json({ success: true });
+    } catch (error) {
+        console.error('Erro ao registrar enquete:', error.message);
+        return res.status(500).json({ success: false });
+    }
+});
+
+/**
+ * ROTA WEBHOOK: Registrar Voto (chamada pelo N8N ao receber MESSAGES_UPDATE)
+/**
+ * ROTA DEBUG: Capturar payload bruto dos webhooks para inspeção
+ */
+app.post('/api/webhook/debug-payload', (req, res) => {
+    const entry = { ts: new Date().toISOString(), ...req.body };
+    const debugFile = path.join(__dirname, 'debug_payloads.json');
+    let payloads = [];
+    try { payloads = JSON.parse(fs.readFileSync(debugFile, 'utf8')); } catch(e) {}
+    payloads.unshift(entry);
+    if (payloads.length > 100) payloads = payloads.slice(0, 100); // Guarda últimos 100
+    fs.writeFileSync(debugFile, JSON.stringify(payloads, null, 2));
+    console.log(`[DEBUG PAYLOAD] evento=${entry.evento} salvo em debug_payloads.json`);
+    res.status(200).json({ ok: true });
+});
+
+/**
+ * ROTA DEBUG: Consultar payloads capturados
+ */
+app.get('/api/webhook/debug-payload', authenticateToken, (req, res) => {
+    const debugFile = path.join(__dirname, 'debug_payloads.json');
+    try {
+        const payloads = JSON.parse(fs.readFileSync(debugFile, 'utf8'));
+        res.status(200).json({ payloads });
+    } catch(e) {
+        res.status(200).json({ payloads: [] });
+    }
+});
+
+/**
+ * ROTA WEBHOOK: Registrar Voto — valida o pollId, identifica a carta e salva o lance.
+ */
+app.post('/api/webhook/voto', async (req, res) => {
+    try {
+        const { pollId, votante, opcaoEscolhida } = req.body;
+        if (!pollId || !votante || !opcaoEscolhida) {
+            return res.status(400).json({ success: false, message: 'Campos obrigatórios faltando.' });
+        }
+        // Verifica se o pollId pertence a uma enquete do nosso leilão
+        const enquetes = JSON.parse(fs.readFileSync(ENQUETES_FILE, 'utf8'));
+        const enquete = enquetes.find(e => e.pollId === pollId);
+        if (!enquete) {
+            console.log(`[VOTO IGNORADO] pollId desconhecido: ${pollId}`);
+            return res.status(200).json({ success: true, ignorado: true });
+        }
+        // Extrai o valor numérico da opção escolhida (ex: "R$ 150" -> 150)
+        const valorStr = opcaoEscolhida.replace(/[^0-9,\.]/g, '').replace(',', '.');
+        const valor = parseFloat(valorStr) || 0;
+        // Salva/atualiza o lance no lances.json
+        let lances = JSON.parse(fs.readFileSync(LANCES_FILE, 'utf8'));
+        if (!Array.isArray(lances)) lances = [];
+        // Remove lance anterior do mesmo votante na mesma carta (último voto vence)
+        const filtrado = lances.filter(l => !(l.votante === votante && l.nomeDaCarta === enquete.nomeDaCarta));
+        filtrado.push({
+            pollId,
+            nomeDaCarta: enquete.nomeDaCarta,
+            votante: votante.replace(/\D/g, ''),
+            opcaoEscolhida,
+            valor,
+            ts: new Date().toISOString()
+        });
+        fs.writeFileSync(LANCES_FILE, JSON.stringify(filtrado, null, 2));
+        console.log(`[LANCE REGISTRADO] ${enquete.nomeDaCarta} — ${votante} → ${opcaoEscolhida} (R$ ${valor})`);
+        return res.status(200).json({ success: true, carta: enquete.nomeDaCarta, valor });
+    } catch (error) {
+        console.error('Erro ao registrar voto:', error.message);
+        return res.status(500).json({ success: false });
+    }
+});
+
+/**
+ * ROTA: Retornar lances atuais (para o dashboard consultar)
+ */
+app.get('/api/lances', authenticateToken, (req, res) => {
+    try {
+        const lances = JSON.parse(fs.readFileSync(LANCES_FILE, 'utf8'));
+        res.status(200).json({ success: true, lances: Array.isArray(lances) ? lances : [] });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Erro ao ler lances.' });
     }
 });
 
@@ -314,10 +449,12 @@ app.post('/api/upload', authenticateToken, upload.single('imagem'), (req, res) =
         if (!req.file) {
             return res.status(400).json({ success: false, message: 'Nenhuma imagem enviada.' });
         }
-        // Gera a URL pública para o frontend
-        const fileUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+        // URL para o browser exibir o preview
+        const fileUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
+        // URL para a Evolution API (Docker) buscar a imagem
+        const fileUrlDocker = `http://host.docker.internal:${PORT}/uploads/${req.file.filename}`;
         
-        res.status(200).json({ success: true, url: fileUrl });
+        res.status(200).json({ success: true, url: fileUrl, urlDocker: fileUrlDocker });
     } catch (error) {
         console.error('Erro no upload:', error.message);
         res.status(500).json({ success: false, message: 'Falha no upload.' });

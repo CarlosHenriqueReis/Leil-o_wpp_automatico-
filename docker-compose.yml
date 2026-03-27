@@ -1,7 +1,7 @@
 
 services:
   evolution-api:
-    image: atendai/evolution-api:v2.2.1
+    image: atendai/evolution-api:latest
     container_name: evolution-api
     restart: unless-stopped
     ports:
@@ -50,6 +50,8 @@ services:
       - NODE_ENV=production
       - WEBHOOK_URL=http://localhost:5678/
       - GENERIC_TIMEZONE=America/Sao_Paulo
+      - NODE_FUNCTION_ALLOW_BUILTIN=http,https,url,querystring,buffer
+      - NODE_FUNCTION_ALLOW_EXTERNAL=*
     volumes:
       - n8n_data:/home/node/.n8n
 

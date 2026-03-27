@@ -1,0 +1,4201 @@
+[
+  {
+    "ts": "2026-03-27T21:37:18.661Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "120363416856063752@g.us",
+          "fromMe": false,
+          "id": "3BF71899F3E336EA302F",
+          "participant": "218747130401013@lid"
+        },
+        "pushName": "Caio Aguiar",
+        "status": "DELIVERY_ACK",
+        "message": {
+          "senderKeyDistributionMessage": {
+            "groupId": "120363416856063752@g.us",
+            "axolotlSenderKeyDistributionMessage": "MwiZzaxgEAAaIP/ppgu2gJ3g0n2FUaOdqe2bt2EjCpQcP+71NjE/UJr0IiEFYO1us+9S6AdlMoI0qCAzXTQ3HRte+LuqOatO+J3Zqmo="
+          },
+          "messageContextInfo": {
+            "messageSecret": "ZZk6PBknsHxDrWMps8ZcKeTIwMF0UUu2krS/R14Zar4="
+          },
+          "conversation": "Amanha tem semanal?"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647430,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "unknown"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:37:18.639Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:36:26.151Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "553194972541-1458753196@g.us",
+          "fromMe": false,
+          "id": "AC68D83353EFEDC20E3E02E45DD7733A",
+          "participant": "43143131046050@lid"
+        },
+        "pushName": "Rafael Milagres",
+        "status": "DELIVERY_ACK",
+        "message": {
+          "senderKeyDistributionMessage": {
+            "groupId": "553194972541-1458753196@g.us",
+            "axolotlSenderKeyDistributionMessage": "MwiYlI/mBxAIGiAXWAkbtzDiOzcfLjvCcetOfTtQjLUSPWnP1AAnl6IQ2SIhBTNa7fl9EBb9SBs6SBPIxCC47r87PnBlquU9h+Sbb5Mp"
+          },
+          "messageContextInfo": {
+            "deviceListMetadata": {
+              "senderKeyHash": "bZRZdzdTL2jE9g==",
+              "senderTimestamp": "1773918921",
+              "recipientKeyHash": "oXNKROQX+eBOpQ==",
+              "recipientTimestamp": "1774401040"
+            },
+            "deviceListMetadataVersion": 2
+          },
+          "reactionMessage": {
+            "key": {
+              "remoteJid": "553194972541-1458753196@g.us",
+              "fromMe": false,
+              "id": "AC029779A6732506CD58D6F997CB77D2",
+              "participant": "274757782089755@lid"
+            },
+            "text": "😬",
+            "senderTimestampMs": "1774647371515"
+          }
+        },
+        "messageType": "reactionMessage",
+        "messageTimestamp": 1774647378,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:36:26.118Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:36:01.036Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "206905871966356@lid",
+          "fromMe": true,
+          "id": "ACE57446E147E6CDF43D4618A6298343"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Tá doido MN"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647353,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:36:01.017Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:36:00.834Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "98337906802717@lid",
+          "fromMe": true,
+          "id": "AC48001482258E021856827C3E5E8B3D"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Oq vc tá fazendo agr meu neném ?"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647353,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:36:00.812Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:36:00.406Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "98337906802717@lid",
+          "fromMe": true,
+          "id": "AC8F187C11A9A1592BE78CF3075E83F0"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ksksksksk"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647352,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:36:00.380Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:36:00.218Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "98337906802717@lid",
+          "fromMe": true,
+          "id": "AC267A7BDAC343E3B97D36A9218BF3B5"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Querendo ou n"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647352,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:36:00.200Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:59.632Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "98337906802717@lid",
+          "fromMe": true,
+          "id": "ACF23CD2EB3C1233F4EA9AD3557C3D8F"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ksksksksks"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647352,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:59.613Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:59.403Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "98337906802717@lid",
+          "fromMe": true,
+          "id": "AC9E5F40645B0264E1D7EB35D8A01A2B"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Pq e mais a ia né"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647351,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:59.379Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:58.918Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "98337906802717@lid",
+          "fromMe": true,
+          "id": "AC470CE6AA31B9E17A9BA41FA2C9E304"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ent tô tentando resolver"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647351,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:58.892Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:58.660Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "45324873764907@lid",
+          "fromMe": true,
+          "id": "AC7CBE1B647D5E2DA622659988FE5DD3"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "De deixar mais bonito"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647351,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:58.640Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:58.240Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "98337906802717@lid",
+          "fromMe": true,
+          "id": "ACD8462064510447BE8D313D9EC7C9F8"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Q eu tava tentando montar"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647350,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:58.212Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:58.069Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "98337906802717@lid",
+          "fromMe": true,
+          "id": "ACC6B06C4E43ECE52B0C6797E738121F"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "De fazer leilão"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647350,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:58.036Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:57.632Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACB654CB86A6F8EA2751D78B862DBCCF"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/541272549_1488959172872022_7971528876402461443_n.enc?ccb=11-4&oh=01_Q5Aa4AEEKwwBEuB57K48obhbBtouY1pszuiBvsX_fz_i1F5KMQ&oe=69EE4E85&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "ayJmoXDMATuoWs4bWCTDVyTf9aIQJg4qUtywaGy2H50=",
+            "fileLength": "268419",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "rFVAibLniXl9u8Ngz4YJ9GAntnpPwSo99OLPvXzQ3Wk=",
+            "fileEncSha256": "uflHFbawGCMCPEc7LUElJZ981yFOlODi1mzTLf+hsog=",
+            "directPath": "/v/t62.7118-24/541272549_1488959172872022_7971528876402461443_n.enc?ccb=11-4&oh=01_Q5Aa4AEEKwwBEuB57K48obhbBtouY1pszuiBvsX_fz_i1F5KMQ&oe=69EE4E85&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643947",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAuAAACAwEAAAAAAAAAAAAAAAADBAABAgUBAQEBAQAAAAAAAAAAAAAAAAQDAgX/2gAMAwEAAhADEAAAAE5bSzKRzEqKzeLSrscfpRq2PMA3l4meiHbSRydF20tRsEJk1EfrpIHQOFmNjAxe4//EACIQAAICAgICAgMAAAAAAAAAAAABAhEDEgQhEzEjcTRBQv/aAAgBAQABPwBlNlMj9EvYpGxDiucVKJkwRiu9rPFGl20TWnSdlj9GD8aAk30ycVZyKU0kIZxZPxoXIjC4yf0y/ItqOS/mYhJORgyU3AcYytoWT+bqjPTbl+yLMSk5XZXdibXpm8jJFuLE5CWlprs2RsbGyFDs5OByeyPGKCHFGqIxP//EACARAAICAQMFAAAAAAAAAAAAAAECAAMRBCFhFDEzUXH/2gAIAQIBAT8AdwgyZ1FXswEMARNRsgPMdexMp8a/JdYC/GIWzKLAFwTGExF2n//EACIRAAEEAQIHAAAAAAAAAAAAAAIAAQMRBBNREhQxM0Jhcf/aAAgBAwEBPwAAc+i0JdkQuL06hayf4gtrpTdwljwXB74lyxbrMhoxpvFBO7CzLXJSyPJVr//Z",
+            "contextInfo": {},
+            "scansSidecar": "5msmdPsSadUnV1b59FM0mEO06Tz3pWXRLJwlrMpVUxFhRoPi1S0fNQ==",
+            "scanLengths": [
+              17919,
+              107284,
+              57430,
+              85786
+            ],
+            "midQualityFileSha256": "vvrdKgB3CWdIVjnAS/l7OxyV/etOg6XL/JHfVe49Xt0="
+          }
+        },
+        "contextInfo": {},
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647350,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:57.602Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:57.461Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACC5BCF7D1B89FB7E8C641ADD61CE472"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/550464158_936174595797038_5700349137731397444_n.enc?ccb=11-4&oh=01_Q5Aa4AEdUNb6rYT3SU9grK6Ucas7owfaFLtI2ozHOo5egBScyA&oe=69EE5A8E&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "jXdY6waFl1zIFOp20hb3iPihZnn3pH/AoY9/uLgjytU=",
+            "fileLength": "229186",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "iC7TCL/9wLo7JUZUM5tr1q+08Mp2Pk5CkPXGNe9As4w=",
+            "fileEncSha256": "bxZ4yLbwkEAN7RXCSbRbmvSKjJ2j81PPSm8+ZWZeMQw=",
+            "directPath": "/v/t62.7118-24/550464158_936174595797038_5700349137731397444_n.enc?ccb=11-4&oh=01_Q5Aa4AEdUNb6rYT3SU9grK6Ucas7owfaFLtI2ozHOo5egBScyA&oe=69EE5A8E&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643946",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAtAAACAwEAAAAAAAAAAAAAAAACBAABAwUBAQEBAAAAAAAAAAAAAAAAAAQDAv/aAAwDAQACEAMQAAAAUlMvErGZja8PLeL6vJ6cLZwcRrJbXBpD6fMbOt4sBhVNRpFcHdBErrlTFbTaDcP/xAAkEAACAgIBBAIDAQAAAAAAAAAAAQIDERIEEyFBURQxICQyYf/aAAgBAQABPwBv/TIxYSF27kRi4lsoqSPh3+j4dpbVOvCZF4GbNcSDTwOfIeq2LJ31pSdiwcuxy6efRnPgYpfqQHYn2imxrqWJRTxn6OblTgmvAhLLwcbSdWkvBGNETpUtZgc2O1ref5IshJORVNQk2x8ipvI+Sk1qlgvls5tEZIphhNj/AAnXibNZL6fYw35HB+xQfs7mrbP/xAAiEQACAgECBwEAAAAAAAAAAAABAgARBCEiAxITMTNBUnL/2gAIAQIBAT8AZlXuanV4X2sBDCwZkVS/qMNfVTH8SzJfcBeksTGfaRHBucsQEGf/xAAjEQABAwIFBQAAAAAAAAAAAAABAAIDBCEREhMxUhQiMmFx/9oACAEDAQE/AA0u2C05OJRBFioNz8Q2U3mVTQ4wudl7sVoy8VVxZMlrkXUUzGxgYLqGKokZIz2v/9k=",
+            "contextInfo": {},
+            "scansSidecar": "OEf9/QgDtH/Kng56zja12SS6w1wcB44TBmdZPSOpaZ3+ruguJJczNw==",
+            "scanLengths": [
+              17732,
+              87596,
+              48735,
+              75123
+            ],
+            "midQualityFileSha256": "rQNYySwcGAcVcMdNBI7nBv3I9j/OBhxMTpKjqB6eo4Y="
+          }
+        },
+        "contextInfo": {},
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647349,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:57.435Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:56.944Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC79CF8CC2D84DECA487AEE989910E75"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/610181205_2436450453494590_4403200656861915169_n.enc?ccb=11-4&oh=01_Q5Aa4AFLcx68tveafbMmP4ISonTusDNam7UuFjIh8sJZKlqE5A&oe=69EE5DC2&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "O9AIC9jHO7G2OpaofvWJd9l1Z28eVeu5AW8/Fy88J20=",
+            "fileLength": "232045",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "Uij+iFhDLETu3J/dp0J7mbrYp35mlCm67foAknJPBt8=",
+            "fileEncSha256": "0bCc5S4MWgDcwDeBaTWglrAijDEn3WooLk8SBeVxXz0=",
+            "directPath": "/v/t62.7118-24/610181205_2436450453494590_4403200656861915169_n.enc?ccb=11-4&oh=01_Q5Aa4AFLcx68tveafbMmP4ISonTusDNam7UuFjIh8sJZKlqE5A&oe=69EE5DC2&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643946",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAtAAADAQEAAAAAAAAAAAAAAAACAwQBAAEBAQEBAAAAAAAAAAAAAAAAAwQCAf/aAAwDAQACEAMQAAAAmzqaZ5MPsLmEGy2uNudsvScl0clElMbXzOGyoZuJsmolYKmAM1R8PcU5mDov/8QAJBABAAICAQMEAwEAAAAAAAAAAQACAxEhBBASEyIxQTIzUVL/2gAIAQEAAT8AezzNd1mLHjvjW3zLVNumenk1sFl8eShVfuf3tiquLe+BlPSvcdffM2v68c6i9/T9x9yr2x2dfep01N3UDxZe1qXK2eF4nW33o1KM+UmG7ju0K7Eh1Hpp7fiZs9s6AamVMlvFXifipKW8rETne4j/AKYbPhmvduLqzMQAvbffNXkZamuQgM8Z4sYm5//EAB0RAAICAgMBAAAAAAAAAAAAAAABAhEDIRITMiL/2gAIAQIBAT8AlJRVs7IkZKStGTySMPkzZFyW9UcomGf01eqJLZRFUz//xAAgEQACAgICAgMAAAAAAAAAAAABAgADESISEwQxMkFR/9oACAEDAQE/AFUucCdFgjIye5TnnPkAAJcNp4tBNT67ZnRYPqeTTxqUlduUquCoBid6/kutV0K4n//Z",
+            "contextInfo": {},
+            "scansSidecar": "XSyRQ96ZwrzjSKAuQk/WqxeSWb4D1pE+lwh2tUyLTj53u1YIoam2Cg==",
+            "scanLengths": [
+              18237,
+              92996,
+              48709,
+              72103
+            ],
+            "midQualityFileSha256": "MQUZqGqVPgv0WL9Hk4Mp1JO7rHBBGnt7lAxfZOWr8Y4="
+          }
+        },
+        "contextInfo": {},
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647349,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:56.920Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:56.511Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC9786343FDD572E5A5565095D62F358"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/658878574_2088986388617000_5611742578476807254_n.enc?ccb=11-4&oh=01_Q5Aa4AFl5Dsj6SAxDHohqoUZrH_cDNIKUpno6R3D2oT3QRyWNQ&oe=69EE7460&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "w7GZNEtukoYjCHasHVwMPYALTj8yZxHGSFaKUfD8W3A=",
+            "fileLength": "275095",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "v0JCKDNyG2PmsZC7utncziHzJwsuknSFEZxWi9X34TM=",
+            "fileEncSha256": "AVOTerHSPgdxMcrSjsH731MOm06HKLPb9BX4frS9S+g=",
+            "directPath": "/v/t62.7118-24/658878574_2088986388617000_5611742578476807254_n.enc?ccb=11-4&oh=01_Q5Aa4AFl5Dsj6SAxDHohqoUZrH_cDNIKUpno6R3D2oT3QRyWNQ&oe=69EE7460&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643946",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAuAAADAQEAAAAAAAAAAAAAAAABAgMEAAEBAQEBAQAAAAAAAAAAAAAABAIDBQH/2gAMAwEAAhADEAAAAMvBknmS00UK3HbMWgyTRYFXPpt0Oe1JWM68m46MiWyrHooJlZQofNXx36sP/8QAIRAAAwACAQQDAQAAAAAAAAAAAAECAxESEyExQRAiUXH/2gAIAQEAAT8Ab/Vs/jH4Jr0cmziNjxWpVa7M6dv0Tgyv0W6h8Wjv7GPJXThT4Fk+2qWkaSTpUzJdO1v4ZiW5Ok6f2rQk5bW20ZXrJoTGR7k22kXylpTJmnbd7JYmnS0TqabY8v5J1F7ky95eiaRiSW2x0v038uNUy8bltPyhI4nA0KD/xAAgEQACAgEEAwEAAAAAAAAAAAAAAQIRIQMEMnESIjFS/9oACAECAQE/AG0vrPOH6QmnlG54Lsq1dmnwj0biSbSvBg0J+uWSVuyiOD//xAAiEQABAwMEAwEAAAAAAAAAAAABAAIDBBESMTJRcRMiI1L/2gAIAQMBAT8AAJ0Cwf8AkoghUu89K4DrAKXe7tUkXze7H2uhHJwquLF4s3UKKXFgFl5xwp5BIALL/9k=",
+            "contextInfo": {},
+            "scansSidecar": "npmHjUBn/fHqritMQ4NngoksJXqOlIXBO9+DlI+PX2J0yMKsfmnHLw==",
+            "scanLengths": [
+              18026,
+              110700,
+              59654,
+              86715
+            ],
+            "midQualityFileSha256": "v4IKcgUDgjW6Q1+QApLumsb3YSCmzhvI0vvGKWWV4H8="
+          }
+        },
+        "contextInfo": {},
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647348,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:56.486Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:56.370Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC8447FF3A97AEA23DBE5E5E299B17B8"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/546105062_956645430235736_2279156399744858431_n.enc?ccb=11-4&oh=01_Q5Aa4AFPUeUGaMOJ_LOrKblA7ZmjklcBimfSnWRdfXle2-_-tg&oe=69EE658A&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "Vgz1ziH6G/R17xvvYf2Q0/KWASbymvKs6cnwVNT/pY0=",
+            "fileLength": "240109",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "yedBgcKwNyQRnYCe5ACA03M8XMSOOpabUCWQXEdezzA=",
+            "fileEncSha256": "e90EfGKNiHhuKE2J6BGeYQymQgyZqW1QLdNwc8/D8J8=",
+            "directPath": "/v/t62.7118-24/546105062_956645430235736_2279156399744858431_n.enc?ccb=11-4&oh=01_Q5Aa4AFPUeUGaMOJ_LOrKblA7ZmjklcBimfSnWRdfXle2-_-tg&oe=69EE658A&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643944",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAuAAACAwEAAAAAAAAAAAAAAAABAgADBAUBAQEBAQAAAAAAAAAAAAAAAAQCAwX/2gAMAwEAAhADEAAAAMgGpg8kvE6JW63lOrydGCNNvGuIyIjPA5Dk6Kiw4toS/IrmbWlZWMIJts18vD//xAAkEAACAgIBAwQDAAAAAAAAAAAAAQIRAxIhE0FRBBAiMTJCYf/aAAgBAQABPwBsTGmUXquPeXpXFJ3xRHEpfjKyWJx+2Tjq+WUvIxtSjDm/jyiHTT1jNE4xk1TM6SyVfsxzetRfLXJbXYxQ2l8shk4ytWIik5FvdpOinf2SX9MkI67dyJj5kPGrsUULVfqZE3F0RnXYxpKI2vJa8my8lryOC2ZPHRqdM6ZqKB//xAAgEQABBAEEAwAAAAAAAAAAAAAAAQIDEhETITFBMlJx/9oACAECAQE/AHOa3lTVj9hFyTps0c3u5H4N+E8iX52wXQgkSq5Xsc3fOSoxKn//xAAmEQABAwIDCQEAAAAAAAAAAAABAAIDBBETIXESFCIjMTJBQlJh/9oACAEDAQE/AGsc7oFgy/CILSQVTHN2iBdlwqbvdqqSHlXLc9pFp8BVkVnNs31Uc9mAWW8fimkxABZf/9k=",
+            "contextInfo": {},
+            "scansSidecar": "bGlGmR0z/j1FaV7l4DhBQGv3sR5eX80N1oQWd4BuEKkUMrvq8XTP2w==",
+            "scanLengths": [
+              18188,
+              94901,
+              49867,
+              77153
+            ],
+            "midQualityFileSha256": "AuauYvdnOWeETU1XG0zc8QGmSfEISNR5alakFnHD+k4="
+          }
+        },
+        "contextInfo": {},
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647348,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:56.334Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:55.810Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACC82C5C31EE8BB09C76F8768430C707"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/613402510_1450499230138456_3842960360825097761_n.enc?ccb=11-4&oh=01_Q5Aa4AFwIn7FrcLSCMGO8C4BwRjnORiI2mmDCI3sbaaVPL0DQQ&oe=69EE5744&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "+1i9Z5GvuZ5ntaBRE4Ok8NVlsHIYB6gMcWfOTR+CmQo=",
+            "fileLength": "209303",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "upiAmfe7vc1yR15jK86fBpNdhmRmXQzzUgsXWi9/CWA=",
+            "fileEncSha256": "MysmwT/2fhnXEbtlLA3vqDzGFf9Z8t5Se0/VgNAC36Y=",
+            "directPath": "/v/t62.7118-24/613402510_1450499230138456_3842960360825097761_n.enc?ccb=11-4&oh=01_Q5Aa4AFwIn7FrcLSCMGO8C4BwRjnORiI2mmDCI3sbaaVPL0DQQ&oe=69EE5744&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643944",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAuAAADAQEBAAAAAAAAAAAAAAABAgQDBQABAQEBAQAAAAAAAAAAAAAAAAQDAgX/2gAMAwEAAhADEAAAAJPChopRYMbm86UwOjzugZCyhh9NctcOhytKptoptM7mvNFdz0xr1VStbynFTJSu4//EACcQAAICAQMCBQUAAAAAAAAAAAABAhEDBBIxISIQMkFRUhMUIGGB/9oACAEBAAE/AGWMV8HBx18HppfOItHP5RHpJrmcTJieOm2nZyMeLfsl6UZXGKbUhZtyaZNtYkm76iGLvwRV10HB32pkMMo99GqaSgqEVbI+bEkxKvVDhOVK0avFckr4REXmRxOL9j6kbbPuO39mWe/r60J0zDDlj/DJDvHFo/pUvcqQ7Nrkz//EACERAAIBAwMFAAAAAAAAAAAAAAECAAQRMQMSEyEiM1Jx/9oACAECAQE/AGdVyZy6XtAwYXBlVfYPswMmaHjEqH7lF+kLiUz5BMdSWm0xAQZ//8QAIhEAAgICAQMFAAAAAAAAAAAAAQIAAwQRMRITUiEiIzJx/9oACAEDAQE/AFRm4E7dniYQVOjMX7n8gCgDiXj5GmLT1VOwX3bgos8Zl0hVrOvU8ym1FrA1O+kyLEdNT//Z",
+            "contextInfo": {},
+            "scansSidecar": "QlfsTJG9hgaXEKhBawK+TQd6IVQEn3TkZmnDb9Eak0fgHrrXhl3cNg==",
+            "scanLengths": [
+              17601,
+              80138,
+              43067,
+              68497
+            ],
+            "midQualityFileSha256": "6aGDqswpQHvEaKkNbxG0yBpwCi+vRke4xkOPvYb90Ng="
+          }
+        },
+        "contextInfo": {},
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647348,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:55.788Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:55.374Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC059B50728441A5491E579E351D3D88"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/658884614_1631789354620851_7614506308085475515_n.enc?ccb=11-4&oh=01_Q5Aa4AFoJ1RyyRDB77YUUVSfU2oyFhnA9X_jfneF6JfsJQW0Uw&oe=69EE4A0C&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "QQWy3S0s+y9kFGFdQv3BuhmusykiGiH7kPMrjEcUKkE=",
+            "fileLength": "238492",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "6eXkLQAkbeBgvfbD0lX3HLfIMP/oupA85AFYRvyX8/E=",
+            "fileEncSha256": "3GKO3eP4eGbkUuOy6Um7ar8j3/ngB6oaf2hvwc/xfB8=",
+            "directPath": "/v/t62.7118-24/658884614_1631789354620851_7614506308085475515_n.enc?ccb=11-4&oh=01_Q5Aa4AFoJ1RyyRDB77YUUVSfU2oyFhnA9X_jfneF6JfsJQW0Uw&oe=69EE4A0C&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643944",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAtAAADAQEBAAAAAAAAAAAAAAACAwQBAAUBAQEBAAAAAAAAAAAAAAAAAAMEAv/aAAwDAQACEAMQAAAAlzKropR9ATSPHpTHNS804aXRV+auiayU6JqAsvKMQYI6oXG1hpB+w8wwz0Zsf//EACYQAQACAgEDBAEFAAAAAAAAAAEAAgMREgRBURATITEUIjJDYXL/2gAIAQEAAT8AWDGfWp9yz29KdPRpW1smtz8Kj/NHpMQ6c5MmOuMGt+REq9/S9lw4jwsDWN/WcjtKtbHBPnusyIY6nblDXpWnPFT/AFHpL2DbXZDAibrVJ1xXG0oEIfKSrprTtynILNTcFX906ivNGz8kqyrysamvkfDPevtdz3snmXs2IW4rsmMKruKeYv8Ac2eZyPMvUbbJkwtbNZwntT2iNJwn/8QAIBEAAgIBAwUAAAAAAAAAAAAAAAECEQMEEjITMTNRgf/aAAgBAgEBPwCUlFWzrY/YpKStGfh9H2MHjRqMi3Rpm+Jp8nK2Tjbs2kFTP//EACIRAAEDAgYDAAAAAAAAAAAAAAMAAQIRIQQSExQiMkFRYf/aAAgBAwEBPwCMXlZlpE9J2eL0dA7qr1Ru7rCAeQicb1s62pViw5Yj438oJ8kMtFufiMbUjSi//9k=",
+            "contextInfo": {},
+            "scansSidecar": "5aU53EP2idayEQZD3t/gKfam/IR7Ku4ghCFZ9wzKQIZ9Q7GDSyBUFg==",
+            "scanLengths": [
+              18379,
+              91683,
+              51554,
+              76876
+            ],
+            "midQualityFileSha256": "kOVrpjBT/McQ3uOda7xEbn5LqjITb8Mq+D4g/knNkyA="
+          }
+        },
+        "contextInfo": {},
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647347,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:55.347Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:55.180Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC268F6CF611C3A206E11EE23C8F4C76"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/609389262_1339201980900799_5304448868741400707_n.enc?ccb=11-4&oh=01_Q5Aa4AH1nfUMnAoDRtVAmJHcfPh92BSocWOqbk-lRPEi8sHsRA&oe=69EE5A9A&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "YahkbYSJZaBGF2CLXZ2rjOXdL4o5rn/225tJmpV31UA=",
+            "fileLength": "253238",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "cTXt2bwY655srsyjWgoVKzNHxCl07UTKNAUiRktmDDM=",
+            "fileEncSha256": "ZdlO/EBztyIDz829vRt+iAurNvDplMv4DUG856sWGu0=",
+            "directPath": "/v/t62.7118-24/609389262_1339201980900799_5304448868741400707_n.enc?ccb=11-4&oh=01_Q5Aa4AH1nfUMnAoDRtVAmJHcfPh92BSocWOqbk-lRPEi8sHsRA&oe=69EE5A9A&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643942",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAADAQEBAAAAAAAAAAAAAAABAgQDBQABAQEBAQEAAAAAAAAAAAAAAAQCBQMB/9oADAMBAAIQAxAAAACMNawfPFaTWHivTm/U5PRMl5tQZPNbLTRA9smufq7JhpFxnyNBejKDRBYeVlPQepv/xAAlEAACAgEDAwQDAAAAAAAAAAABAgARAyEiMRASQQRRYXETMkL/2gAIAQEAAT8Alz66cCfzF1YC+TMvpFx8vMmBMYBLnWLiV+GMcUSPaA1EO9D8zO9ugeeoQNjURU7XUAxjvbXz0H7D7EYli224rOdsKFSCTL3t9nogFE+0xuxXkcQZaDAst+IV3C2uZFCvpBMa7T8zXt7bgxqIDRmcUwMDiWoFCFh7zvEDCZaZYqRsRBryIEn44cdQrrAk/8QAIBEAAgIBAwUAAAAAAAAAAAAAAQIAAxESMUIEEBMhQf/aAAgBAgEBPwBnVdzPLWeXbqOMwR9g2llo1t7yIbFlLg1rloUmiINIn//EACERAAEDBAEFAAAAAAAAAAAAAAEAAgMEEBExExRBQlFh/9oACAEDAQE/AGsc7QXFJ6tB5WdtR0zjDHgAFNppAeyqoy2Z+GoVJxoLqfimfyOzhf/Z",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 28
+            },
+            "scansSidecar": "vIYWZqDjS4tjJtXKTf4cn0QEL/4vT9T8dPzxLJ26bVuf/DLnVESz3w==",
+            "scanLengths": [
+              18496,
+              96597,
+              55352,
+              82793
+            ],
+            "midQualityFileSha256": "oTrv5dJA/fP05Zt4NEjcmFVzPe6q9QsyfRr/2ZhOynU="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 28
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647347,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:55.158Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:54.776Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC8E63BD63ED9BED3AF03959B0E045E5"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/540573490_1588445439051606_3286973170275089544_n.enc?ccb=11-4&oh=01_Q5Aa4AEJOYVXDuf4mCZDwmFoQFU5x6TinynwcTNJaYOWcJ-DoQ&oe=69EE4326&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "UxMv+VKMGrN3WiGEe12aFb3eTT5JYZeO9WIIc0+525I=",
+            "fileLength": "232467",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "Ujl7Rkzs4v8WTULOgNWZDLDi11lGQlKyeB1PuQZsPy8=",
+            "fileEncSha256": "2sKdZWCtAAQE5eQBKNPUNi1gGhxzZHvnAn68Le+naM8=",
+            "directPath": "/v/t62.7118-24/540573490_1588445439051606_3286973170275089544_n.enc?ccb=11-4&oh=01_Q5Aa4AEJOYVXDuf4mCZDwmFoQFU5x6TinynwcTNJaYOWcJ-DoQ&oe=69EE4326&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643941",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAtAAACAwEAAAAAAAAAAAAAAAADBAABAgUBAQEBAAAAAAAAAAAAAAAAAAQCA//aAAwDAQACEAMQAAAAUzHGjTy7UWrCCuJ1eS7nTS1gMoY9iUfRgHMyNLFw3WA0mjBoljMm5eZ12oeVl//EACUQAAICAQIGAgMAAAAAAAAAAAECABEDEiEEECJBQmETURQkcf/aAAgBAQABPwCz7n8EPuATyhNNLP3MXCnLi166h4J+zT8Rx5CZcLY6NiXexEM4Zv1qhyuiEgxs+ZlJ1TJkd0Uud7ghmFyuHYd4+RgLoexFZcl3sJxKjGUUQcjkOMBF7wFnJ6hGVBiDKoJjg5SWbYgRYvUwAjYw1XFRF8YHpdNbRgKNQNRmKlJuFxLH3AeTp1mPjokEbiBbnxip8dTTNFz/xAAdEQACAwEAAwEAAAAAAAAAAAAAAQIDERITITJS/9oACAECAQE/AJSUVrPLX+hNNai1bEZV8IvtWxxjsiUWb1r9E469OCC5Z//EACQRAAEEAQMDBQAAAAAAAAAAAAEAAgMRBBIhMRMUMkFRUmFx/9oACAEDAQE/AGtLjQXTk+KIINFR8pnG9qXyKxccujktv4hiyD2WXDpbHTd/VRTaGgUu5+lNKJG1S//Z",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 26
+            },
+            "scansSidecar": "65IeEF8s2atrEKwVlBIN64ZydE1VWiN4Ud92iHkY39LT2tCWWZ13qQ==",
+            "scanLengths": [
+              17268,
+              90011,
+              49128,
+              76060
+            ],
+            "midQualityFileSha256": "HNpHM/4ha6HaGR3VqEx+x/fJNtrYDc5+gx143go7MAw="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 26
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647347,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:54.746Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:54.594Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC8B7F92EC28246C0C65B3DC3E031106"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/541249441_4250515841945900_8812189900699304633_n.enc?ccb=11-4&oh=01_Q5Aa4AEOZ6SvvkbSwY64YW7JQ92EDgKUqzcwXno0VkqQLaipnA&oe=69EE65EA&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "FHlqnlSxOuQ13ZK5Vswc2bHy0caPfp1w/8hs43czYNY=",
+            "fileLength": "234265",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "wlhPCzgsmhd2QF3Qqv9fmbLlf9+ahG9uOqDiKb/29+M=",
+            "fileEncSha256": "L1ItVLptpfkWalJhFqmrfX4NxcNutp4wVnTLcDAVx7A=",
+            "directPath": "/v/t62.7118-24/541249441_4250515841945900_8812189900699304633_n.enc?ccb=11-4&oh=01_Q5Aa4AEOZ6SvvkbSwY64YW7JQ92EDgKUqzcwXno0VkqQLaipnA&oe=69EE65EA&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643940",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAwAAACAwEAAAAAAAAAAAAAAAACAwEEBQABAQEBAQEBAAAAAAAAAAAAAAQDBQABAv/aAAwDAQACEAMQAAAAqEd28M3tEo2ye6GksXs62FZMUY1ZMqZsZreOc3Zlio+eQDqiyaIOEylc+POTWtRSH//EACUQAAICAQIGAgMAAAAAAAAAAAECABEDEiEEIjFBUWEQEyMyUv/aAAgBAQABPwAAm6n1ZKvTDjyDqpn1ZP4MOx+MB0sdrhYsKqbkFjZqPxKsgFbzI2rIxM8Th3C5N4XLDsIDkuiRURQnM1XMjA5nPuCYd3EXcEDtArjpRgJ0c4qMbdj7gl/iJExvlK2CAYH4hjQqO2bTzuumZf1EUxEpaM0gShCAZlS1gYiFx4hYHtNXqBh4hYTRvHwlGKnqIFmgQoIVgWf/xAAgEQEAAgIBBAMAAAAAAAAAAAABAAIDESEEEhRBMlFS/9oACAECAQE/AM2ZxvBPLfySrsGdWbSc+pT4kvcbW17YWPqYMgUjUnaSpqf/xAAfEQACAgICAwEAAAAAAAAAAAAAAQIDERQEUhMiQWH/2gAIAQMBAT8AqqU/prLsSWG0cZMwWL2ZrylXUs4aiasu5za35M/hsyNiRdY7MZP/2Q==",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 25
+            },
+            "scansSidecar": "b/jYD8E69K06/WHSjVUePPKJVDIQZI/shuS8Ew2tMevMfl7hoQWnbg==",
+            "scanLengths": [
+              19494,
+              98150,
+              46743,
+              69878
+            ],
+            "midQualityFileSha256": "cG2LjAQIRnK+SF1JcLuN7NlviJlkfsNbLp43ehv71h4="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 25
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647347,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:54.567Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:54.067Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACB88E016D5CE408D402F2E84F6E6825"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/596539113_1423049982643952_6965236992362935618_n.enc?ccb=11-4&oh=01_Q5Aa4AEaEN-9l8aSknzyCQhzH33mIQIsp93HnACzX1AXXiQs8g&oe=69EE52A1&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "AA+0dEajgCMB1BlmQu8p5jJolhlNqV90OW6ZWDIUKCc=",
+            "fileLength": "225604",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "npUojeDD1qO1ZqnTTQzNbD3++O8dXidyR+r4WfgqJug=",
+            "fileEncSha256": "0Nm00xaHK2ew6LejwFlcU0CAxFH6xq9mka+592ZGE3g=",
+            "directPath": "/v/t62.7118-24/596539113_1423049982643952_6965236992362935618_n.enc?ccb=11-4&oh=01_Q5Aa4AEaEN-9l8aSknzyCQhzH33mIQIsp93HnACzX1AXXiQs8g&oe=69EE52A1&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643941",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAuAAADAQEAAAAAAAAAAAAAAAAAAgMBBAEBAAMBAAAAAAAAAAAAAAAAAwECBAX/2gAMAwEAAhADEAAAAOYZmKQ7ReWPNB15XNtm0zVRRs9THydR5M9ZjDo4mDuGTPoBsi2QsXH/xAAmEAEAAgICAQIGAwAAAAAAAAABAAIREgMhMUFRBBATFDJxQlJh/9oACAEBAAE/AO168zW3szW39Wap/F+fF1y0/cebkee9c4Ja3LgK2g2+nmz3L2zWrPQgu1f3G2l7jXtgqdkva3gJdSvGf5CepPiUbC16CFb17PEXIp+U513qexBlPWPJZE1zPuS2K6ekzYtY06xOTFq5TvEqziymWYnRN7SxmrNkfELgYCNhmSbE3rGo2ZbjR1fJCvvNJpNYUZ//xAAfEQADAAEEAwEAAAAAAAAAAAAAAQIRAxITMSEyUVL/2gAIAQIBAT8Aq3L6OR/kl7lk1O5GyPRF2uRs3r4aNpKsscmCfB//xAAhEQABBAAGAwAAAAAAAAAAAAABAAIDEQQSExQxQiEyQf/aAAgBAwEBPwBjM31CIHwHJzcpIUPZNYLsKT3KigLoGDhbVw4cFjIq06HVNnNLcFTS6gApf//Z",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 25
+            },
+            "scansSidecar": "KG41OPzZH9OH/7EpdzUSL8QG9EwSNPyGd7IhJxSmhZ800AEbO7T/6g==",
+            "scanLengths": [
+              19205,
+              89457,
+              47289,
+              69653
+            ],
+            "midQualityFileSha256": "X18zVoERpbbWHHkcR/jwto9v4v9FvLXlTwcaB5bP5L4="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 25
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647346,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:54.033Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:53.900Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACD59AA4E45B4277F7B43C3E0FAA1E51"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/542054566_990661236867908_8816006483984848805_n.enc?ccb=11-4&oh=01_Q5Aa4AEVn0SyzFn_-zxJ2J5CVAlJ1kpgRiQFS4oKzAgjyw-Bgg&oe=69EE4E90&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "2aPgBg8gDHiC188LtaKyxRuwTN5++qPqCkwWGCa8g7I=",
+            "fileLength": "250154",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "3J8akGV6qZMQIghNAfjRYUKrkpvA2VyHTxtI6muKKRU=",
+            "fileEncSha256": "+xcjLNhKENsZ1oKXzoinl0K4N08PIfdiHGcGnU7KRAw=",
+            "directPath": "/v/t62.7118-24/542054566_990661236867908_8816006483984848805_n.enc?ccb=11-4&oh=01_Q5Aa4AEVn0SyzFn_-zxJ2J5CVAlJ1kpgRiQFS4oKzAgjyw-Bgg&oe=69EE4E90&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643942",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAACAwEAAAAAAAAAAAAAAAADBAABAgUBAAMBAQAAAAAAAAAAAAAAAAIDBAEF/9oADAMBAAIQAxAAAABWbZelGdIeEjNjejbSjclbiZLko5kETqc7ZRFg65qDAIGSqUydDDApqx0bOYILFmj/xAAgEAACAgIBBQEAAAAAAAAAAAABAgARAxIhEDFBUWEi/9oACAEBAAE/AOewmrejKPoyvnXE4VwTFyBjt2WD9mtePBjNjR9ALMzArlKz1F5YAwLyQe3ib1iuphChyxU37mR98rN0U/oTYbkDsJbPqAOJZHMJvIx+9E8zCv5tiYdCOGI+xsQ1NO1zLwogMxA62YCQKBl/ZZPmZFtYGPqcAVNhNhNvkLmaTJhKsVms0EKwrAs//8QAHhEBAAICAgMBAAAAAAAAAAAAAQADAhEEIiEjMkL/2gAIAQIBAT8Atua067hyB/MHYM5I+NTtMPkllnsySNjKLAw0scZqYmp//8QAIBEAAgEEAQUAAAAAAAAAAAAAAAEDAgQRE2ISITEyYf/aAAgBAwEBPwCKHYm8jh5DWG0W2O+R9JX7Mjt24I0K05F7E9ifwVw8G+olkcnk/9k=",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 25
+            },
+            "scansSidecar": "qUJmAzc6YrSCSKEFTGZd3i7xRKadGoJX2bpos481yF4BL0izyNJL1g==",
+            "scanLengths": [
+              19010,
+              103141,
+              51353,
+              76650
+            ],
+            "midQualityFileSha256": "JXB6UGfCLUaIMGzN6C811Q6a2L1gx5qh6XP0M7EuY2M="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 25
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647346,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:53.854Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:53.330Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC150CA6374E02C1F19C5F6E0332AE37"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/616323011_2438819613224186_7801428396995429560_n.enc?ccb=11-4&oh=01_Q5Aa4AEQGeTvocdy1tZLS-aICzG9VV7rOD8474uljhPNR0OKnA&oe=69EE51AE&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "D6J/souRVGQ0IHpBAQS5cFY7hCCh5LbmJjk2XeC9Ld4=",
+            "fileLength": "241101",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "rz91CllPShXQukgjfAVcPvt5y9QT+S0+3MyyUVg9W6E=",
+            "fileEncSha256": "XlxOq3AaG9Xy2Dsmjfd61Qmy8ac3x0iOXC9GQbhuSYw=",
+            "directPath": "/v/t62.7118-24/616323011_2438819613224186_7801428396995429560_n.enc?ccb=11-4&oh=01_Q5Aa4AEQGeTvocdy1tZLS-aICzG9VV7rOD8474uljhPNR0OKnA&oe=69EE51AE&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643937",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAADAQEBAAAAAAAAAAAAAAACAwQAAQUBAQEBAQEAAAAAAAAAAAAAAAQCAwEF/9oADAMBAAIQAxAAAACXoOUYA6cUoXI1zO7z/QMnYlm3RKanEe5LBerQcmxvRWQqPdrpMbXm7lKnoG8v/8QAJBAAAgIBAwQCAwAAAAAAAAAAAQIAEQMSITEEIkFREBMgYXH/2gAIAQEAAT8AUaiBChAv91CtckTzVwj4U0wM7BZZzY4EVUokneDEjVVkmZ8P0hfbQGAix/YAVc9isvszIqUWAAmLY9nE65wSlGCUSYllLvxB3CoFbCL5nUh9Yv1FiczC7dy3VRWO9GNkoqPEdrLQGYl2s/gRcNqxEBIHELCWJqmqOAxsTqsIVrA2MKVAlwqIRNE//8QAIBEAAgEDBAMAAAAAAAAAAAAAAQIAAxIhBBAREzJhYv/aAAgBAgEBPwCo7KRxOyp8xWuHM1LW2zsx7lHwGZWcM5207gFoVEtEUAZn/8QAIREAAQMEAQUAAAAAAAAAAAAAAQACAwQREiETFEFSYWL/2gAIAQMBAT8AjY1wN1hEfJObiVTMuDpceztSg5bCghIgYCe91wfSrIzhH6Tah1l1DlLK54xK/9k=",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 25
+            },
+            "scansSidecar": "N49kGjcZ4xU796wrHrCIenbQPOGby8ag9l5t0d+uNKN8hOdjTGhlUg==",
+            "scanLengths": [
+              19690,
+              102434,
+              47661,
+              71316
+            ],
+            "midQualityFileSha256": "QjFGVDEBTsfY5z8SDkPwL+OjbWgSfA7kY9xVuyFbMW8="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 25
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647345,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:53.291Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:53.064Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACF901CAA0340FC4E4FF093272B6E8DE"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/541583878_1858999504759548_4741023304010228842_n.enc?ccb=11-4&oh=01_Q5Aa4AFF5FCZNdYAUgoVoRz1QSdgS9UuxfzGcs6Cv58lAkTdRA&oe=69EE6EEB&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "xaXetEmv34uSGxevIcJZg4Og5BPy66bmIlnoTgilX8k=",
+            "fileLength": "218321",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "x5SfxHbu8T6kT8Ta8rfhIxbGjxRl8JZg/EWbCzkuppM=",
+            "fileEncSha256": "xgzsMroVZkz8lxhnEJRIjxVKWHgW3B2AsdabITqw1zo=",
+            "directPath": "/v/t62.7118-24/541583878_1858999504759548_4741023304010228842_n.enc?ccb=11-4&oh=01_Q5Aa4AFF5FCZNdYAUgoVoRz1QSdgS9UuxfzGcs6Cv58lAkTdRA&oe=69EE6EEB&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643937",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAwAAACAwEBAAAAAAAAAAAAAAADBAECBQAGAQEBAQEBAAAAAAAAAAAAAAAEAgMBBf/aAAwDAQACEAMQAAAASgusjLD7SBNqcUOuB9rz+idTCDqOKFajs0BjUsH1nKqjmRDOog2nUoCtnojl2RapeH//xAAkEAACAgEDAwUBAAAAAAAAAAABAgARAxIhQQQTMRAgM1Fhcf/aAAgBAQABPwC5v7cPypHCWTpEZMm5CioObqZyLWvqAzpjWdI5QA/ZiMSHVV/hmRSj1MzW8BiGsin9jPbAeTEK46APmZy4c7TIbcwGL8ZPMVtdAGmExggozETqGJGwuPjAUtzFMxqQlGaROKhVuHNTLeiBprWE/vqdxNO8zYdD0PBnbPM7ZmkwkwC5/8QAHhEAAgICAgMAAAAAAAAAAAAAAAECEQMSITETQVH/2gAIAQIBAT8Ank1fR5l8Iu1Zm7RjvZkekPIt5MUo7XZhycO37NSiHFn/xAAhEQACAgIBBAMAAAAAAAAAAAABAgADBBEhEhMiYTFCUf/aAAgBAwEBPwCuruQYzn4jKVYiY48WMB0d7lnLE+4tDmqscDxhx7BMuoK6hV+sXI9QZA/JkutnTqf/2Q==",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 25
+            },
+            "scansSidecar": "h2LweYuuWVjkz55rThiy0qwSRbgAqu2s91vbiE+6BsDW7YQZzhjecA==",
+            "scanLengths": [
+              18392,
+              86832,
+              44022,
+              69075
+            ],
+            "midQualityFileSha256": "+LtadR/eSy8UGkTvkDttpBGkBbCi1cB7EY1np3IaEAg="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 25
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647345,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:53.033Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:52.632Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC69DB7392F5A38527A4541A33CC5A06"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/661027475_1615156146266749_4053772168973385089_n.enc?ccb=11-4&oh=01_Q5Aa4AF9QwikeLYzApMgvnhQGfK8yHepm_yZqiJRwKF0LQ20ZA&oe=69EE5F67&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "SnFLNuSFIBUG/oPRWo6ksBO9q025VGnBOdKYJ6e2Hgw=",
+            "fileLength": "237267",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "lgPrejKdnZaTskcztmxkrWaTZ3i/vx3vVIQfiYMvKsg=",
+            "fileEncSha256": "t748lehmlO+6KyIvvTH/zzRs3s59OQryyXuBGxUGiGI=",
+            "directPath": "/v/t62.7118-24/661027475_1615156146266749_4053772168973385089_n.enc?ccb=11-4&oh=01_Q5Aa4AF9QwikeLYzApMgvnhQGfK8yHepm_yZqiJRwKF0LQ20ZA&oe=69EE5F67&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643937",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAuAAADAQEBAAAAAAAAAAAAAAAAAgQDAQUBAQEBAQAAAAAAAAAAAAAAAAQDAgX/2gAMAwEAAhADEAAAAJQpSeYZJ0OKXk1kPplvkjqZMDKdAWtE2oerWsxGmONMTCX8rnPdOa8ztJqF3H//xAAkEAEAAgIBAwQDAQAAAAAAAAABAAIREiEDMVEEEBNhFCIjQf/aAAgBAQABPwANniYmGYie1DN6nln41NrZ6gBK/wBm2His+KyWR4rPPPtRxer9y1MWbIIytBMFQlzi1cYIuriEO5NatT9uJ03mxbL9yzzx5nqNfmdZVlO86WNbTgqBLcBghyXbH+yrOkPKzt2mz5m1kxmNeEmWqkEKk2GZJkmxL1G09R0Nb5OzNMTQmpiNYVn/xAAgEQACAgIABwAAAAAAAAAAAAAAAgEDERIEEyIxMkFR/9oACAECAQE/AHeV7Qc/6ojbLEnFNrg3nYq8FLnhnk9lFkdWZJUwLGD/xAAgEQACAwABBAMAAAAAAAAAAAABAgADEVESExQhBCIx/9oACAEDAQE/AEVW/TOxw0ZeliJQu+8gQdOjmWD7GUUnsKDzs8c56afLqKrXEvbBPIPAl1pdcyf/2Q==",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 25
+            },
+            "scansSidecar": "OuDj3QYsYJ4KAyQ3jfy+RUiEIjQvdbJfBSCwIDmlkfu6o/9RhmMfJw==",
+            "scanLengths": [
+              19269,
+              97444,
+              48505,
+              72049
+            ],
+            "midQualityFileSha256": "OdTKOs2i3Q94LE9vajh/rdY8CEPmlP3J16Xa9gRjmgY="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 25
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647345,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:52.601Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:52.449Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC22C9285D27155D1D25243191D2FA4A"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/541964956_796063569783930_2537050273582222628_n.enc?ccb=11-4&oh=01_Q5Aa4AH5qX1IAzQgmSptRUN-3jDTdn53gBHXefpEFlGv7tya3Q&oe=69EE6B54&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "/fyxvzhN8IxygbHhOi4r+0PIs3BQ8rD1pkVUYoJ3PbQ=",
+            "fileLength": "243026",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "Cw68hGGjdX5zvXVrNd0IQvZ6udWeeMn39BLncYoAqZU=",
+            "fileEncSha256": "zDu5iBsxFvwJxiZCHX/B+a3J6qZlsejrL8l3ruXJm7Y=",
+            "directPath": "/v/t62.7118-24/541964956_796063569783930_2537050273582222628_n.enc?ccb=11-4&oh=01_Q5Aa4AH5qX1IAzQgmSptRUN-3jDTdn53gBHXefpEFlGv7tya3Q&oe=69EE6B54&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643940",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAwAAADAQEBAAAAAAAAAAAAAAACAwQBBQABAQEAAwEAAAAAAAAAAAAAAAQDAAECBf/aAAwDAQACEAMQAAAAm0q1FhDsz8d83GpvKiuCk1aEsWe8SyW4zyAgetbKWc4qamJEeiNsRmZhe1oZn5Q3/8QAJxAAAgIBAwMDBQEAAAAAAAAAAQIAAxIEESETMUEQM0IiIzJSYXH/2gAIAQEAAT8AUFuBOlYfjDVaPgYUbyph49Kfz7xbVU8mWPlWrL3iG3I5DiagnMbieBKPdE2rpyLcnysfWIFXFJbY6EWft2mpJ6vPkQSo/cT/AGC1DcyuOTDQQ/YYR3UsNzwJqveMEUgLvEf6wzAGC9mDylMmJxl53DRTEU48xRjA5BJEyMdSwMyI9DN/7MgDCwjLux2mqoCNuOxhrIM6YmAEKwLP/8QAIBEAAwACAgEFAAAAAAAAAAAAAAECAxIEIRExMkFicf/aAAgBAgEBPwDJlcMfI+pNbSmcjqpN0/RGP2ovInVd/JvJx8iUv9HBqQvB/8QAIREAAQQBBAMBAAAAAAAAAAAAAQACAxEhBBIUQRNSYXL/2gAIAQMBAT8AZGHNu14R7JwokKIYVHtPGSuO50UVAA7coaN/bgtdEdzPyhqm1gLk/FNKZAAv/9k=",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 25
+            },
+            "scansSidecar": "qswCGQU7GXkrNNFrC7FzbbR3cocq/vH7wplkw72HUXceJFqOq+8Hig==",
+            "scanLengths": [
+              20527,
+              103459,
+              48361,
+              70679
+            ],
+            "midQualityFileSha256": "CqtOmI9en88nfSeRQ8Qye5g0HqWGPXdwbUYewpAk0sc="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 25
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647344,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:52.417Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:51.881Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACD0383C3131CBE2F7E32D55C6D025E6"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/660586129_2673258876393085_6978162845257456582_n.enc?ccb=11-4&oh=01_Q5Aa4AEUeu6e2SYF1YL5tRhEVg-qDJOwEHqxKiMU2cZKLpBXtw&oe=69EE70D0&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "CbpRLlm7jRBOx2+ZDa5NK/K0VPVEY+1NTkdWVB0ITJM=",
+            "fileLength": "218369",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "NV2QYD/zSAtHqGUrW4RlmzMVlTsYCQBotOb7YiwhFLU=",
+            "fileEncSha256": "w5syEDKIR1KLCFWvb24mLP3PjjR9ik+O45nGQmOlhXk=",
+            "directPath": "/v/t62.7118-24/660586129_2673258876393085_6978162845257456582_n.enc?ccb=11-4&oh=01_Q5Aa4AEUeu6e2SYF1YL5tRhEVg-qDJOwEHqxKiMU2cZKLpBXtw&oe=69EE70D0&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643936",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAwAAACAwEAAAAAAAAAAAAAAAACBAEDBQABAQEBAAMAAAAAAAAAAAAAAAQDAAECBf/aAAwDAQACEAMQAAAATntVRsiNyiVMrmFrwJ7PdjZYjWOqynoYOy6m0PqmBj05BVlJENCLqCr6CjaFmOof/8QAJBAAAgEDAgcBAQAAAAAAAAAAAAECAxESITEEECIjQVFxYTL/2gAIAQEAAT8A/DCfpjUvTMfznB9yP0U2nbQ7bWsiooeZo4iyStyi+qP0lUxy0KlSbsVGk4JNnEO2HwRfqRNxnPF7WRXpxiv7FktStJuUfgiHkozk3dpM4ibUlFlFR6vLKz0baIspxdiF4bDk3uXZOLkmXaZsNr2XXsyVxzRJXk2VqOE8TAwRiOIoH//EAB8RAAICAgIDAQAAAAAAAAAAAAABAhEDEiEiBBMUMv/aAAgBAgEBPwCeRwqlZ9CunEjLZWZ21TF25Mf5Rkyd5Ht4qjx5pJ2zQ0IrU//EACERAAICAgIBBQAAAAAAAAAAAAECAAMRIQQUEhMiUmFy/9oACAEDAQE/AEQMDlsT0NZDRl8TiUKGyDCAoxLB7jK+MzUVjQM6jfITm1NlPzByRjSzs/UutNmp/9k=",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "6BMbdTqgduPrWJ775iPxxnlOPBinfAwGbtTy/f+PFUf+UV3x8Akqdw==",
+            "scanLengths": [
+              17651,
+              90417,
+              43810,
+              66491
+            ],
+            "midQualityFileSha256": "UaNNjMOhPZs9pKpief3wHC8M1bD9da8QPR1z5ceQJaQ="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647344,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:51.855Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:51.539Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC49D9FE62DFEF9D26FAEB9D65BF0A04"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/544374579_902565972612337_5713555893403807541_n.enc?ccb=11-4&oh=01_Q5Aa4AExW6eeZYlBkecvffYDzqt88XqD8LtyLiZ0EEvwXbrXpw&oe=69EE72B6&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "HNg2P4+fshm5LUR9QP5Xt8ClGHAvIY7uOpGBNsOHo5E=",
+            "fileLength": "228763",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "GeQkV7GeLQzW6x4qC+lJgIeB7HnjGDlT9LmfEaA8ga0=",
+            "fileEncSha256": "685g5QBFXVUYQPWtg1PXMwPrQAEI/57cztZ+q0Efof0=",
+            "directPath": "/v/t62.7118-24/544374579_902565972612337_5713555893403807541_n.enc?ccb=11-4&oh=01_Q5Aa4AExW6eeZYlBkecvffYDzqt88XqD8LtyLiZ0EEvwXbrXpw&oe=69EE72B6&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643936",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAwAAACAwEAAAAAAAAAAAAAAAADBAABBQIBAQEAAwEAAAAAAAAAAAAAAAQDAAIFAf/aAAwDAQACEAMQAAAAUnTt459aB50yY6iiHWllaJ0cuDTLfpEoOgMrKph9NmAuew1GkUnfrsRWXLvzKWPN4f/EACUQAQACAgEDAwUBAAAAAAAAAAEAAgMRIQQSMTJRcRMgIzNBYf/aAAgBAQABPwBmn2j8fZjfyVlto/yGQdCjPpbOK1nUAV9IO4ciSrq1fmXRrMePt5TiY7ia3OtXRpg7i8kPNV8ajbjT6ZZTZudXb9Z/krK65hf0u5Wvd5uyxjTyzqA148ErMe9KwdATvtDJcmXeQYW0wNARZs95s953EtUbMyYmlmjOxhjnYRrCs//EAB8RAAICAgEFAAAAAAAAAAAAAAABAgMRIRIEExRCUv/aAAgBAgEBPwC23ttaPKj8kJc1k6n1IQztlWoIssTsZzRRNYeWOJgisH//xAAiEQABAwMDBQAAAAAAAAAAAAABAAIDBBESExRBITJCUmH/2gAIAQMBAT8Aji1OUaZw5Tm4mypjYlPeXKTuKjgJgjAABW1d7BVkRBZ08U2oGIsFuPimlMgAsv/Z",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "0iIbJhtc+tlJWuClNvwHa3tM2VvAHkcIQXf3q4z3/f4TSY09ggpKaQ==",
+            "scanLengths": [
+              18034,
+              94683,
+              46853,
+              69193
+            ],
+            "midQualityFileSha256": "8Rgcv/wnCmrz075K52YpRnYkzsi92p45Xgp/BQErMF4="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647343,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:51.502Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:51.323Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC17C666D8240BFDAF1D86309DEA284E"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/549235193_1976718669906649_7811019775779143670_n.enc?ccb=11-4&oh=01_Q5Aa4AEJlVDLjYkzLKyIbaPz_hCAAXxSsZtNibe7gkj4n8JBpQ&oe=69EE4E92&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "oLpdNnN6uy0ikQrPc0dK0gx4gdDiTLJjRFjnVDXBAPU=",
+            "fileLength": "249304",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "GdiA/sQvvMDeh/GtGFkGCLCcAE4hpZ4uN8qxznRaCfI=",
+            "fileEncSha256": "SQclqzeyJ64mLiwtlRyOS922sdkOPQG4KuLFTTaiBa8=",
+            "directPath": "/v/t62.7118-24/549235193_1976718669906649_7811019775779143670_n.enc?ccb=11-4&oh=01_Q5Aa4AEJlVDLjYkzLKyIbaPz_hCAAXxSsZtNibe7gkj4n8JBpQ&oe=69EE4E92&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643936",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAACAwEAAAAAAAAAAAAAAAABBAIDBQABAQEBAQEAAAAAAAAAAAAAAAIDAQQA/9oADAMBAAIQAxAAAABMxe6uZOOlGFM4P51hN/OdOu109GsM3Symb2E2z1tFXhpUYW87bTUNPHhURMNP/8QAJRAAAgICAQMDBQAAAAAAAAAAAQIAEQMSMQQTIRBBUjJCUWGC/9oACAEBAAE/ALgRyLCmp28nwM0YfaZq3xPria8CiyPM2J4MZqU2DYiN9RJ9pdsYZ0wHZ/qKVrUDmZbFCvEdStkcVAYZ0zkIR+4TkFnUQ5Qyje5nYHAYsMTJoVMRWyNsGncFFXUTKx0r2uZQBVCLszATWAleDN2IIh4qZgfBmOlJuFxLEuWI9FTHx0T+RKmk0hWET//EAB8RAAIDAAICAwAAAAAAAAAAAAABAgMREjETIUFRYf/aAAgBAgEBPwCybhHUK9/OELOe9Fy5Qz9Gl0uihYn6wusjsTzR+mRsTsTJLWcRI//EACERAAIDAAEDBQAAAAAAAAAAAAECAAMRBBIUYSExQVJx/9oACAEDAQE/AEUMcMNa/BMZcEr9CfyAESzD7HZxKGKW+Rk7G37LG45r47g4TKbyi9OCdz4j8jVIyf/Z",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "yXa5HaPWMEuEey52e2PQsqMdDNuxo7zoj3uJCy2wMg+GPdVPZxqKjA==",
+            "scanLengths": [
+              19594,
+              102398,
+              51139,
+              76173
+            ],
+            "midQualityFileSha256": "7E2quo1UJSVxw6bxXik/yZi9wszsAWpIwHc7534DlJA="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647343,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:51.292Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:50.881Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACC7507816470D7AD9EA27A892DFA8D4"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/597247912_1986220938768612_4214038669162138726_n.enc?ccb=11-4&oh=01_Q5Aa4AHpeKLExG_zN9Y3J3ctnxo8tTAJUs62d5qy3H496z4B2g&oe=69EE6419&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "Z1uOr2Ka4pXWiX35RJJ/oJhdQOR2WqXIG8cCx5IfJ8Y=",
+            "fileLength": "235640",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "El38vsnalNbQBVlX2kFyQjlZXSDdZbYbbg+PYeODQrU=",
+            "fileEncSha256": "A0dEHx2663lZoiS6huwxtuP6dCu7E+nX1RO4wx/Y+HE=",
+            "directPath": "/v/t62.7118-24/597247912_1986220938768612_4214038669162138726_n.enc?ccb=11-4&oh=01_Q5Aa4AHpeKLExG_zN9Y3J3ctnxo8tTAJUs62d5qy3H496z4B2g&oe=69EE6419&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643937",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAADAQEBAAAAAAAAAAAAAAACAwQFAQABAAMBAQAAAAAAAAAAAAAAAAIDBAEF/9oADAMBAAIQAxAAAACNidauPN46pTs0dHLek9DOsWxQWSzUrnolpRUajm6NilCGnBZCY6IMWs1+Z4T4lnCX/8QAIhAAAgMAAgEFAQEAAAAAAAAAAQIAAxESIRMQMTJBQgRR/9oACAEBAAE/AIaLh+Z4LT+IabQc4xq7F+SzfRmXxLyOaI97hwi9QWUoAXJ5T+lqxS+HuKdEMvYBKuXsVgZB0V7MZiyAex2XAhAeWiKYYhU4XPQHUDU2Es4wwpW1uKc+xL2UVcf0T3FleFjKymkMfuGutU0M2xa6SO2JMenxnd0GH5GUh+2MInkcfcLFveFmIAlgKsYpUKBGYTR/vpolig5HT7E4zgJwEKgTJ//EAB8RAAEEAgIDAAAAAAAAAAAAAAABAgMREjETIQQiUf/aAAgBAgEBPwCeR7ETFBPId8QikV6WT6Qoi0SyJyWc3eiF/s6xzezEa2ls/8QAIBEAAgIBBQADAAAAAAAAAAAAAQIAAwQREhQhURMxYf/aAAgBAwEBPwCpA5Os+AeyxAplH2ZrLR3KcZnxVT9nAYDp5k0laKx4YmSQoGgnKPgluRvQrtn/2Q==",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "wjA9TvfTa/hgbcaubeTuGX+RMqxk8U7Sa/VxUuZI2yhDjswVR/IeHg==",
+            "scanLengths": [
+              19963,
+              95427,
+              46990,
+              73260
+            ],
+            "midQualityFileSha256": "YvxW3GNgd3M2MDxuunvBYHJRD0BO3fowUmU4E7ERg74="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647343,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:50.847Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:50.733Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC4A72974A2B9CE1ADD0883C705496A0"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/549173319_3186911541509291_6282723938266466020_n.enc?ccb=11-4&oh=01_Q5Aa4AG1ySh_9YebeSap57UBKAY3jO-6YHpRLbJwGNal0_lJmw&oe=69EE5D73&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "VDeDqa8QJrxS5babmKeIRl1I0opff4bY9IEs+vDlXTc=",
+            "fileLength": "187681",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "ojd0jr4a7+QXVLUvVzjL6qfMG7ckVJYkjTHtdztKAtw=",
+            "fileEncSha256": "Dru0NqE2xojx3GeCXdZVDLQmvvs5ALV1TtbG5PwBYmQ=",
+            "directPath": "/v/t62.7118-24/549173319_3186911541509291_6282723938266466020_n.enc?ccb=11-4&oh=01_Q5Aa4AG1ySh_9YebeSap57UBKAY3jO-6YHpRLbJwGNal0_lJmw&oe=69EE5D73&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643943",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAuAAADAQEBAAAAAAAAAAAAAAABAgQFAAMBAQEBAQAAAAAAAAAAAAAAAAIEAwH/2gAMAwEAAhADEAAAAJCujZHnc1OWsY08throNIqd/VZa0zL82ieiqGrK2jwIzaS1RrlbcgZBAfebqh//xAAlEAACAgICAAUFAAAAAAAAAAABAgARAxIhURAxQVJhBBMjQnH/2gAIAQEAAT8AhRvaZo3tM0b2mEN0fHIfxpR/WOcoPDGYnyKvJuByytajyl2fBw328PVRjqVK0RcGQE6mhC+qZDA3hhUPix23AmTGiAnYHqYwC4BAM+pAUORBBViY2okXxU3Rjx6ChGzlGpVhor/THoNxMdswnkbm56E2PQjEmZAQ0xAKDCR3L+ZfzNh3HphGT1EC3NJpCtTWf//EACIRAAEEAAUFAAAAAAAAAAAAAAEAAgMREhMhQnEiMTJRkf/aAAgBAgEBPwCR5ZVBGZw2j6o5C+7FUp/EcoOrQhQbuVPIC5qzG+lE/r7pzbNrCg1f/8QAIREAAQQBBAMBAAAAAAAAAAAAAAECAxIRBBQhMTJSYWL/2gAIAQMBAT8AYy2eRIf0PZTHJB5KVTtCXs0sCrDJ9U2cnshNCrIMY5sRairEbU3Xwk1FmqlT/9k=",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "H55HkDH+wrjABDhWA0YdFp2TbtMUjMU1QgOZiX1Tts0MEGnungqPJw==",
+            "scanLengths": [
+              18387,
+              72404,
+              35643,
+              61247
+            ],
+            "midQualityFileSha256": "Pcp0hARKDlvdkqng/CaTaOSZm8py9Yl7SfuNQv9deQg="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647343,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:50.689Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:50.192Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC35E646A8C394F4144F296FDDE15270"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/545906852_26557987370500641_3007163107457918670_n.enc?ccb=11-4&oh=01_Q5Aa4AF40q89NGISx_5zwLuTzZ-0Lnjb7YEPBLB6HHBhjywZIQ&oe=69EE5886&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "gCJpMR0tHJPGtQiSm66MpDDDGZI+lRJSrbUbgnx52qA=",
+            "fileLength": "233094",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "8JwvL10vBBXiHkdDmVoGHMRDkdopWFjieWhcRlY3C4Q=",
+            "fileEncSha256": "VpAskdqN/uTJlpbVRn2nPVX5Dasa5Yr4WXLVN5uS1KE=",
+            "directPath": "/v/t62.7118-24/545906852_26557987370500641_3007163107457918670_n.enc?ccb=11-4&oh=01_Q5Aa4AF40q89NGISx_5zwLuTzZ-0Lnjb7YEPBLB6HHBhjywZIQ&oe=69EE5886&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643936",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAtAAADAQEAAAAAAAAAAAAAAAACAwQBAAEBAQEBAAAAAAAAAAAAAAAAAwQCAf/aAAwDAQACEAMQAAAAVo0Uzr5+TrMDUUkVkTT3otGWgomT1hQaGz33oUJbKN8jHbugbcJdzuLb2i//xAAgEAACAgICAwEBAAAAAAAAAAABAgARAxITIRAiMVFB/9oACAEBAAE/APsKkHuDEW/IcTCFTDB0RC2NnI1szTH0aMPH2D1GKp0v0y4YvEFFnsiK4ZjRgyqfYr1cZQ6cgqBvFHVWIJgwititCDUhkqhGVsan2/kUwTEzqSfq3Cwom7WuhCWcq3wTKx2own2MxbGyYtrdTdps0NmOGVogAUQ+LH7LjANDjM1szjucYmtQLP/EAB4RAAIDAAIDAQAAAAAAAAAAAAABAgMRBFESFHEh/9oACAECAQE/ALrHWlh7Uuiuxz05K2Mfooro4+ZL6XT2Z5Mpnkm2Sj+mCR//xAAhEQACAgEEAgMAAAAAAAAAAAAAAQIDBBESMVEUYjJhcf/aAAgBAwEBPwCqtTbHRHtllezQx/k/wZdyiihvHS9jxH2jJqcaUvYhkRUElHhDyfosv3RcdD//2Q==",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "Sk87DcdeIaI7DAqlXsnI2HPWujTO67bVbheZKQDrg/M5zQlZiw+3JQ==",
+            "scanLengths": [
+              19700,
+              90500,
+              47388,
+              75506
+            ],
+            "midQualityFileSha256": "/syAqHoexWKgrozldcvdBEFR203VnkBiM+mGIo4u8gE="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647342,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:50.159Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:49.756Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC118F500840389A0FF539A7B20A578A"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/612759109_3980924682211415_5479560495892554513_n.enc?ccb=11-4&oh=01_Q5Aa4AGj3ZTCwtwQ7oJBLpphaZxq37i7phJRWwylsX_hjukogg&oe=69EE608B&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "KRLp7NfuEmm+kcfIBtQjIuePGmVttrvagU5LnF/uoHg=",
+            "fileLength": "169935",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "PcRGpbTJxgEqgUI30NimeXmZP6oele20ph8qDsxpH44=",
+            "fileEncSha256": "wWhJ+g5TcFj995m54EH33456LVAqckPZE87brQheQ6Q=",
+            "directPath": "/v/t62.7118-24/612759109_3980924682211415_5479560495892554513_n.enc?ccb=11-4&oh=01_Q5Aa4AGj3ZTCwtwQ7oJBLpphaZxq37i7phJRWwylsX_hjukogg&oe=69EE608B&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643936",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAACAwEAAAAAAAAAAAAAAAAAAwIEBQEBAQEBAQEAAAAAAAAAAAAAAAMEAgEF/9oADAMBAAIQAxAAAACo5OjXJQNCZpk818hMGnlvxqykdNXzNt0qZXdW2b0ZOTM0jUs0kK8TSNIBzotktj//xAAkEAACAgIBAgcBAAAAAAAAAAABAgARAxIhBEEQExQxQlFSIv/aAAgBAQABPwCeny/meS5+M8rIPgZq31O8BoiMxZhq/aHqMGLijcx9SmY6g6wrVkmMbY+GJAlE8kiNhXcUQbPMzY2w5Br3mR7HH1L8GzHGFpuam62pU8mMxU88kzK4IaoDFq4VDtyaiuit72BHyIxGsfT+gBDQYzGGJJgFXBX5gya+yiOxY3UfYNFGqiGWZcuMA0dDVyjNJpNIEn//xAAfEQACAwABBQEAAAAAAAAAAAAAAQIDERITISIxQVH/2gAIAQIBAT8Asm45h1n+EJ897F+4j6VemXWbMViKrPNkovTiRjj0/8QAIBEAAQMDBQEAAAAAAAAAAAAAAQACAwQREhQhMUFRE//aAAgBAwEBPwBjQ6918R6U9mPah5KBsFJ0oKcmntbfJaR3anhwgaLb5KOoYGNAHAWpHilnyaW2X//Z",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "Kw4/mK5L3I5JVA0/dbGWNkMy4cE8nHxpB2vpGiTvbwyJ+Bo6odwNgg==",
+            "scanLengths": [
+              18065,
+              65582,
+              32639,
+              53649
+            ],
+            "midQualityFileSha256": "puifoTi6fb8UupTmgrDKZ4BA0NtHZ4L2MJvWq6270wY="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647342,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:49.724Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:49.480Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC48F21DF4E737AC609B0FBC097F6AF4"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/610164090_1985959628964456_2967547786746000783_n.enc?ccb=11-4&oh=01_Q5Aa4AGGcisvaRLyJX11uOCkZCqqM6O6ZSryclJuj5TRaRKT7Q&oe=69EE50CD&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "otU3eU4QQH3UnfKbJmB0Uq1shXgEqYVZvydxFaQlLhc=",
+            "fileLength": "175156",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "/MT7faiTWmMLEGcxtKZfZSk5eavklcyuPlaJmEezQw4=",
+            "fileEncSha256": "48tYPFjlyHpxCTvfaSqIFwiHIEdyyJvY+ZaScPt+ve8=",
+            "directPath": "/v/t62.7118-24/610164090_1985959628964456_2967547786746000783_n.enc?ccb=11-4&oh=01_Q5Aa4AGGcisvaRLyJX11uOCkZCqqM6O6ZSryclJuj5TRaRKT7Q&oe=69EE50CD&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643936",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAADAQEBAAAAAAAAAAAAAAACBAUBAwABAAMBAQAAAAAAAAAAAAAAAAIDBAEF/9oADAMBAAIQAxAAAABVhajVKqNEVsn8KclqzoTqKy085IqGYym+dppTtP0urk7QLyLiRC77QDcwvYYgeav/xAAlEAACAgIABQQDAAAAAAAAAAABAgARAxIEITFBURAUIjITUnH/2gAIAQEAAT8AUbMF8w8JkBntX8ie3eHA3kQ9aiGnX+xj8rn5bqlELtsLAozPQUkCXzneZQSFN9ot6gjtMri1sGcRmsa9ABAfRFZ0Hc1EBSww6jkIzOthhMpGhPPaCIflOHylSwhbOh3PUyy2JWb7GZBTGP8AczCpPMyqNiFm8zd/2hJPWZVIaKwCgQsJY8zYTYR6aOniVNZpCJU//8QAIBEAAgMAAAcBAAAAAAAAAAAAAAIBAxESEzFBQmFxgf/aAAgBAgEBPwC15TDmuVuzbpfmL9O8FPSfpbZE2b6Jt3xKnx/wZThFXJ0//8QAHxEAAgICAgMBAAAAAAAAAAAAAQIAEQMEFCESE1Ji/9oACAEDAQE/AMaqbuepauOqiqmJbvqdRxNfXY63ifq5wz9zYwlcAH6ibLBQKE5JmTOWUrU//9k=",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "LjD4QdN2f8GFEunHp/pEQwwH6C4BKHiphLDlA3LolurIA+rdDehstQ==",
+            "scanLengths": [
+              18140,
+              67664,
+              32635,
+              56717
+            ],
+            "midQualityFileSha256": "GBKJYD+lWxuQ5HgHejPy6TMtolxpHsbZA1dEMby9Tkw="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647341,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:49.456Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:49.024Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACCE3DBD75B71247D082F665422BC15F"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/658888269_26351595114498410_821779751726051152_n.enc?ccb=11-4&oh=01_Q5Aa4AEy3yCDhSXq33YaT4wLK7KJOpNmME-zHyPsEXpEdNT4VQ&oe=69EE7660&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "pugw0tA8435XTGLkgpjOffuYcKdlbekTiJxH5No2M00=",
+            "fileLength": "221381",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "D/bWYzLM/47eLcjgkgfdAdHXMQvRrz+MHpAVCzHxMks=",
+            "fileEncSha256": "nQyNPnP6WiZR2P3yu8dzZipdgUyerLMd0XIZmWu/PJg=",
+            "directPath": "/v/t62.7118-24/658888269_26351595114498410_821779751726051152_n.enc?ccb=11-4&oh=01_Q5Aa4AEy3yCDhSXq33YaT4wLK7KJOpNmME-zHyPsEXpEdNT4VQ&oe=69EE7660&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643936",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAwAAADAQEBAAAAAAAAAAAAAAACAwQBAAUBAAMAAwAAAAAAAAAAAAAAAAIDBAABBf/aAAwDAQACEAMQAAAAl7LqJ4t9NC2w9XC5JVSOWy01qkqyB09kr9Bk3QLQ4TFFMZhbojO8u7sLVHu1/wD/xAAjEAACAgIBAwUBAAAAAAAAAAABAgARAxIhBDFBEBMiMmFx/9oACAEBAAE/AIVIPae2/fQz28lfQ1CG8iDyYPsP7GDLkBNVE3YFrFTMchobVMwb2iSeYCZdETqnJVP2Y8iLjWzLR9TxQnVOCnEBhmbLxjSYxuvIBEZq+PgTqHDKKixauKoyM23cdoQ6AkXUCkqfBmvyIajCQGMxWSTAoFwoD5MI/TNajhlcxBSiX63HAaFCJVzSaTWBZ//EAB8RAAICAgEFAAAAAAAAAAAAAAABAxECEhMhIjJCUf/aAAgBAgEBPwCSTSjnfxGGe6uib1Ne4i8SWRchy4kUi3Y8epQlTP/EACIRAAEEAQIHAAAAAAAAAAAAAAEAAgMREgQUEyIxQUJRYf/aAAgBAwEBPwCNgfa4APkU9mBpQ90AphzKGAnTtFC8ltpPi1MJELBQ6pk4DQKW4HpSz5NLcV//2Q==",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "I9gejb+qLgnJEQcFbA6rKW1BGmBPhGKccddGd7T16VRvZtrVJ8D6DQ==",
+            "scanLengths": [
+              18958,
+              86998,
+              45280,
+              70145
+            ],
+            "midQualityFileSha256": "xG1ETnatzoPM7KKY6GzPa/meG4iLjU2sDSDOQAvxRkc="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647341,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:49.002Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:48.744Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC76E58D8FFDDF62F9270C211D8F704B"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/548531981_1283961860328269_5763282051752585131_n.enc?ccb=11-4&oh=01_Q5Aa4AFtzOtf7baD58YVYb6qKFqTtZkjhjO0xEayuiy1vI3DDg&oe=69EE4883&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "067LQMesDkbd1t20S2WdTPGlx22JDcCzhHd74dJbGi0=",
+            "fileLength": "154838",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "S3Fv/Wa3GkpxjjdCeL8moXyzSHqsVtQmSGLu85txaXw=",
+            "fileEncSha256": "V1HOQ0MhkMTMlXkuJMT/j7M46daETpjaPWWn3XX0/lA=",
+            "directPath": "/v/t62.7118-24/548531981_1283961860328269_5763282051752585131_n.enc?ccb=11-4&oh=01_Q5Aa4AFtzOtf7baD58YVYb6qKFqTtZkjhjO0xEayuiy1vI3DDg&oe=69EE4883&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643943",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAACAwEAAAAAAAAAAAAAAAABBAACAwUBAQEBAQEAAAAAAAAAAAAAAAMEAgEA/9oADAMBAAIQAxAAAABbTN2mdar0JOfTpc1StbJo0FGlpq4sc6pdjXSa/pVSmPFFxFMuw0CwwTnTnc6L/8QAJRAAAgIBBAEDBQAAAAAAAAAAAQIAEQMSEyFRIgRCUhAUMUFh/9oACAEBAAE/AFBY0JsZT7Z9rl+MOHIPbDjf4mciYz5iKygnWSY3qMC9xM2DJ+AY7oBwSIx8jENOpmVtTmY8ILgt1GG1m4NE/qM5sAy+TL5mNEDnUf7D6fcbWrcCZcDszMGvQLls3k3UBiAG4rB3ogzCAisFaboJZBUyqBQ7jUGIExXRiDQbjEMxbmBlU2LjvqmSw5gFACGXL+jrcN9zmU0pppMCz//EAB4RAAEFAAIDAAAAAAAAAAAAAAEAAgMRIQQTEkJR/9oACAECAQE/AJZCwiqXe74FHIX3i5PqqK44wqWS3u3F2ClDJTzuUi02vEprSDa//8QAIBEAAQQBBAMAAAAAAAAAAAAAAQACAxEEEhQiURMxQv/aAAgBAwEBPwCGISA3a247Kki0Usb6RIWR7Cix7gjpotbaTpZENQDjy1Js8YAAXnYpZmOYW0v/2Q==",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "e5T02+MZ1APlB4C5PRFeoARk+KJkz3R90rZzlx1+B/EWHfNHVoXnzA==",
+            "scanLengths": [
+              17105,
+              62477,
+              26098,
+              49158
+            ],
+            "midQualityFileSha256": "bP9Vc2F5EZp/nwPPZurwmXEdo5FK4aGUMhXTUZfPzeA="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647341,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:48.718Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:48.323Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACE3D8160AF917AAAC1F62FDA8465131"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/550526604_1345242074079090_1445365616590696798_n.enc?ccb=11-4&oh=01_Q5Aa4AFNKrU4xUioLGDydIO9HeIiP2ZmTuSQMZ2LLUg64nV_DA&oe=69EE5AD8&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "+IE/4e+biwFEnaY48jlwKPMKLEfGjR2DVKuZJqPdS+o=",
+            "fileLength": "212718",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "pvMyXVsVTGm1S6ohcEgDHPn+9a6PRvaABfkhIICFF08=",
+            "fileEncSha256": "xbzKPLHP4GisglgohzXJAK6j3kdvT6kQqZQk1T35os0=",
+            "directPath": "/v/t62.7118-24/550526604_1345242074079090_1445365616590696798_n.enc?ccb=11-4&oh=01_Q5Aa4AFNKrU4xUioLGDydIO9HeIiP2ZmTuSQMZ2LLUg64nV_DA&oe=69EE5AD8&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643944",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAuAAADAQEAAAAAAAAAAAAAAAACAwQBAAEBAQEBAQAAAAAAAAAAAAAAAwQCAQX/2gAMAwEAAhADEAAAAJcOlxi6xWdoJiEIqY6goDOAqmINNMLao2TehYkdPYxVwsN3Dk9hdmc0aDLQ/wD/xAAiEAADAQABAwQDAAAAAAAAAAAAAQIRAyEiMRASEzIgI3H/2gAIAQEAAT8A9UNiOP7oqoTSxIrkiF5kfKn5mSvY4bS9JeXP9K++b0FXG98FY9cLwXi4dSEbjRybV4uiciiZTQsjcOav0whMlJk3LnXO4drS7RUpr6bhy5aWoRxtvXhOw9R8lM+TFiRTbNab6EL2ykP8LjuGnItFLHJgpP/EAB8RAAICAQQDAAAAAAAAAAAAAAABAhEDEBIhMhNCUf/aAAgBAgEBPwCeTa6o8y+EZKSsz+pSow9DLNOb54NyMM+1sad6R4P/xAAkEQABAwIEBwAAAAAAAAAAAAACAAEDERMEISJREBIUMTJBQv/aAAgBAwEBPwAI+du6sFujBweiw/1wm83UML2BoOqq6c1i4aBHpz9oJhYWyV8dlNKxjSi//9k=",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "2+Bs2CzBhSO9PlkaeRuGazkKO6+n6ycygWWDU4lxTG+0MbzCgQa0wQ==",
+            "scanLengths": [
+              18106,
+              87685,
+              41255,
+              65672
+            ],
+            "midQualityFileSha256": "FqhMiLEjIFKRy7+hHCSI+EAkZMFrVGdXdCadaPsegMM="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647340,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:48.294Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:48.157Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC493C387F758FCC753F9DF5F6A55CC3"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/658888416_1630010618237355_249310975627638702_n.enc?ccb=11-4&oh=01_Q5Aa4AF2WhZVF_bIRDpqRcBnUoKMgd9crVKwO-Km97ZG6m8zLQ&oe=69EE70E1&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "SfdnHhP92MHOSzAG9gAwVktjDNmnCUVBCBVJP8u0Bwg=",
+            "fileLength": "181852",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "fB7xZDTc/+PRVvdyzqLoXLc7d2a8nhulqn+X/ZEbOsw=",
+            "fileEncSha256": "a+pJUulS0U8qhY7S3Hv+atu6dem4EYY1U756e//+TgU=",
+            "directPath": "/v/t62.7118-24/658888416_1630010618237355_249310975627638702_n.enc?ccb=11-4&oh=01_Q5Aa4AF2WhZVF_bIRDpqRcBnUoKMgd9crVKwO-Km97ZG6m8zLQ&oe=69EE70E1&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643936",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAACAwEAAAAAAAAAAAAAAAAEBQABAgMBAQEBAQEAAAAAAAAAAAAAAAMEAQAC/9oADAMBAAIQAxAAAAAKtOaBS2yz51dDQFPTNU4B+QZWhQIYsCoO7hQXLefkK/Qcl5gPIfm8zXSSds59L0//xAAkEAACAgEDAwUBAAAAAAAAAAABAgARAwQSIRAUMSMzQVJxcv/aAAgBAQABPwAmbX+hgVvqZTfUwgj4PTF72P8AZQJIv5jmiY2dcY5S5qmBwqR4JlzF7+P9moY4yrQFC1k8VzNVb7QhtZlY9vjBEBmM+tj/AKmfEMoIM7Xit8xadU88zXmtgEBlAKGHmYmLKCfMLIPiAV4M1SK7CHgkRbKARM4VaqdwZ3AjtuYmG9x6GX1K83GDCUZTSjKMAn//xAAgEQABBAIBBQAAAAAAAAAAAAAAAQIDEhEhMhATIkFS/9oACAECAQE/AJJaKh3xjrtyTckKqRcC/k7K+yzPojkw529GOiaU/8QAHxEAAQMEAwEAAAAAAAAAAAAAAgABAxESEyEiQVFS/9oACAEDAQE/AAjuZYXRja9FFoXVzeqTZI4CcI7A62sE3w6mipFHxoXayiso+qUgIHaq/9k=",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 24
+            },
+            "scansSidecar": "oSVp6veS4TSCF7JzRgSR3JEoI5li7pqC7tPTHzZRI0Fpuv6XHO8PkA==",
+            "scanLengths": [
+              17685,
+              68927,
+              33163,
+              62077
+            ],
+            "midQualityFileSha256": "o1Ef/8L3S8Nz4r9AcxoR3fkz+1r0VS/cZaKTN2ALrMI="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 24
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647340,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:48.127Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:47.629Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC3812D87CED8B663A152BB55F36CD9F"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/658895862_1640970007220884_694419141388452806_n.enc?ccb=11-4&oh=01_Q5Aa4AHy4j2B-vDH1BDtdg9PvBtboCweescgoeOXYlrF0GEuVA&oe=69EE7737&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "zs3K8DtI7/LSD9a4BeP3YtM28ngjVYMAEkVV4SN+WJ8=",
+            "fileLength": "184091",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "41Kl09MOljLILONtDiGE14elZv74BlsXyWiOCvmQEtA=",
+            "fileEncSha256": "X/egG82243SatynPdepq1UdD/8pG7+S7D71soKx4m+8=",
+            "directPath": "/v/t62.7118-24/658895862_1640970007220884_694419141388452806_n.enc?ccb=11-4&oh=01_Q5Aa4AHy4j2B-vDH1BDtdg9PvBtboCweescgoeOXYlrF0GEuVA&oe=69EE7737&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643935",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAwAAACAwEAAAAAAAAAAAAAAAAABAEDBQIBAQADAQEAAAAAAAAAAAAAAAMAAgQBBf/aAAwDAQACEAMQAAAAS5jX0hkGjFFz+m0EI2MbYJZiqoHrTaS0Bfo512b0HoVJYz207C4HOfYATs19ddP/xAAiEAEAAgICAgMAAwAAAAAAAAABAAIDERIhEBMEMUFRYYH/2gAIAQEAAT8AWf543N78LNHrHifUND3QnGm+6zL63BZKAwZaNiuKr/UxBdlwovcyr6ncGWY94qAfhOFzfH9J6spo3Plcq4zcJSo1VmHJzod6jep9srY10z5OrpVicXUxq0ZjtwNM51fuVyBMluV9kvvmwAIzfm1TYzubfO3+IbZ//8QAHxEAAQQCAgMAAAAAAAAAAAAAAgABAxESIRBREzJC/9oACAECAQE/ADkwrS87dIDza1P88Q+qI7MrfSyHtRnRvvSrhrZ1/8QAJBEAAQQABAcBAAAAAAAAAAAAAAECAxESEyFCBBQiIzJRUnH/2gAIAQMBAT8AjjxnLKu5CSNWLRBu/CnLWhP5jIu1HTda1MDvk4iNMpFw9ViSsozGeyRzHMVLP//Z",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 23
+            },
+            "scansSidecar": "fCfc52fN7Yu+xs7dNb5kK93LWABX0PYROm5KJpstRpOJysenRr2X9Q==",
+            "scanLengths": [
+              17557,
+              74766,
+              32731,
+              59037
+            ],
+            "midQualityFileSha256": "QdVcoN5ELtQwfhV0AO7r47Jj/joPM2scOCdDWehowHg="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 23
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647340,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:47.601Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:47.405Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACD873620237D1722382EA44C72C17DF"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/549461713_790320837057072_6885680654717385173_n.enc?ccb=11-4&oh=01_Q5Aa4AF2e94D9VtDxp1CihEKr0ZDY8d4Vk894mdsQi0x_pifHQ&oe=69EE66C9&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "69pOhnC+IHI4BcvKKl7hy7j53dObjuaLMlCvNDabCI8=",
+            "fileLength": "200558",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "URkPJ93WXZ+wS5rkQr2s/GPqn6TMBdiKVdwJMV1GOr0=",
+            "fileEncSha256": "Qfthz1nSyMTwEUP7EyYxJzQQnp8b756JDAfba3NSajM=",
+            "directPath": "/v/t62.7118-24/549461713_790320837057072_6885680654717385173_n.enc?ccb=11-4&oh=01_Q5Aa4AF2e94D9VtDxp1CihEKr0ZDY8d4Vk894mdsQi0x_pifHQ&oe=69EE66C9&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643935",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAADAQEBAAAAAAAAAAAAAAACAwQBBQABAAMBAQAAAAAAAAAAAAAAAAIDBAEA/9oADAMBAAIQAxAAAABbSrcrl+qIClmshcqu3nWz0ClkaKKIXy2R1UTumuXpr1WxVRkXSDAmuLw5xmo80P/EACoQAAICAgEBBAsAAAAAAAAAAAECABEDEgQxECEiQRMUIzIzQlFhcYGR/9oACAEBAAE/AMPHfOTqY3BderrPQAfOIMIPRxDxm1LbCuzgZArODMzq46wqjkT1cIDrQEfbrtYI7OIayGOUNCaspJP6j5tmKlo51w9PwYDON8ZY7ePYpf0mTkCvduO4bxH+R8gOMwGJ4V3HWF3KrDjfznslsMsdVZSOguMNWImOzjowOQO6M5cUzQDzJhsX3zJe5lQy+11FiMWXzmxlmX9ptLuf/8QAHxEAAgICAQUAAAAAAAAAAAAAAAIBEQMhIgQSE0FR/9oACAECAQE/AHyMrUeZjG8tE2dRHIpjBpCX5tc+zvX6Y8lNO9FFC3En/8QAHhEAAgICAwEBAAAAAAAAAAAAAQIAAxESEyJCFFH/2gAIAQMBAT8ASsMuZwiOuplB6wMpl2C8agmuvVfM+e0eTLacUKde20FyzlT9lrI9bDIn/9k=",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 23
+            },
+            "scansSidecar": "RZpLEqOrJoZCKU7JJI1S0w5u9kzg74m49GrQX0asy6m6HMG5J7L79A==",
+            "scanLengths": [
+              20051,
+              87828,
+              33590,
+              59089
+            ],
+            "midQualityFileSha256": "FWqfJjuYybcQSDgH4qyQ+INijsN3s44NHlfuR6/Lids="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 23
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647339,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:47.382Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:46.984Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC18BFBC139BF488F8BAAB92B51F1820"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/545521486_931023136454035_8787375563287554189_n.enc?ccb=11-4&oh=01_Q5Aa4AHaZPDjfNdZb3lquH-eNCTg4M8lpxRn081GdbwptV8luA&oe=69EE6E53&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "+nt/gSx1Ty2awpvJXLFmWKTHZcAcG4S4Av7MjF54DNU=",
+            "fileLength": "174389",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "/c56HjRDTyvqqLWrCKjUFZMd/aCkp15dFbnbTvPAORA=",
+            "fileEncSha256": "PEDcUfaQS0nT//7OaLRRmoJY1kh4B44jHqXrVhCGiz4=",
+            "directPath": "/v/t62.7118-24/545521486_931023136454035_8787375563287554189_n.enc?ccb=11-4&oh=01_Q5Aa4AHaZPDjfNdZb3lquH-eNCTg4M8lpxRn081GdbwptV8luA&oe=69EE6E53&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643935",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAwAAACAwEAAAAAAAAAAAAAAAACBAABAwUBAAMBAQEAAAAAAAAAAAAAAAECAwQABf/aAAwDAQACEAMQAAAAsdsnXKWXDDNtF1dmPSnTHFwZOkk4jpk50Oaxl9FglaaIIOIk9IIGfYVVOJYnDL//xAAjEAACAgIBBAMBAQAAAAAAAAABAgARAyESBBAxQRMiUXGB/9oACAEBAAE/AMPSpkxBy0bpa8NDh/CDBiJ8IYU9+odTomY42HoGZ2bnd6itmbYXUYuD9iR/INY2uXc6UmnECh3omI2ip8CO/KkX/TH+uM0YDOmJ+SBFXYEKIfAnGvCidV9VAEEU8QpEUlhszhRuxC1TLs7EPkxVPAAwZSBVT5mnzNHYsbjXyPY9r7Ou7jBho6Mo/sppTQ2Pcomf/8QAHBEAAwEBAQADAAAAAAAAAAAAAAECEQMSMVFh/9oACAECAQE/AKulbWldWl8nGnW6zqn71Hn8OKyBWk637F0g53lUYYTqZ//EAB0RAAIDAAMBAQAAAAAAAAAAAAECAAMRBBIhE1H/2gAIAQMBAT8ACKUByCsbLVC5glZHXDNH7LfTLOO7hOoAxYeLdL6sprGewXrPuktsR0In/9k=",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 23
+            },
+            "scansSidecar": "Zl3bzhmSNnSmLiABffQlR4U8cXxGcOZ2kclirZA8z50g5pJdZnTVpg==",
+            "scanLengths": [
+              18629,
+              69301,
+              30410,
+              56049
+            ],
+            "midQualityFileSha256": "uuAQLRMBA3KLpz9lerlLtm7GZifQe4Vw4q+EG3awIqM="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 23
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647339,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:46.957Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:46.804Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACC788C4677277F62C0CDC60E485BC32"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/549308356_2823077301371107_6748368871332395554_n.enc?ccb=11-4&oh=01_Q5Aa4AF5zZWqyGtyp29yF8Cxd_zKsq1TFFwQqahAytdpqUegiA&oe=69EE692D&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "3xUzpyS/lzowgzybtw4zupiT46zhFsEvbWCLqObttxo=",
+            "fileLength": "176005",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "KWRyXXh9YcNB91S+Mfhi4Kf4ZQRae/aqZ4CEJjLENZ4=",
+            "fileEncSha256": "AiAEwSihlQtzva7VumrHvB9z6SDwL/gHOgoUHd5kHFc=",
+            "directPath": "/v/t62.7118-24/549308356_2823077301371107_6748368871332395554_n.enc?ccb=11-4&oh=01_Q5Aa4AF5zZWqyGtyp29yF8Cxd_zKsq1TFFwQqahAytdpqUegiA&oe=69EE692D&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643935",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAACAwEAAAAAAAAAAAAAAAABBAIDBQABAQEBAQEAAAAAAAAAAAAAAAMEAgEA/9oADAMBAAIQAxAAAACrpMuGeHJCqPMrsZYT0cbl0jJSom3n1zsaWY5PbfOqI+GS/n0YfjcuN5A7nTVYNF//xAAiEAACAgIBBQADAAAAAAAAAAABAgARAxIhBDFBUWEQEyP/2gAIAQEAAT8AxYv3PqDHwlSRNDAsC+CajKVqdIazCZcqp3F8wZx3GOLk4J1FiAjI+2symnImE/1WZcTO7X2hxAYhOKJKgccwWW9CObcxDTqfsrLuG2GvqNqfZh18COHsu60AJ5iqK2iOzqupqNd0TBQHedQQUIBjDUxLOMzBkCIAYc6+5vjPmZivZZkJ2moAh/HEoR0Fx1KGjC3yXLm3yXfif//EACARAAIDAAEEAwAAAAAAAAAAAAABAgMRIRIUMUEyQpH/2gAIAQIBAT8AtslB8I7ixfRfpXa5yxov+UWJPnSheS2bk3r9mlE+l56GmYyOpn//xAAiEQACAgIBAwUAAAAAAAAAAAABAwACERMhEDFSEiIyQUL/2gAIAQMBAT8AWutq8zRQ/oxihSuQYj426P7CBIC1mlfrma7+JjlDT6iPdmBq8d5sp5COsu67DIn/2Q==",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 23
+            },
+            "scansSidecar": "AJ35cOwJ9zpSECJwtcOe3tklQ96eWrI8l0YaN1asOMwUWfA1YHkeAA==",
+            "scanLengths": [
+              19824,
+              76438,
+              29268,
+              50475
+            ],
+            "midQualityFileSha256": "15oltKbd6o6bcO1QkGXLmAhzzR7C4PIBDkGj91vzML8="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 23
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647339,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:46.784Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:46.252Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "ACE7C4975E9445F5E0EAB3CD9F6D11BC"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/614863393_955774700464053_8739191752966182348_n.enc?ccb=11-4&oh=01_Q5Aa4AH8DR17bEGVC5bVPdvf_0TEWiaUE3b3CwVFA_J8ROPG3A&oe=69EE448B&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "rFkqE4nyD8MVGN6Fes8P8kO/vIashbkujXct7UPaGaA=",
+            "fileLength": "131464",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "Iu+32ZA4cJbMT+I1f43C2CaKOGsIPySMjnoUFxcUUYU=",
+            "fileEncSha256": "xLidD7mwL3ELVqsx3ZMxzu1jPuxuAnMcs+yyaD4HU18=",
+            "directPath": "/v/t62.7118-24/614863393_955774700464053_8739191752966182348_n.enc?ccb=11-4&oh=01_Q5Aa4AH8DR17bEGVC5bVPdvf_0TEWiaUE3b3CwVFA_J8ROPG3A&oe=69EE448B&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643935",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAuAAACAwEAAAAAAAAAAAAAAAACAwABBAUBAQEBAQAAAAAAAAAAAAAAAAQDAQL/2gAMAwEAAhADEAAAAMkpizKpwyqElUlbE6J20gCxMmclMK5udx2ks5CgZtWJR+hXT5h11BmUJDb6j//EACIQAAIBBAMAAgMAAAAAAAAAAAECAAMREiEQIjETIEFRUv/aAAgBAQABPwC/Bg5MxRgO1p8Y/q8NM2JgWpskcpTybUpoq7caEFTbEr1Plo1TEHfvBMpOAjm/48ivjiFY2IjObGwEZjjsagMABMRl8t5Ga3kBJjdlxnhlINleAAEzr+oCBfUYwk3MxwuPqy9pXoZx0IJExMxMsZjef//EACARAAICAQMFAAAAAAAAAAAAAAECAAMREBIhFCIxQVH/2gAIAQIBAT8Adwg5nUVn7FdXziXnCzu9mUDgmX2bjpQ+Mg+IRovE/8QAIBEAAQQBBAMAAAAAAAAAAAAAAgABAxEEEyIjMUFRYf/aAAgBAwEBPwAAc+loSfEQEHax2s3XlZLs5NSx4OG2bdaeGT0smGgB63KOcWFmrpa4qeQDCl//2Q==",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 23
+            },
+            "scansSidecar": "DYvp9KyUv1bhXVyM5o8cjLTLytYhhqz9DN4r06iIGc8UViClRuWjjA==",
+            "scanLengths": [
+              17284,
+              61127,
+              18299,
+              34754
+            ],
+            "midQualityFileSha256": "rdeaUpMupYwhB1lQRRk0gC0D5a+ktb30NcO8Vn/qqWc="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 23
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647338,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:46.222Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:45.973Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC31DC4B17ACA687C7D06F8B32FE4AB7"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/545606006_1448049580093585_1093399580008929591_n.enc?ccb=11-4&oh=01_Q5Aa4AEIapyzOxtNH07znXY-TCuGaHyx_lMnj0xUnuUPn0LujA&oe=69EE660A&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "v9Hil+eXtjxIgEyxUPLdgx1TzKozDYj3gysp9nlZ8y0=",
+            "fileLength": "139852",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "64IWt2eKK3NNbMfBMdrKfOkbpKraW1LGDWgGgV3WSwA=",
+            "fileEncSha256": "DUpO8KBjRvVKrsv+xU78yXIlKYFb/w08NFwWS5MEWeg=",
+            "directPath": "/v/t62.7118-24/545606006_1448049580093585_1093399580008929591_n.enc?ccb=11-4&oh=01_Q5Aa4AEIapyzOxtNH07znXY-TCuGaHyx_lMnj0xUnuUPn0LujA&oe=69EE660A&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643935",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAwAAADAQEBAAAAAAAAAAAAAAABAwQCAAUBAAMAAwAAAAAAAAAAAAAAAAIDBAABBf/aAAwDAQACEAMQAAAAlHWUIiFPCSBvBgfR8y1D0zUJRSAVVTNcts9L19lW5FUpoCknEvV3kdhCenJJ/8QAIxAAAgIBAwQDAQAAAAAAAAAAAQIAEQMQEjEEISJBEyBRcf/aAAgBAQABPwDWtRyJ8KMtgxenL2VYAD9j9O6KSSsGJ6JIGgNMDCqlF9WJkJU7bnk3swliNoMB0zMPgQBoE8AcncxlsmuBDaLfuAyjzB3Ae4rhlVW7D9hGJLO65kcsRO4MU3iM6cA4psX20OFOA0OMJkH8mU+cVdq1ASvE3NCblTInlcMv6MLn/8QAHhEAAgICAgMAAAAAAAAAAAAAAQIAEQMSITEQE2H/2gAIAQIBAT8AZwtXPakV1bqZzrqYH5mHomZHLn4DKmF6Os58KaM//8QAHREAAgMAAwEBAAAAAAAAAAAAAQIAAxESITETUv/aAAgBAwEBPwBULeT5PGRl9lC8tE49S/0QUipEYbrDucjktq2r673uZFC4B11MX8iXoGqIE//Z",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 23
+            },
+            "scansSidecar": "9PhCk/qFpH4oDbCY+6mAysnQ5tg0kr0cNXu8VlUWFMxwqmq/f9N6nA==",
+            "scanLengths": [
+              18014,
+              59237,
+              21425,
+              41176
+            ],
+            "midQualityFileSha256": "+hN+ridLSt1YKbue7e/PItTlNn6rHCGqLP+9f9OkBZI="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 23
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647338,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:45.953Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:45.549Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC02D83989C651E72974B6F5C7B49A50"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/610580350_1566374477808464_5374796593737044130_n.enc?ccb=11-4&oh=01_Q5Aa4AEM2tT4X7F4SJ2x8ULxyPoJ7XdlWCZ0G9dZG6XJz1sB0w&oe=69EE73D9&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "fileSha256": "wIGTf1VaxBZyUic4NdGYNFcGig+/66j1KvYBbOyUOFU=",
+            "fileLength": "165787",
+            "height": 1600,
+            "width": 1200,
+            "mediaKey": "ecWFqVK24SnSuXbYBxBPis4sz7ObZ8Y5xidffFzMvXw=",
+            "fileEncSha256": "cW3BoruescrVexOHmKmmpLu0lMUOy0vYWG2TBH+he7k=",
+            "directPath": "/v/t62.7118-24/610580350_1566374477808464_5374796593737044130_n.enc?ccb=11-4&oh=01_Q5Aa4AEM2tT4X7F4SJ2x8ULxyPoJ7XdlWCZ0G9dZG6XJz1sB0w&oe=69EE73D9&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774643935",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEAAMAMBIgACEQEDEQH/xAAvAAACAwEAAAAAAAAAAAAAAAADBAABBQIBAAMBAQAAAAAAAAAAAAAAAAIDBAAB/9oADAMBAAIQAxAAAABModRgIcu9g7OHp5jUxxF8Tc6QGilrIdznTtGARF9y5jijamW1DrppqVW71xd9H//EACYQAAICAQIFBAMAAAAAAAAAAAABAhEDITETIkFhcQQSMlFCUoL/2gAIAQEAAT8AH6fKuhwMv0cHL+o8OVfgzsL5LyZcyTUftIaSbsx4r1tk3KGRRbJu5y8nVEoueaDsljUnHTlItX0Rlbnk22Q3zPyNiipU9U6JykklxGf2xT35m9C9SMU02yOWdNIk5bs1aIr5W+hOCjsYrpkUluP2tlxG406Mt6CVIZaNDQkk0ZcfDfYk2i+xfYtm5//EAB4RAAICAgIDAAAAAAAAAAAAAAACAREDIRIxE0Fh/9oACAECAQE/AMrssrC+zzP8Mbs0zcQZu1K12Ye5Ge3m50c1Een1OipKIs//xAAfEQACAgICAwEAAAAAAAAAAAABAwACERIhURMUQVL/2gAIAQMBAT8AUut85nrr7tGLrUAgxAJ2AmL/AJjgRqCItWFL1rz9M0t0Y5YKrk15+SrV4GDPLTuXYs1IJn//2Q==",
+            "contextInfo": {
+              "entryPointConversionSource": "global_search_new_chat",
+              "entryPointConversionApp": "whatsapp",
+              "entryPointConversionDelaySeconds": 23
+            },
+            "scansSidecar": "JRaajAsF/pg/akvbMqYJDdHU13xtV364nvk3H7zTVwhdDz2baKm+Kg==",
+            "scanLengths": [
+              17805,
+              66984,
+              28726,
+              52272
+            ],
+            "midQualityFileSha256": "b34drvzEJpmrS2syYjLDsRbMb3FdYPPrCdxevyK7GmA="
+          }
+        },
+        "contextInfo": {
+          "entryPointConversionSource": "global_search_new_chat",
+          "entryPointConversionApp": "whatsapp",
+          "entryPointConversionDelaySeconds": 23
+        },
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647337,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:45.514Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:45.373Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "198152627994764@lid",
+          "fromMe": true,
+          "id": "AC020E1FEE316FE455801912FE9CC5A3"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {},
+        "messageType": "unknown",
+        "messageTimestamp": 1774647337,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:45.349Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:44.888Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "139415275999417@lid",
+          "fromMe": true,
+          "id": "AC0DE2C214D3777CEA8F43AFE22F1E28"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Teve um amigo q tinha um pedido q n foi liberado antes q chamaram semana passa para liberar e ele n quis até por isso pensei q ainda teria uma quantidade no estoque"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647337,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:44.867Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:44.437Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "139415275999417@lid",
+          "fromMe": true,
+          "id": "AC0F224831C5118E7AFB544E3336C4BF"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Era meu foco agora"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647336,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:44.412Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:44.255Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "139415275999417@lid",
+          "fromMe": true,
+          "id": "AC303F16C56FC9C5F2A915AE4349125F"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Mas acabou msm então né as etbs"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647336,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:44.230Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:43.825Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "139415275999417@lid",
+          "fromMe": true,
+          "id": "AC2325437606A97AC57ACC677DA11F65"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Eu esqueci q n era o Pedro"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647336,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:43.806Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:43.651Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "139415275999417@lid",
+          "fromMe": true,
+          "id": "AC9062047AD1832B434576EDB298BB39"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Tudo bem sim"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647336,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:43.627Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:43.028Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "111510386962473@lid",
+          "fromMe": true,
+          "id": "AC9419FE66BF32A7669A3CBBC48AE597"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Da Ana lá"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647335,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:42.999Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:42.816Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "111510386962473@lid",
+          "fromMe": true,
+          "id": "AC9419FE66BF32A7669A3CBBC48AE597"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Da Ana lá"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647335,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:42.790Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:42.507Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "120363421027375248@g.us",
+          "fromMe": false,
+          "id": "AC6DAB101145AE2BC250E242B5CE0F81",
+          "participant": "258853551747162@lid"
+        },
+        "pushName": "Carlos Reis",
+        "status": "DELIVERY_ACK",
+        "message": {
+          "senderKeyDistributionMessage": {
+            "groupId": "120363421027375248@g.us",
+            "axolotlSenderKeyDistributionMessage": "Mwj11byyBxAEGiBw7zK/BSl4LOkuggxQ/CQs1OHHaEHcisiFU8s9VQOXwyIhBUHzODmvMFJSsK0+cYTRPa5cwnoN0kvotvGmYaPiTyl/"
+          },
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m239/AQNncXTemvYxKw715AJeK31x5-y8NINoiwXP1HyOEdmcTR39k1AgsRjrkf_J077NE7TViEcqfP8v8fEuM4vEy1Wth7h6c_Dbj5mgiBGdrQ?ccb=9-4&oh=01_Q5Aa4AF-N2v0RxL70f7rr3WU4ZdTT9IBcWiizMPH39EqHdiXWA&oe=69EE5396&_nc_sid=e6ed6c&mms3=true",
+            "mimetype": "image/jpeg",
+            "caption": "Algumas coisas q vamos ter no leilão de hoje",
+            "fileSha256": "TXpfYgZ0CdrpziC2o+uz0enSetwq3eUS/zPDYddL5Wc=",
+            "fileLength": "163513",
+            "height": 1280,
+            "width": 720,
+            "mediaKey": "22Au3LuP035Yv6y5pvylfSSJn5k50Dt18A7WHOuUrRw=",
+            "fileEncSha256": "dhr9Fu9eGZ8eJp8CdjCwPs8sjB0OezziY6OLd9y7dhE=",
+            "directPath": "/o1/v/t24/f2/m239/AQNncXTemvYxKw715AJeK31x5-y8NINoiwXP1HyOEdmcTR39k1AgsRjrkf_J077NE7TViEcqfP8v8fEuM4vEy1Wth7h6c_Dbj5mgiBGdrQ?ccb=9-4&oh=01_Q5Aa4AF-N2v0RxL70f7rr3WU4ZdTT9IBcWiizMPH39EqHdiXWA&oe=69EE5396&_nc_sid=e6ed6c",
+            "mediaKeyTimestamp": "1774642555",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIADwAIQMBIgACEQEDEQH/xAAvAAADAQEBAAAAAAAAAAAAAAAAAwQBAgUBAAMBAQAAAAAAAAAAAAAAAAACAwEE/9oADAMBAAIQAxAAAACHt/d9472hNUaFlL61OfbIqEpUeSUnS5CkHPThoAyp1G217fNYLWKOZf/EACcQAAICAQQABQUBAAAAAAAAAAECABEDEhMhQRQiMVFSIzJDU2Fi/9oACAEBAAE/AGTzGxESwRUxIK5J1Q4n1g0Zpb2hBLMD1A6otEXMeUMR5IFy9NxNrJ8milSoLN6xyAy8giYkVyKM101ULm//AATw6VXcXD6qRdDiaTjyIR1G1LZ6M3f8xHsc9QHgHiEnKaUcCMRp5E2sfygWl0t7cRFcsFMxK2Mk9iFnDWe5ur7TG9gC+RGyU4AMdw35ADDpsagSB2JuYv1tAdLaRNP1Es3zMn3tMGZ1Yczxr/FZ/8QAIREAAQQCAAcAAAAAAAAAAAAAAQACEiEDERAyQVFSYZH/2gAIAQIBAT8ALq5VOzSn6U29HKZlRGtcBjYLQDaDW0ojsUbpOxlrSWqWbwH1f//EACMRAAIBAgUFAQAAAAAAAAAAAAECABESAyExUVIUIjJhYqH/2gAIAQMBAT8A1OtIO1VH1dOpbiIpIbMRgXzMt9/kvYtSG/lLm3i4PniSoD0YSq7z/9k=",
+            "contextInfo": {},
+            "scansSidecar": "iBU+AP4hvr0a/N5qkqnLhhouAEbcbpUCpustrIWo1PA9/3ogzVx5Pg==",
+            "scanLengths": [
+              12632,
+              73051,
+              30762,
+              47068
+            ],
+            "midQualityFileSha256": "XR90LqeJRt/aFZBTa4mxr9tcCl22kn7av1cZQ33cG/E="
+          }
+        },
+        "contextInfo": {},
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647334,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:42.481Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:42.430Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "5511993049999-1631726898@g.us",
+          "fromMe": false,
+          "id": "AC4AA47CEE085E9A4E31A644696CF990",
+          "participant": "258853551747162@lid"
+        },
+        "pushName": "Carlos Reis",
+        "status": "DELIVERY_ACK",
+        "message": {
+          "senderKeyDistributionMessage": {
+            "groupId": "5511993049999-1631726898@g.us",
+            "axolotlSenderKeyDistributionMessage": "MwixqpqRAxAPGiBtVxT01nBx8LIh9JjehYlS5IxfcOZ5kBPaEj5e+8p7hyIhBTBNiBem5dz7TnoTqSTV1k+whtNHYtkWlCpUnNY0l8co"
+          },
+          "conversation": "Ss"
+        },
+        "contextInfo": {
+          "stanzaId": "3EB01BC6C4B6172D2F8FD2",
+          "participant": "144302411931822@lid",
+          "quotedMessage": {
+            "conversation": "Conseguiu arrumar o bug do botao do menu?"
+          },
+          "expiration": 7776000,
+          "disappearingMode": {
+            "initiator": "CHANGED_IN_CHAT",
+            "trigger": "UNKNOWN"
+          }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647334,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:42.410Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:41.662Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "77519898304548@lid",
+          "fromMe": true,
+          "id": "AC50DAFBA5A27DAC5261F4E5E437474A"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ele perde MT para ele msm"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647334,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:41.638Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:41.492Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "77519898304548@lid",
+          "fromMe": true,
+          "id": "AC494EB4E84D73F79FB30EABEA0E51B3"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "MN ***"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647333,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:41.465Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:41.021Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "77519898304548@lid",
+          "fromMe": true,
+          "id": "AC47F8A03CFA43AC07649867B4090BA8"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Um deck q eu tô testando mas n tô achando legal e Rocket mb"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647333,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:40.996Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:40.854Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "77519898304548@lid",
+          "fromMe": true,
+          "id": "ACCD128A477D04DB8C18325EA747B3F7"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Kskskskskks"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647333,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:40.828Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:40.229Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "77519898304548@lid",
+          "fromMe": true,
+          "id": "ACF914107BA1FDCA58F909CD8CA5DEA3"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ger q comprar esse meow"
+        },
+        "contextInfo": {
+          "stanzaId": "AC447C1DEEE29408DF0634AFC92B5113",
+          "participant": "77519898304548@lid",
+          "quotedMessage": {
+            "imageMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7118-24/559556770_785964494571767_7266278556329064165_n.enc?ccb=11-4&oh=01_Q5Aa4AHih9DffCmeJG2m3Mv-_Sze0t7cggvZin9IvVBGZ-ADxg&oe=69EE6144&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "image/jpeg",
+              "fileSha256": "HUm9coN0ZyOAn8YeAnbIV7xyIJn6Me0fIEj9WXJNH4I=",
+              "fileLength": "683577",
+              "height": 895,
+              "width": 1053,
+              "mediaKey": "/gbU33QC4xrrpT62ytmNdPmAcjHvQcxi62FWK53SqgM=",
+              "fileEncSha256": "Vf7MXvAffFyxfslXh2Fa0eUpicW6qah4eTGKDeFrAmc=",
+              "directPath": "/v/t62.7118-24/559556770_785964494571767_7266278556329064165_n.enc?ccb=11-4&oh=01_Q5Aa4AHih9DffCmeJG2m3Mv-_Sze0t7cggvZin9IvVBGZ-ADxg&oe=69EE6144&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1774564582",
+              "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIADgAQgMBIgACEQEDEQH/xAAvAAACAwEBAAAAAAAAAAAAAAAAAwIEBQEGAQEBAQEAAAAAAAAAAAAAAAACAQAD/9oADAMBAAIQAxAAAADRlBIVuFeujoczF9BqTx9IqyTOWzqN06qTks5twKQqWq7teiSJsOdpuMrSNdFSugnLQDcc2RjEuBOsEgMQBH0AGgBt/8QAJxAAAgICAgEDBAMBAAAAAAAAAQIAEQMSBCETBSIxFDJBYSAzUmL/2gAIAQEAAT8AblBGI0bqHnBR2sHNtQdY3qCqCai88ML1g9Qsj2Q+p0a0j8sOKKT7u9BHyAPRH5mVcbNswNxgEQarYmRbxEjH8zEvZOh+JjDbj2Ga9n2H5hHSGj31AtCZcoXKbJ+ZyMucZ6VjrU4uQ+Il2vuLk3LURQgP/MsD9GNyHokHvaqhfJYAbufUovTE2Jm4ju7HYVcPFZiKYT6ZwlK4mHAcd2wiBlvZhGQvl2LiHhhmsZAKMegf7FBEK4CSfIsyFxnrb2kzk53RlCDqYqyYrJqajWg1/uIiAHVrniS+n7E8Is+/smfS42LFmA2h9Lx/7mbKd2Oo6MDI2rHHZInkVVUa9NPMiAgCq6gz41tQv4uJyASp8f3mrnhxkg13DgxmrE8STLhytkYaGiZjU48YHiszk4myINVIi8dzipla5iwZCCGUzFgcOBo1XYP8P//EAB4RAAMAAgIDAQAAAAAAAAAAAAABERIhUWECIDFS/9oACAECAQE/AM12eLTa+jxHiiv9DahuisEyvgXBrLs2haKUm76f/8QAHhEAAgICAgMAAAAAAAAAAAAAAAEREgIhIjEDEEH/2gAIAQMBAT8AqxppM5mSy1Xs2LtSzhVjSlkLWyPGRikiuVZ+GSQ4ZBlnZJQtF3Wo9+//2Q==",
+              "contextInfo": {}
+            }
+          }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647332,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:40.199Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:40.076Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "120363020602422855@g.us",
+          "fromMe": false,
+          "id": "3A5F6706C11AECA7FABD",
+          "participant": "21912939958307@lid"
+        },
+        "pushName": "Felipe Façanha",
+        "status": "DELIVERY_ACK",
+        "message": {
+          "senderKeyDistributionMessage": {
+            "groupId": "120363020602422855@g.us",
+            "axolotlSenderKeyDistributionMessage": "Mwjd+J3GBRAAGiA6TElxnfLFNWgPAAke6wUivkz34evrdL3HoBaJA9JwbSIhBex5+43DsynXAINY5YF+TSn37RYsckxnoDMulwIdVj8/"
+          },
+          "messageContextInfo": {
+            "messageSecret": "rwgTFac9TrOdp+rMb3yIjMYt9Xj00Fot87amQbQYr2w="
+          },
+          "conversation": "Espera que tá saindo se quero ser te vendo o meu"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647332,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "ios"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:40.045Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:39.858Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "77519898304548@lid",
+          "fromMe": true,
+          "id": "ACFFCAA76136118F1D89E5CE05C8511C"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "MT difícil bater com o 2 ataque né"
+        },
+        "contextInfo": {
+          "stanzaId": "AC2A7FC800848840360970420F7C598B",
+          "participant": "77519898304548@lid",
+          "quotedMessage": {
+            "conversation": "Garchomp eu larguei por agora"
+          }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647332,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:39.821Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:39.774Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "274757782089755@lid",
+          "fromMe": true,
+          "id": "AC0434031C755247D89B22BF0A01EF78"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Aí eu q sou meio off n compensa ksksksksks"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647332,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:39.731Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:39.173Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "274757782089755@lid",
+          "fromMe": true,
+          "id": "ACF2361D10061988084CDC02E1B92729"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "então e por que o pessoal costuma tipo pegar mas pouco"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647331,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:39.142Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:38.933Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "274757782089755@lid",
+          "fromMe": true,
+          "id": "ACB0B75D1A5547DA973256C2E942D338"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ksksksksksk"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647331,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:38.909Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:38.478Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "274757782089755@lid",
+          "fromMe": true,
+          "id": "AC37852E4EC810144F82177381B8B735"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Se tiver foil mio ainda"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647330,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:38.454Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:38.309Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "274757782089755@lid",
+          "fromMe": true,
+          "id": "AC85A5C3F3E29537680EEFB83E79320D"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Aquelas lá msm da foto"
+        },
+        "contextInfo": {
+          "stanzaId": "AC2994B233D629A4E0A1FB918BC7B752",
+          "participant": "274757782089755@lid",
+          "quotedMessage": {
+            "audioMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7117-24/614470307_915346944814108_2782300662565005437_n.enc?ccb=11-4&oh=01_Q5Aa4AGYe6OofFLLRZwAeMEzpZtdqeuLN3r8IR6NeQjLNqf-Fw&oe=69EE2DBE&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "audio/ogg; codecs=opus",
+              "fileSha256": "KVgbNhKWnbeF6KRcUcUx8AkeX9tbyfCD5mFB/FH6udY=",
+              "fileLength": "39370",
+              "seconds": 18,
+              "ptt": true,
+              "mediaKey": "Lej+6vumOD575lGOjc6uNKNZu/NjR4VHgllUX/jDnEE=",
+              "fileEncSha256": "gGQDwvRCG/QXAZIAXu9gTYlB8oDJ5d0EJZlJbuVsb1c=",
+              "directPath": "/v/t62.7117-24/614470307_915346944814108_2782300662565005437_n.enc?ccb=11-4&oh=01_Q5Aa4AGYe6OofFLLRZwAeMEzpZtdqeuLN3r8IR6NeQjLNqf-Fw&oe=69EE2DBE&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1774638973"
+            }
+          }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647330,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:38.285Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:37.724Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "274757782089755@lid",
+          "fromMe": true,
+          "id": "ACC14CD7C293F8FF7109CDFF360B0DB2"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Essa coleção e MT ruim"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647330,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:37.706Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:37.465Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "274757782089755@lid",
+          "fromMe": true,
+          "id": "ACC8B9F55A27D9314EAD1C221062B06E"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ksksksksksksk"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647329,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:37.437Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:37.297Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "274757782089755@lid",
+          "fromMe": true,
+          "id": "AC45BC34C342B735B78D0EBE37A05765"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Mas assim animei com nada"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647329,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:37.273Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:36.700Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "274757782089755@lid",
+          "fromMe": true,
+          "id": "AC70DFACDB336EA08218FD86E9F63F5D"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ou eu vi"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647329,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:36.678Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:36.571Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "98337906802717@lid",
+          "fromMe": true,
+          "id": "AC610ADB0246E830DFA190BA7CFCE0EE"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "❤️❤️❤️❤️❤️❤️"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647329,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:36.552Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:36.056Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "98337906802717@lid",
+          "fromMe": true,
+          "id": "ACEB5D88A32D16968B97C16910038593"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Vai me avisando meu neném"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647328,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:36.029Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:35.626Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "204990333366298@lid",
+          "fromMe": true,
+          "id": "ACAEC5C408B59AD5E8807B0B2FE54332"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Agradeço"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647328,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:35.602Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:35.447Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "204990333366298@lid",
+          "fromMe": true,
+          "id": "AC6964948CA9D8A9BC9B956D99393605"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Somente por -10 n meu bom"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647327,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:35.427Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:35.000Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "204990333366298@lid",
+          "fromMe": true,
+          "id": "ACE0D7419FA6189D1BE85861F3311A74"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Para levar eles"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647327,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:34.976Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:34.841Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "204990333366298@lid",
+          "fromMe": true,
+          "id": "ACDD3D16D4B13FE5452B86E2400C9D41"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Quanto no dragonite e no elektross MN"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647327,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:34.806Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:34.264Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "144302411931822@lid",
+          "fromMe": true,
+          "id": "AC97018BDA8425DC728DD5323DD6E521"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Combinado"
+        },
+        "contextInfo": {
+          "stanzaId": "3EB03D039F2659DBC16061",
+          "participant": "144302411931822@lid",
+          "quotedMessage": {
+            "audioMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7117-24/612332391_1460988052197337_7261406520738793412_n.enc?ccb=11-4&oh=01_Q5Aa4AEy_hV9U47QO7BBvkCSoe0M4ZcdesEJkjbTxkc5wN9EwQ&oe=69EE2B5E&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "audio/ogg; codecs=opus",
+              "fileSha256": "UxkobjKBqeZvIbJdhSQuM75rYGABrRCT6R+rRuSq0cQ=",
+              "fileLength": "54510",
+              "seconds": 26,
+              "ptt": true,
+              "mediaKey": "nDOKZH883okaumjUKV5Fut+VpAbWBc4eMjNJASi79ys=",
+              "fileEncSha256": "q9QqQjiDk0Oj90BhRcwIm4QHrW3nyuJZT4b+9fS5RHU=",
+              "directPath": "/v/t62.7117-24/612332391_1460988052197337_7261406520738793412_n.enc?ccb=11-4&oh=01_Q5Aa4AEy_hV9U47QO7BBvkCSoe0M4ZcdesEJkjbTxkc5wN9EwQ&oe=69EE2B5E&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1774637444",
+              "waveform": "E0BSRTM+IzM2MwArREtDQyolPj8sMzw9CCBAEy1GRzw8QT44MzRPRQAkQj8xDDMbTEI3KRJCMxMYQkZJRkA6RA=="
+            }
+          }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647326,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:34.235Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:34.099Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "144302411931822@lid",
+          "fromMe": true,
+          "id": "AC53D742AE89D564892B5CF07641EF5E"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Mas aí um modelo só ?"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647326,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:34.072Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:33.816Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "553194972541-1458753196@g.us",
+          "fromMe": false,
+          "id": "AC4053F1EC1B4692D5C04711A8C4F86A",
+          "participant": "274757782089755@lid"
+        },
+        "pushName": "Diego Felipe",
+        "status": "DELIVERY_ACK",
+        "message": {
+          "stickerMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.15575-24/551030310_1017348340950589_4082411975168214248_n.enc?ccb=11-4&oh=01_Q5Aa4AF-1wvQMoXXEu4JJeGGDsUiAI4ovZUV7YS7yj-xF7BLEQ&oe=69EE703E&_nc_sid=5e03e0&mms3=true",
+            "fileSha256": "itSD6T2FhRrqDuisPi2Cm/AJPDZ7MZSltfnjXJ3uqBw=",
+            "fileEncSha256": "9Un7c+SYEFPh67y/jvo5gy5wSE2FfXrbn0WWebSQYwI=",
+            "mediaKey": "/7sc2Wz0i9J+wzwV3uiXx9bMtpjdds8iZYojnz2JwqI=",
+            "mimetype": "image/webp",
+            "height": 64,
+            "width": 64,
+            "directPath": "/v/t62.15575-24/551030310_1017348340950589_4082411975168214248_n.enc?ccb=11-4&oh=01_Q5Aa4AF-1wvQMoXXEu4JJeGGDsUiAI4ovZUV7YS7yj-xF7BLEQ&oe=69EE703E&_nc_sid=5e03e0",
+            "fileLength": "336290",
+            "mediaKeyTimestamp": "1774624420",
+            "firstFrameLength": 335880,
+            "firstFrameSidecar": "XJlvQVc2cvqzxg==",
+            "isAnimated": true,
+            "stickerSentTs": "1774647323190",
+            "isAvatar": false,
+            "isAiSticker": false,
+            "isLottie": false
+          },
+          "messageContextInfo": {
+            "messageSecret": "sn/Kce/1g3RpNBi9DvmUk+GJRfCv86V+z2AALa9mAA8="
+          }
+        },
+        "contextInfo": null,
+        "messageType": "stickerMessage",
+        "messageTimestamp": 1774647326,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:33.778Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:33.465Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "144302411931822@lid",
+          "fromMe": true,
+          "id": "AC61C5855F6B155770759FFB1A597B05"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ss"
+        },
+        "contextInfo": {
+          "stanzaId": "3EB03D039F2659DBC16061",
+          "participant": "144302411931822@lid",
+          "quotedMessage": {
+            "audioMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7117-24/612332391_1460988052197337_7261406520738793412_n.enc?ccb=11-4&oh=01_Q5Aa4AEy_hV9U47QO7BBvkCSoe0M4ZcdesEJkjbTxkc5wN9EwQ&oe=69EE2B5E&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "audio/ogg; codecs=opus",
+              "fileSha256": "UxkobjKBqeZvIbJdhSQuM75rYGABrRCT6R+rRuSq0cQ=",
+              "fileLength": "54510",
+              "seconds": 26,
+              "ptt": true,
+              "mediaKey": "nDOKZH883okaumjUKV5Fut+VpAbWBc4eMjNJASi79ys=",
+              "fileEncSha256": "q9QqQjiDk0Oj90BhRcwIm4QHrW3nyuJZT4b+9fS5RHU=",
+              "directPath": "/v/t62.7117-24/612332391_1460988052197337_7261406520738793412_n.enc?ccb=11-4&oh=01_Q5Aa4AEy_hV9U47QO7BBvkCSoe0M4ZcdesEJkjbTxkc5wN9EwQ&oe=69EE2B5E&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1774637444"
+            }
+          }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647325,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:33.439Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:33.156Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "144302411931822@lid",
+          "fromMe": true,
+          "id": "AC60405B887708793E223E8CEDD67881"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Mas e para fazer antes da reunião ?"
+        },
+        "contextInfo": {
+          "stanzaId": "3EB01302EFD8298202D09A",
+          "participant": "144302411931822@lid",
+          "quotedMessage": {
+            "audioMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7117-24/610131343_4383690301901259_2872475310979036112_n.enc?ccb=11-4&oh=01_Q5Aa4AEOLkH9NVyiUhASSS5Vov3SAxnwd7D_GVNtZWT_OFaxVg&oe=69EE45BD&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "audio/ogg; codecs=opus",
+              "fileSha256": "1hjRVJDVQ8C+EvB9xsXMF1VN5Abm5WJ61T9R6FVFvRc=",
+              "fileLength": "63261",
+              "seconds": 31,
+              "ptt": true,
+              "mediaKey": "6hKMQkXglOspsScOtHRB6TmyiQnBjPVabLg/OrMyrG8=",
+              "fileEncSha256": "s4EjAp04xjjK+iSTpgpzNORIjz0Rmi4RYKTcyNnvxtw=",
+              "directPath": "/v/t62.7117-24/610131343_4383690301901259_2872475310979036112_n.enc?ccb=11-4&oh=01_Q5Aa4AEOLkH9NVyiUhASSS5Vov3SAxnwd7D_GVNtZWT_OFaxVg&oe=69EE45BD&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1774637415"
+            }
+          }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647325,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:33.122Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:33.105Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "553194972541-1458753196@g.us",
+          "fromMe": false,
+          "id": "AC029779A6732506CD58D6F997CB77D2",
+          "participant": "274757782089755@lid"
+        },
+        "pushName": "Diego Felipe",
+        "status": "DELIVERY_ACK",
+        "message": {
+          "senderKeyDistributionMessage": {
+            "groupId": "553194972541-1458753196@g.us",
+            "axolotlSenderKeyDistributionMessage": "MwiJwZ3yARATGiBL/lf4LwNvXodo0WUQ7lvolg52FKyXORs3Hk3uSHRQ7CIhBW4ww9d20ekNoKUP6CGtpZNlJS1OXT5XYcpBupL85jdM"
+          },
+          "messageContextInfo": {
+            "messageSecret": "vaA6T4BOyEpjt7Zdr+SV7Djj4Rh/iKetPG+vejnhMcw="
+          },
+          "stickerMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.15575-24/596842528_930390452947576_1568609292344739958_n.enc?ccb=11-4&oh=01_Q5Aa4AGU7dGxugnNq3E__-3_3ZGIOYmYKAhuve3jbfgClMOD9Q&oe=69EE785E&_nc_sid=5e03e0&mms3=true",
+            "fileSha256": "AtlSLX6GYvxkx8Qq7zfs9/lCLqaTERPCSs5z1AIJPVk=",
+            "fileEncSha256": "RPRProKixq47jEaG4LiJegdMYyBUJbDtFOx00p+9AeI=",
+            "mediaKey": "vbX1wWPrCp2obkiRGLcYROXW5Wk/23733aov8b9x5kI=",
+            "mimetype": "image/webp",
+            "height": 64,
+            "width": 64,
+            "directPath": "/v/t62.15575-24/596842528_930390452947576_1568609292344739958_n.enc?ccb=11-4&oh=01_Q5Aa4AGU7dGxugnNq3E__-3_3ZGIOYmYKAhuve3jbfgClMOD9Q&oe=69EE785E&_nc_sid=5e03e0",
+            "fileLength": "27426",
+            "mediaKeyTimestamp": "1774647316",
+            "isAnimated": false,
+            "contextInfo": {
+              "stanzaId": "ACD5D05A6F639AA85668404B4A95582E",
+              "participant": "111798099390509@lid",
+              "quotedMessage": {
+                "conversation": "Petrel da equipe Rocket, juiz, Plínio e surfista estão sendo bem procurados"
+              }
+            },
+            "stickerSentTs": "1774647316494",
+            "isAvatar": false,
+            "isAiSticker": false,
+            "isLottie": false
+          }
+        },
+        "contextInfo": {
+          "stanzaId": "ACD5D05A6F639AA85668404B4A95582E",
+          "participant": "111798099390509@lid",
+          "quotedMessage": {
+            "conversation": "Petrel da equipe Rocket, juiz, Plínio e surfista estão sendo bem procurados"
+          }
+        },
+        "messageType": "stickerMessage",
+        "messageTimestamp": 1774647325,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:33.075Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:32.868Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "144302411931822@lid",
+          "fromMe": true,
+          "id": "AC780DDD70BEC66F743AA4C02E226C4E"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Esse cara é um louco me pegou"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647325,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:32.842Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:32.697Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "144302411931822@lid",
+          "fromMe": true,
+          "id": "AC62E90678C7E8FE28B24E3B708118DC"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ksksksksksks"
+        },
+        "contextInfo": {
+          "stanzaId": "3EB01302EFD8298202D09A",
+          "participant": "144302411931822@lid",
+          "quotedMessage": {
+            "audioMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7117-24/610131343_4383690301901259_2872475310979036112_n.enc?ccb=11-4&oh=01_Q5Aa4AEOLkH9NVyiUhASSS5Vov3SAxnwd7D_GVNtZWT_OFaxVg&oe=69EE45BD&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "audio/ogg; codecs=opus",
+              "fileSha256": "1hjRVJDVQ8C+EvB9xsXMF1VN5Abm5WJ61T9R6FVFvRc=",
+              "fileLength": "63261",
+              "seconds": 31,
+              "ptt": true,
+              "mediaKey": "6hKMQkXglOspsScOtHRB6TmyiQnBjPVabLg/OrMyrG8=",
+              "fileEncSha256": "s4EjAp04xjjK+iSTpgpzNORIjz0Rmi4RYKTcyNnvxtw=",
+              "directPath": "/v/t62.7117-24/610131343_4383690301901259_2872475310979036112_n.enc?ccb=11-4&oh=01_Q5Aa4AEOLkH9NVyiUhASSS5Vov3SAxnwd7D_GVNtZWT_OFaxVg&oe=69EE45BD&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1774637415"
+            }
+          }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647325,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:32.675Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:32.090Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "206905871966356@lid",
+          "fromMe": true,
+          "id": "AC66A447A344BB5565B5ACB722CE448A"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ksksskksksk"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647324,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:32.064Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:31.847Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "206905871966356@lid",
+          "fromMe": true,
+          "id": "AC1FB7B914410C077CF2D49535A3C35A"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Queria +2"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647324,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:31.820Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:31.358Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "53197481705632@lid",
+          "fromMe": true,
+          "id": "AC2EF07712D92DB783150764C5596DE8"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Mas tem umas 60"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647323,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:31.332Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:31.018Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "53197481705632@lid",
+          "fromMe": true,
+          "id": "ACA5CD0588CCCF571506902A7D5A8FDF"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "N tanta coisa"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647323,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:30.985Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:30.789Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "53197481705632@lid",
+          "fromMe": true,
+          "id": "AC1424B5F25DFB8B6B0649FEEFED1149"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Acho q até a próx"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647323,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:30.734Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:30.557Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "53197481705632@lid",
+          "fromMe": true,
+          "id": "AC20D58C9A727B82EBCE6585EA57ECFB"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Tenho sim"
+        },
+        "contextInfo": {
+          "stanzaId": "3A1D8593ADAFF4C20800",
+          "participant": "53197481705632@lid",
+          "quotedMessage": {
+            "audioMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7117-24/612753028_2272708073256247_1925348954454105605_n.enc?ccb=11-4&oh=01_Q5Aa4AFK2U-lZaJzMhfROo4_TNpaPDcQBDhPxu3OjC-5eNyC6g&oe=69EE22F0&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "audio/ogg; codecs=opus",
+              "fileSha256": "V2QLsBuN4uvhNHkv74199GIKLg1pNonpP4u7LG9ecBU=",
+              "fileLength": "17314",
+              "seconds": 7,
+              "ptt": true,
+              "mediaKey": "ckaukGNQa4MP/ykqvNj/fMXQnSAu87fL+0Rssy0MBVM=",
+              "fileEncSha256": "mcXMXZ6czbNLJjDzVKp6L0a7NjjUwHwgEGMwHA0lzQM=",
+              "directPath": "/v/t62.7117-24/612753028_2272708073256247_1925348954454105605_n.enc?ccb=11-4&oh=01_Q5Aa4AFK2U-lZaJzMhfROo4_TNpaPDcQBDhPxu3OjC-5eNyC6g&oe=69EE22F0&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1774633008"
+            }
+          }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647322,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:30.530Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:29.929Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "53197481705632@lid",
+          "fromMe": true,
+          "id": "ACC277C023AE2C7BC9C03745D98819EF"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Tmj meu bom 🫡"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647322,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:29.902Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:29.797Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "206905871966356@lid",
+          "fromMe": true,
+          "id": "AC04D3ADFE37E39528A1305451EF09AE"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.7118-24/612766357_1649571276468982_6069426878611516344_n.enc?ccb=11-4&oh=01_Q5Aa4AE9N4cjx4CRL-u8LrfmGQwfcyO5oN6hOvoUAc4iC3SlXQ&oe=69EE52D2&_nc_sid=5e03e0&mms3=true",
+            "mimetype": "image/jpeg",
+            "caption": "Tu n tem isso n MN ?",
+            "fileSha256": "v+vtKJgQ7DQcBHYOzBwZim0Haa8g0rssIXb4vfDu/To=",
+            "fileLength": "257443",
+            "height": 1599,
+            "width": 899,
+            "mediaKey": "oI3mRkIrpSSlZpmiXtBWEqPoRD02QGty3q1RLfuiYe4=",
+            "fileEncSha256": "ucPioGReOsYkKd5VFtpgGjCvqFtjibWYmrYv/8RE+9w=",
+            "directPath": "/v/t62.7118-24/612766357_1649571276468982_6069426878611516344_n.enc?ccb=11-4&oh=01_Q5Aa4AE9N4cjx4CRL-u8LrfmGQwfcyO5oN6hOvoUAc4iC3SlXQ&oe=69EE52D2&_nc_sid=5e03e0",
+            "mediaKeyTimestamp": "1774636703",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIADwAIQMBIgACEQEDEQH/xAAuAAADAQEBAAAAAAAAAAAAAAAAAgMEAQUBAQEBAQAAAAAAAAAAAAAAAAIDAAH/2gAMAwEAAhADEAAAAOrxS3rj0dPTMPa3l2ddcVvtlHFOBK06Us67sDCVk9zKF6HY85ujAf8A/8QAJBAAAgIBAwMFAQAAAAAAAAAAAQIAEQMSITFBUVIEExQiMrH/2gAIAQEAAT8AGPGr8czNjFq29kzUqtfURmVif7KXzMOdgQxTao2VsrAgEaYGcmitwpoUWOe01TAiOGL7zbVQUQBK/AmRQOBzPjDznpwfZ37wkmq2i3+RHH0E1p4mYSUxgSms0dpgDMCbmUsuOwes+SPETG5XGogXemnp1IDUZ6sEoB3nx8k0lGAZCe0UqdySKmLPisjVM7qwAU8Ga37iD742vpxCxNREVV2EQ+4rX0Mpe0//xAAgEQACAgEDBQAAAAAAAAAAAAAAAREhUQISMSIyQlKR/9oACAECAQE/ADmKI0+z+C7rdHkb3gai2xPqRKOYNSwXk//EACARAAIDAAAHAQAAAAAAAAAAAAABAhFREBMhMTJBU5H/2gAIAQMBAT8ApYa/ZzZ/KP6Lxk0k2tJKop0UtItok+/DqrVkXpccP//Z",
+            "contextInfo": {},
+            "scansSidecar": "atqrqVPLGHOAoiTJUP+yUsUyGNwya6gzlYsDwHNK0y2yaf0jT5c1Dg==",
+            "scanLengths": [
+              20187,
+              112997,
+              50868,
+              73391
+            ],
+            "midQualityFileSha256": "mrR3WSqsUQ/wQrL8Imn5FvMaMpQbO7HmJUqyrn0DeAo="
+          }
+        },
+        "contextInfo": {},
+        "messageType": "imageMessage",
+        "messageTimestamp": 1774647322,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:29.769Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:29.269Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "206905871966356@lid",
+          "fromMe": true,
+          "id": "AC96F6387CD7D100783534A975A58C68"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ksksskksksks"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647321,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:29.239Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:29.031Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "206905871966356@lid",
+          "fromMe": true,
+          "id": "AC2551E4FC36B39FF0965B643D50CB25"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Isso tá MT supervalorizado"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647321,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:29.005Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:28.790Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "206905871966356@lid",
+          "fromMe": true,
+          "id": "AC9A67CD813818B065BEFE6BC5915A97"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Ksksksksksksksk"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647321,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:28.763Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:28.716Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "553192891512@s.whatsapp.net",
+          "fromMe": true,
+          "id": "AC48001482258E021856827C3E5E8B3D"
+        },
+        "pushName": "",
+        "status": "DELIVERY_ACK",
+        "message": {
+          "conversation": "Oq vc tá fazendo agr meu neném ?",
+          "messageContextInfo": {
+            "messageSecret": "u2ny26zzlj9sBJgADc9AY4aOhdhrepsC2VcEBKed3Q0="
+          }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774646551,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:28.669Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  },
+  {
+    "ts": "2026-03-27T21:35:22.792Z",
+    "evento": "messages.upsert",
+    "payloadCompleto": {
+      "event": "messages.upsert",
+      "instance": "leilao-bot",
+      "data": {
+        "key": {
+          "remoteJid": "206905871966356@lid",
+          "fromMe": true,
+          "id": "ACDB379D01A3D2B282A7AAE82186FB47"
+        },
+        "pushName": "Carlos Reis",
+        "status": "SERVER_ACK",
+        "message": {
+          "conversation": "Mas tem MT no mercado"
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1774647315,
+        "instanceId": "59469b0a-1359-4eba-b2f3-b7642e05e6bb",
+        "source": "android"
+      },
+      "destination": "http://n8n:5678/webhook/processa-voto",
+      "date_time": "2026-03-27T18:35:22.771Z",
+      "sender": "553194374607@s.whatsapp.net",
+      "server_url": "http://localhost:8080",
+      "apikey": "D7C05CEA1C64-4B63-A232-BA09E6F3DD41"
+    }
+  }
+]

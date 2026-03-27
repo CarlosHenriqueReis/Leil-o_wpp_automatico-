@@ -1,1 +1,363 @@
-[]
+[
+  {
+    "id": "1774646386630",
+    "nome": "Leilão 27/03/2026",
+    "data": "2026-03-27T21:19:46.630Z",
+    "cartas": [
+      {
+        "img_url": "http://localhost:3000/uploads/1774644339377-960139388-WhatsApp_Image_2026-03-27_at_17.38.57_(1).jpeg",
+        "nome": "Jolteon (169/∞)",
+        "valor": "1"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644374239-285393298-WhatsApp_Image_2026-03-27_at_17.38.57_(2).jpeg",
+        "nome": "Espeon 033/131",
+        "valor": "1"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644384608-297290676-WhatsApp_Image_2026-03-27_at_17.39.02.jpeg",
+        "nome": "Vaporeon (168/∞)",
+        "valor": "1"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644409127-407520795-WhatsApp_Image_2026-03-27_at_17.39.05.jpeg",
+        "nome": "Glaceon (171/∞)",
+        "valor": "1"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644416796-274657276-WhatsApp_Image_2026-03-27_at_17.39.03.jpeg",
+        "nome": "Sylveon (172/∞)",
+        "valor": "1"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644426223-85274486-WhatsApp_Image_2026-03-27_at_17.38.56.jpeg",
+        "nome": "Sylveon (87/131) HP",
+        "valor": "40"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644439279-638209694-WhatsApp_Image_2026-03-27_at_17.38.57.jpeg",
+        "nome": "Mega Hawlucha ex Inglês (116/217)",
+        "valor": "6"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644478223-702483060-WhatsApp_Image_2026-03-27_at_17.38.56_(1).jpeg",
+        "nome": "Eevee-V (0113-15/140)",
+        "valor": "40"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644496316-883108490-WhatsApp_Image_2026-03-27_at_17.39.08_(1).jpeg",
+        "nome": "Êri (136/131)",
+        "valor": "9"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644503469-335151197-WhatsApp_Image_2026-03-27_at_17.39.08.jpeg",
+        "nome": "Mismagius (212/193) SP",
+        "valor": "148"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644521579-435896021-WhatsApp_Image_2026-03-27_at_17.39.09.jpeg",
+        "nome": "Celebi-V (245/264) SP",
+        "valor": "275"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644557369-936649780-WhatsApp_Image_2026-03-27_at_17.39.09_(3).jpeg",
+        "nome": "Rillaboom (197/189)",
+        "valor": "54"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644578267-353554351-WhatsApp_Image_2026-03-27_at_17.39.09_(1).jpeg",
+        "nome": "Miriam (238/198)",
+        "valor": "50"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644594416-600013873-WhatsApp_Image_2026-03-27_at_17.39.09_(2).jpeg",
+        "nome": "Glória (TG26/TG30)",
+        "valor": "100"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644607156-671471764-WhatsApp_Image_2026-03-27_at_17.39.10.jpeg",
+        "nome": "Lucario e Melmetal-GX (SM192/250)",
+        "valor": "200"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644633019-267806228-WhatsApp_Image_2026-03-27_at_17.39.09_(4).jpeg",
+        "nome": "Eevee (TG11/TG30)",
+        "valor": "170"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644643713-907614473-WhatsApp_Image_2026-03-27_at_17.39.10_(1).jpeg",
+        "nome": "Blastoise (01/25)",
+        "valor": "65"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644661778-33749180-WhatsApp_Image_2026-03-27_at_17.39.10_(4).jpeg",
+        "nome": "Vikavolt (230/217)",
+        "valor": "14"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644703601-903878692-WhatsApp_Image_2026-03-27_at_17.39.10_(2).jpeg",
+        "nome": "Whimsicott-V-ASTRO (175/172)",
+        "valor": "30"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644712490-953401459-WhatsApp_Image_2026-03-27_at_17.39.11_(1).jpeg",
+        "nome": "Mimikyu-V SP (148/163)",
+        "valor": "250"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644809372-233212848-WhatsApp_Image_2026-03-27_at_17.39.13_(2).jpeg",
+        "nome": "Sylveon Sombrio-V (SWSH134/71),",
+        "valor": "40"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644847802-841741216-WhatsApp_Image_2026-03-27_at_17.39.12_(1).jpeg",
+        "nome": "Pikachu-V-UNIÃO (SWSH141/71)",
+        "valor": "40"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644862233-155404185-WhatsApp_Image_2026-03-27_at_17.39.11_(2).jpeg",
+        "nome": "Pikachu-V-UNIÃO (SWSH139/71)",
+        "valor": "40"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644875746-526756461-WhatsApp_Image_2026-03-27_at_17.39.12.jpeg",
+        "nome": "Misdreavus (233/217)",
+        "valor": "18"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644887549-250829563-WhatsApp_Image_2026-03-27_at_17.39.11_(3).jpeg",
+        "nome": "Eevee e Snorlax-GX (SM169/250) SP",
+        "valor": "500"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644904162-571072260-WhatsApp_Image_2026-03-27_at_17.39.12_(3).jpeg",
+        "nome": "Shedinja (144/132)",
+        "valor": "10"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644916095-712272452-WhatsApp_Image_2026-03-27_at_17.39.12_(2).jpeg",
+        "nome": "Cassiopeia (086/064)",
+        "valor": "17"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644925944-117879895-WhatsApp_Image_2026-03-27_at_17.39.12_(4).jpeg",
+        "nome": "Greninja Star (SWSH144/71)",
+        "valor": "140"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644953290-472587802-WhatsApp_Image_2026-03-27_at_17.39.13_(1).jpeg",
+        "nome": "Moltres, Zapdos e Articuno-GX (44/68) MP",
+        "valor": "250"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644962151-510155188-WhatsApp_Image_2026-03-27_at_17.39.13.jpeg",
+        "nome": "Xerneas-EX (97/146)",
+        "valor": "24"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644974114-117062319-WhatsApp_Image_2026-03-27_at_17.39.12_(5).jpeg",
+        "nome": "Groudon da Equipe Magma (11/25)",
+        "valor": "50"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774645012783-860179438-WhatsApp_Image_2026-03-27_at_17.39.14_(1).jpeg",
+        "nome": "Cresselia (228/203)",
+        "valor": "70"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644995746-187185867-WhatsApp_Image_2026-03-27_at_17.39.14.jpeg",
+        "nome": "Zapdos da Equipe Rocket (07/25)",
+        "valor": "22"
+      }
+    ]
+  },
+  {
+    "id": "1774645076862",
+    "nome": "Leilão 27/03/2026",
+    "data": "2026-03-27T20:57:56.862Z",
+    "cartas": [
+      {
+        "img_url": "http://localhost:3000/uploads/1774644339377-960139388-WhatsApp_Image_2026-03-27_at_17.38.57_(1).jpeg",
+        "nome": "Jolteon (169/∞)",
+        "valor": "1"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644374239-285393298-WhatsApp_Image_2026-03-27_at_17.38.57_(2).jpeg",
+        "nome": "Espeon 033/131",
+        "valor": "1"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644384608-297290676-WhatsApp_Image_2026-03-27_at_17.39.02.jpeg",
+        "nome": "Vaporeon (168/∞)",
+        "valor": "1"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644409127-407520795-WhatsApp_Image_2026-03-27_at_17.39.05.jpeg",
+        "nome": "Glaceon (171/∞)",
+        "valor": "1"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644416796-274657276-WhatsApp_Image_2026-03-27_at_17.39.03.jpeg",
+        "nome": "Sylveon (172/∞)",
+        "valor": "1"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644426223-85274486-WhatsApp_Image_2026-03-27_at_17.38.56.jpeg",
+        "nome": "Sylveon (87/131) HP",
+        "valor": "40"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644439279-638209694-WhatsApp_Image_2026-03-27_at_17.38.57.jpeg",
+        "nome": "Mega Hawlucha ex Inglês (116/217)",
+        "valor": "6"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644478223-702483060-WhatsApp_Image_2026-03-27_at_17.38.56_(1).jpeg",
+        "nome": "Eevee-V (0113-15/140)",
+        "valor": "40"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644496316-883108490-WhatsApp_Image_2026-03-27_at_17.39.08_(1).jpeg",
+        "nome": "Êri (136/131)",
+        "valor": "9"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644503469-335151197-WhatsApp_Image_2026-03-27_at_17.39.08.jpeg",
+        "nome": "Mismagius (212/193) SP",
+        "valor": "148"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644521579-435896021-WhatsApp_Image_2026-03-27_at_17.39.09.jpeg",
+        "nome": "Celebi-V (245/264) SP",
+        "valor": "275"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644557369-936649780-WhatsApp_Image_2026-03-27_at_17.39.09_(3).jpeg",
+        "nome": "Rillaboom (197/189)",
+        "valor": "54"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644578267-353554351-WhatsApp_Image_2026-03-27_at_17.39.09_(1).jpeg",
+        "nome": "Miriam (238/198)",
+        "valor": "50"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644594416-600013873-WhatsApp_Image_2026-03-27_at_17.39.09_(2).jpeg",
+        "nome": "Glória (TG26/TG30)",
+        "valor": "100"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644607156-671471764-WhatsApp_Image_2026-03-27_at_17.39.10.jpeg",
+        "nome": "Lucario e Melmetal-GX (SM192/250)",
+        "valor": "200"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644633019-267806228-WhatsApp_Image_2026-03-27_at_17.39.09_(4).jpeg",
+        "nome": "Eevee (TG11/TG30)",
+        "valor": "170"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644643713-907614473-WhatsApp_Image_2026-03-27_at_17.39.10_(1).jpeg",
+        "nome": "Blastoise (01/25)",
+        "valor": "65"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644661778-33749180-WhatsApp_Image_2026-03-27_at_17.39.10_(4).jpeg",
+        "nome": "Vikavolt (230/217)",
+        "valor": "14"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644703601-903878692-WhatsApp_Image_2026-03-27_at_17.39.10_(2).jpeg",
+        "nome": "Whimsicott-V-ASTRO (175/172)",
+        "valor": ""
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644712490-953401459-WhatsApp_Image_2026-03-27_at_17.39.11_(1).jpeg",
+        "nome": "Mimikyu-V SP (148/163)",
+        "valor": "250"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644809372-233212848-WhatsApp_Image_2026-03-27_at_17.39.13_(2).jpeg",
+        "nome": "Sylveon Sombrio-V (SWSH134/71),",
+        "valor": "40"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644847802-841741216-WhatsApp_Image_2026-03-27_at_17.39.12_(1).jpeg",
+        "nome": "Pikachu-V-UNIÃO (SWSH141/71)",
+        "valor": "40"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644862233-155404185-WhatsApp_Image_2026-03-27_at_17.39.11_(2).jpeg",
+        "nome": "Pikachu-V-UNIÃO (SWSH139/71)",
+        "valor": "40"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644875746-526756461-WhatsApp_Image_2026-03-27_at_17.39.12.jpeg",
+        "nome": "Misdreavus (233/217)",
+        "valor": "18"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644887549-250829563-WhatsApp_Image_2026-03-27_at_17.39.11_(3).jpeg",
+        "nome": "Eevee e Snorlax-GX (SM169/250) SP",
+        "valor": "500"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644904162-571072260-WhatsApp_Image_2026-03-27_at_17.39.12_(3).jpeg",
+        "nome": "Shedinja (144/132)",
+        "valor": "10"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644916095-712272452-WhatsApp_Image_2026-03-27_at_17.39.12_(2).jpeg",
+        "nome": "Cassiopeia (086/064)",
+        "valor": "17"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644925944-117879895-WhatsApp_Image_2026-03-27_at_17.39.12_(4).jpeg",
+        "nome": "Greninja Star (SWSH144/71)",
+        "valor": "140"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644953290-472587802-WhatsApp_Image_2026-03-27_at_17.39.13_(1).jpeg",
+        "nome": "Moltres, Zapdos e Articuno-GX (44/68) MP",
+        "valor": "250"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644962151-510155188-WhatsApp_Image_2026-03-27_at_17.39.13.jpeg",
+        "nome": "Xerneas-EX (97/146)",
+        "valor": "24"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644974114-117062319-WhatsApp_Image_2026-03-27_at_17.39.12_(5).jpeg",
+        "nome": "Groudon da Equipe Magma (11/25)",
+        "valor": "50"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774645012783-860179438-WhatsApp_Image_2026-03-27_at_17.39.14_(1).jpeg",
+        "nome": "Cresselia (228/203)",
+        "valor": "70"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774644995746-187185867-WhatsApp_Image_2026-03-27_at_17.39.14.jpeg",
+        "nome": "Zapdos da Equipe Rocket (07/25)",
+        "valor": "22"
+      }
+    ]
+  },
+  {
+    "id": "1774404382812",
+    "nome": "teste",
+    "data": "2026-03-25T02:06:22.812Z",
+    "cartas": [
+      {
+        "img_url": "http://localhost:3000/uploads/1774404312821-877486530-ab464d0fd68843a8.webp",
+        "nome": "teste",
+        "valor": "123"
+      },
+      {
+        "img_url": "http://localhost:3000/uploads/1774404372445-639885516-2025-11-15_f4af06dd8ea9c8_(1).webp",
+        "nome": "trada",
+        "valor": "123"
+      }
+    ]
+  }
+]

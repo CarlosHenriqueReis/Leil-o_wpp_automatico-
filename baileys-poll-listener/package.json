@@ -1,0 +1,16 @@
+{
+  "name": "baileys-poll-listener",
+  "version": "1.0.0",
+  "description": "Serviço passivo para capturar votos das enquetes do WhatsApp e enviar via POST para o Dashboard Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^6.7.7",
+    "axios": "^1.6.8",
+    "pino": "^8.20.0",
+    "qrcode-terminal": "^0.12.0"
+  }
+}

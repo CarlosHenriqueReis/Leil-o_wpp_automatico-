@@ -1,0 +1,384 @@
+[2026-04-07T00:27:33.023Z] [INFO] Recebido update de enquete. Procurando ID 3EB0DDB3B1BF4AF05DC5
+[2026-04-07T00:27:33.024Z] [-] Voto ignorado: Tentou votar em uma enquete (3EB0DDB3B1BF4AF05DC5) que não está na nossa memória.
+[2026-04-07T00:29:46.971Z] [INFO] Recebido update de enquete. Procurando ID 3EB05F83AC195856A6F4
+[2026-04-07T00:29:46.971Z] [-] Voto ignorado: Tentou votar em uma enquete (3EB05F83AC195856A6F4) que não está na nossa memória.
+[2026-04-07T00:29:47.770Z] [INFO] Recebido update de enquete. Procurando ID 3EB05F83AC195856A6F4
+[2026-04-07T00:29:47.771Z] [-] Voto ignorado: Tentou votar em uma enquete (3EB05F83AC195856A6F4) que não está na nossa memória.
+[2026-04-07T00:30:06.314Z] [+] Enquete Registrada na Memória: Enquete 3 (ID: AC2776D231D7B92F57CF55230EBD0F1E)
+[2026-04-07T00:30:12.969Z] [INFO] Recebido update de enquete. Procurando ID AC2776D231D7B92F57CF55230EBD0F1E
+[2026-04-07T00:30:12.970Z] [BAILEYS] Decifrou Voto (Poll: Enquete 3 | Eleitor: 120363041701998287)
+[2026-04-07T00:30:12.977Z] [ERRO] Falha ao processar voto: 
+[2026-04-07T00:30:16.649Z] [INFO] Recebido update de enquete. Procurando ID AC2776D231D7B92F57CF55230EBD0F1E
+[2026-04-07T00:30:16.650Z] [BAILEYS] Decifrou Voto (Poll: Enquete 3 | Eleitor: 120363041701998287)
+[2026-04-07T00:30:16.653Z] [ERRO] Falha ao processar voto: 
+[2026-04-07T00:30:18.274Z] [INFO] Recebido update de enquete. Procurando ID AC2776D231D7B92F57CF55230EBD0F1E
+[2026-04-07T00:30:18.274Z] [BAILEYS] Decifrou Voto (Poll: Enquete 3 | Eleitor: 120363041701998287)
+[2026-04-07T00:30:18.279Z] [ERRO] Falha ao processar voto: 
+[2026-04-07T00:30:19.843Z] [INFO] Recebido update de enquete. Procurando ID AC2776D231D7B92F57CF55230EBD0F1E
+[2026-04-07T00:30:19.844Z] [BAILEYS] Decifrou Voto (Poll: Enquete 3 | Eleitor: 120363041701998287)
+[2026-04-07T00:30:19.848Z] [ERRO] Falha ao processar voto: 
+[2026-04-07T00:30:25.519Z] [INFO] Recebido update de enquete. Procurando ID 3EB052E90E59F3F73495
+[2026-04-07T00:30:25.520Z] [-] Voto ignorado: Tentou votar em uma enquete (3EB052E90E59F3F73495) que não está na nossa memória.
+[2026-04-07T00:31:19.536Z] [INFO] Recebido update de enquete. Procurando ID AC2776D231D7B92F57CF55230EBD0F1E
+[2026-04-07T00:31:19.536Z] [BAILEYS] Decifrou Voto (Poll: Enquete 3 | Eleitor: 120363041701998287)
+[2026-04-07T00:31:19.541Z] [ERRO] Falha ao processar voto: 
+[2026-04-07T00:31:21.551Z] [INFO] Recebido update de enquete. Procurando ID AC2776D231D7B92F57CF55230EBD0F1E
+[2026-04-07T00:31:21.552Z] [BAILEYS] Decifrou Voto (Poll: Enquete 3 | Eleitor: 120363041701998287)
+[2026-04-07T00:31:21.555Z] [ERRO] Falha ao processar voto: 
+[2026-04-07T00:31:24.419Z] [INFO] Recebido update de enquete. Procurando ID AC2776D231D7B92F57CF55230EBD0F1E
+[2026-04-07T00:31:24.419Z] [BAILEYS] Decifrou Voto (Poll: Enquete 3 | Eleitor: 120363041701998287)
+[2026-04-07T00:31:24.423Z] [ERRO] Falha ao processar voto: 
+[2026-04-07T00:32:44.285Z] [+] Enquete Registrada na Memória: ETB DESTINED RIVALS (ID: 3EB04BA268DB1FEB5B15)
+[2026-04-07T00:32:48.805Z] [INFO] Recebido update de enquete. Procurando ID 3EB04BA268DB1FEB5B15
+[2026-04-07T00:32:48.806Z] [BAILEYS] Decifrou Voto (Poll: ETB DESTINED RIVALS | Eleitor: 120363421027375248)
+[2026-04-07T00:32:48.815Z] [ERRO] Falha ao processar voto:
+AggregateError
+    at AxiosError.from (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:874:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:3196:25)
+    at RedirectableRequest.emit (node:events:531:35)
+    at eventHandlers.<computed> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:105:11)
+    at Socket.socketErrorListener (node:_http_client:518:5)
+    at Socket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:4236:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:112:38)
+[2026-04-07T00:33:10.935Z] [+] Enquete Registrada na Memória: Enquete 5 (ID: AC7251086C6E95CDB9D51A33DD4F8A90)
+[2026-04-07T00:33:15.904Z] [INFO] Recebido update de enquete. Procurando ID AC7251086C6E95CDB9D51A33DD4F8A90
+[2026-04-07T00:33:15.905Z] [BAILEYS] Decifrou Voto (Poll: Enquete 5 | Eleitor: 120363041701998287)
+[2026-04-07T00:33:15.909Z] [ERRO] Falha ao processar voto:
+AggregateError
+    at AxiosError.from (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:874:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:3196:25)
+    at RedirectableRequest.emit (node:events:531:35)
+    at eventHandlers.<computed> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:105:11)
+    at Socket.socketErrorListener (node:_http_client:518:5)
+    at Socket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:4236:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:112:38)
+[2026-04-07T00:33:18.326Z] [INFO] Recebido update de enquete. Procurando ID AC7251086C6E95CDB9D51A33DD4F8A90
+[2026-04-07T00:33:18.327Z] [BAILEYS] Decifrou Voto (Poll: Enquete 5 | Eleitor: 120363041701998287)
+[2026-04-07T00:33:18.331Z] [ERRO] Falha ao processar voto:
+AggregateError
+    at AxiosError.from (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:874:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:3196:25)
+    at RedirectableRequest.emit (node:events:531:35)
+    at eventHandlers.<computed> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:105:11)
+    at Socket.socketErrorListener (node:_http_client:518:5)
+    at Socket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:4236:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:112:38)
+[2026-04-07T00:33:21.287Z] [INFO] Recebido update de enquete. Procurando ID AC7251086C6E95CDB9D51A33DD4F8A90
+[2026-04-07T00:33:21.287Z] [BAILEYS] Decifrou Voto (Poll: Enquete 5 | Eleitor: 120363041701998287)
+[2026-04-07T00:33:21.291Z] [ERRO] Falha ao processar voto:
+AggregateError
+    at AxiosError.from (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:874:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:3196:25)
+    at RedirectableRequest.emit (node:events:531:35)
+    at eventHandlers.<computed> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:105:11)
+    at Socket.socketErrorListener (node:_http_client:518:5)
+    at Socket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:4236:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:112:38)
+[2026-04-07T00:33:21.767Z] [INFO] Recebido update de enquete. Procurando ID AC7251086C6E95CDB9D51A33DD4F8A90
+[2026-04-07T00:33:21.768Z] [BAILEYS] Decifrou Voto (Poll: Enquete 5 | Eleitor: 120363041701998287)
+[2026-04-07T00:33:21.773Z] [ERRO] Falha ao processar voto:
+AggregateError
+    at AxiosError.from (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:874:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:3196:25)
+    at RedirectableRequest.emit (node:events:531:35)
+    at eventHandlers.<computed> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:105:11)
+    at Socket.socketErrorListener (node:_http_client:518:5)
+    at Socket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:4236:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:112:38)
+[2026-04-07T00:33:22.634Z] [INFO] Recebido update de enquete. Procurando ID AC7251086C6E95CDB9D51A33DD4F8A90
+[2026-04-07T00:33:22.634Z] [BAILEYS] Decifrou Voto (Poll: Enquete 5 | Eleitor: 120363041701998287)
+[2026-04-07T00:33:22.638Z] [ERRO] Falha ao processar voto:
+AggregateError
+    at AxiosError.from (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:874:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:3196:25)
+    at RedirectableRequest.emit (node:events:531:35)
+    at eventHandlers.<computed> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:105:11)
+    at Socket.socketErrorListener (node:_http_client:518:5)
+    at Socket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:4236:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:112:38)
+[2026-04-07T00:33:23.405Z] [INFO] Recebido update de enquete. Procurando ID AC7251086C6E95CDB9D51A33DD4F8A90
+[2026-04-07T00:33:23.406Z] [BAILEYS] Decifrou Voto (Poll: Enquete 5 | Eleitor: 120363041701998287)
+[2026-04-07T00:33:23.409Z] [ERRO] Falha ao processar voto:
+AggregateError
+    at AxiosError.from (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:874:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:3196:25)
+    at RedirectableRequest.emit (node:events:531:35)
+    at eventHandlers.<computed> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:105:11)
+    at Socket.socketErrorListener (node:_http_client:518:5)
+    at Socket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\node_modules\axios\dist\node\axios.cjs:4236:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:112:38)
+[2026-04-07T00:34:13.446Z] [+] Enquete Registrada na Memória: Drakloak (212/193) (ID: 3EB010934B560376F374)
+[2026-04-07T00:34:44.931Z] [INFO] Recebido update de enquete. Procurando ID 3EB010934B560376F374
+[2026-04-07T00:34:44.932Z] [BAILEYS] Decifrou Voto (Poll: Drakloak (212/193) | Eleitor: 120363421027375248)
+[2026-04-07T00:34:44.978Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:35:07.397Z] [+] Enquete Registrada na Memória: Enquete 8 (ID: ACA4D60F96F825F434FF011FE198F705)
+[2026-04-07T00:35:11.472Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:35:11.472Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:35:11.483Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:35:15.174Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:35:15.175Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:35:15.180Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:35:16.211Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:35:16.212Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:35:16.216Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:36:22.011Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:36:22.011Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:36:22.017Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:36:23.051Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:36:23.052Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:36:23.059Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:36:24.015Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:36:24.015Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:36:24.022Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:38:40.802Z] [INFO] Recebido update de enquete. Procurando ID 3EB0F988581B90B1D9F8
+[2026-04-07T00:38:40.803Z] [-] Voto ignorado: Tentou votar em uma enquete (3EB0F988581B90B1D9F8) que não está na nossa memória.
+[2026-04-07T00:38:46.744Z] [INFO] Recebido update de enquete. Procurando ID 3EB052E90E59F3F73495
+[2026-04-07T00:38:46.744Z] [-] Voto ignorado: Tentou votar em uma enquete (3EB052E90E59F3F73495) que não está na nossa memória.
+[2026-04-07T00:40:57.310Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:40:57.311Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:40:57.312Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:40:57.345Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:40:57.658Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:40:57.659Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:40:57.660Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:40:57.666Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:41:02.728Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:41:02.729Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:41:02.729Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:41:02.736Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:41:03.825Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:41:03.826Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:41:03.827Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:41:03.832Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:41:40.055Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:41:40.056Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:41:40.056Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:41:40.063Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:41:40.355Z] [INFO] Recebido update de enquete. Procurando ID ACA4D60F96F825F434FF011FE198F705
+[2026-04-07T00:41:40.356Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:41:40.357Z] [BAILEYS] Decifrou Voto (Poll: Enquete 8 | Eleitor: 120363041701998287)
+[2026-04-07T00:41:40.363Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:41:47.419Z] [INFO] Recebido update de enquete. Procurando ID 3EB04BA268DB1FEB5B15
+[2026-04-07T00:41:47.419Z] [DEBUG] pollAggregated: [{"name":"899","voters":[]},{"name":"999","voters":[]},{"name":"1098","voters":[]},{"name":"1198","voters":[]}]
+[2026-04-07T00:41:47.420Z] [BAILEYS] Decifrou Voto (Poll: ETB DESTINED RIVALS | Eleitor: 120363421027375248)
+[2026-04-07T00:41:47.427Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:41:57.863Z] [+] Enquete Registrada na Memória: Enquete nova (ID: AC3EBDD588FF3E9E133460203AB8E686)
+[2026-04-07T00:42:04.152Z] [INFO] Recebido update de enquete. Procurando ID AC3EBDD588FF3E9E133460203AB8E686
+[2026-04-07T00:42:04.153Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:42:04.154Z] [BAILEYS] Decifrou Voto (Poll: Enquete nova | Eleitor: 120363041701998287)
+[2026-04-07T00:42:04.162Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:42:05.259Z] [INFO] Recebido update de enquete. Procurando ID AC3EBDD588FF3E9E133460203AB8E686
+[2026-04-07T00:42:05.260Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:42:05.261Z] [BAILEYS] Decifrou Voto (Poll: Enquete nova | Eleitor: 120363041701998287)
+[2026-04-07T00:42:05.268Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:42:53.585Z] [INFO] Recebido update de enquete. Procurando ID AC3EBDD588FF3E9E133460203AB8E686
+[2026-04-07T00:42:53.585Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:42:53.586Z] [BAILEYS] Decifrou Voto (Poll: Enquete nova | Eleitor: 120363041701998287)
+[2026-04-07T00:42:53.593Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:42:53.910Z] [INFO] Recebido update de enquete. Procurando ID AC3EBDD588FF3E9E133460203AB8E686
+[2026-04-07T00:42:53.911Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:42:53.912Z] [BAILEYS] Decifrou Voto (Poll: Enquete nova | Eleitor: 120363041701998287)
+[2026-04-07T00:42:53.916Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:42:57.237Z] [INFO] Recebido update de enquete. Procurando ID AC3EBDD588FF3E9E133460203AB8E686
+[2026-04-07T00:42:57.238Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:42:57.239Z] [BAILEYS] Decifrou Voto (Poll: Enquete nova | Eleitor: 120363041701998287)
+[2026-04-07T00:42:57.245Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T00:42:57.792Z] [INFO] Recebido update de enquete. Procurando ID AC3EBDD588FF3E9E133460203AB8E686
+[2026-04-07T00:42:57.792Z] [DEBUG] pollAggregated: [{"name":"R$1","voters":[]},{"name":"R$2","voters":[]}]
+[2026-04-07T00:42:57.793Z] [BAILEYS] Decifrou Voto (Poll: Enquete nova | Eleitor: 120363041701998287)
+[2026-04-07T00:42:57.797Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T01:01:26.469Z] [+] Enquete Registrada na Memória: Enquete 10299292 (ID: ACAC8847D2AA5C066D04D93ECBF06220)
+[2026-04-07T01:01:34.996Z] [INFO] Recebido update de enquete. Procurando ID ACAC8847D2AA5C066D04D93ECBF06220
+[2026-04-07T01:01:34.997Z] [ERRO] Falha ao processar voto:
+TypeError: Cannot destructure property 'pollCreatorJid' of 'undefined' as it is undefined.
+    at decryptPollVote (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/process-message.js:75:58)
+    at EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:92:43)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.<anonymous> (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:35:16)
+    at EventEmitter.emit (node:events:519:28)
+    at Object.flush (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:62:16)
+    at processNodeWithBuffer (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Socket/messages-recv.js:842:12)
+[2026-04-07T01:01:36.862Z] [INFO] Recebido update de enquete. Procurando ID ACAC8847D2AA5C066D04D93ECBF06220
+[2026-04-07T01:01:36.863Z] [ERRO] Falha ao processar voto:
+TypeError: Cannot destructure property 'pollCreatorJid' of 'undefined' as it is undefined.
+    at decryptPollVote (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/process-message.js:75:58)
+    at EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:92:43)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.<anonymous> (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:35:16)
+    at EventEmitter.emit (node:events:519:28)
+    at Object.flush (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:62:16)
+    at processNodeWithBuffer (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Socket/messages-recv.js:842:12)
+[2026-04-07T01:03:52.649Z] [INFO] Recebido update de enquete. Procurando ID ACAC8847D2AA5C066D04D93ECBF06220
+[2026-04-07T01:03:52.660Z] [ERRO] Falha ao processar voto:
+Error: Unsupported state or unable to authenticate data
+    at Decipheriv.final (node:internal/crypto/cipher:184:29)
+    at aesDecryptGCM (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/crypto.js:61:58)
+    at decryptPollVote (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/process-message.js:86:23)
+    at EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:92:43)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.<anonymous> (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:35:16)
+    at EventEmitter.emit (node:events:519:28)
+    at Object.flush (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:62:16)
+    at processNodeWithBuffer (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Socket/messages-recv.js:842:12)
+[2026-04-07T01:03:53.701Z] [INFO] Recebido update de enquete. Procurando ID ACAC8847D2AA5C066D04D93ECBF06220
+[2026-04-07T01:03:53.702Z] [ERRO] Falha ao processar voto:
+Error: Unsupported state or unable to authenticate data
+    at Decipheriv.final (node:internal/crypto/cipher:184:29)
+    at aesDecryptGCM (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/crypto.js:61:58)
+    at decryptPollVote (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/process-message.js:86:23)
+    at EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:92:43)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.<anonymous> (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:35:16)
+    at EventEmitter.emit (node:events:519:28)
+    at Object.flush (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:62:16)
+    at processNodeWithBuffer (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Socket/messages-recv.js:842:12)
+[2026-04-07T01:03:55.244Z] [INFO] Recebido update de enquete. Procurando ID ACAC8847D2AA5C066D04D93ECBF06220
+[2026-04-07T01:03:55.245Z] [ERRO] Falha ao processar voto:
+Error: Unsupported state or unable to authenticate data
+    at Decipheriv.final (node:internal/crypto/cipher:184:29)
+    at aesDecryptGCM (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/crypto.js:61:58)
+    at decryptPollVote (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/process-message.js:86:23)
+    at EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:92:43)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.<anonymous> (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:35:16)
+    at EventEmitter.emit (node:events:519:28)
+    at Object.flush (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:62:16)
+    at processNodeWithBuffer (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Socket/messages-recv.js:842:12)
+[2026-04-07T01:03:55.931Z] [INFO] Recebido update de enquete. Procurando ID ACAC8847D2AA5C066D04D93ECBF06220
+[2026-04-07T01:03:55.932Z] [ERRO] Falha ao processar voto:
+Error: Unsupported state or unable to authenticate data
+    at Decipheriv.final (node:internal/crypto/cipher:184:29)
+    at aesDecryptGCM (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/crypto.js:61:58)
+    at decryptPollVote (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/process-message.js:86:23)
+    at EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:92:43)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.<anonymous> (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:35:16)
+    at EventEmitter.emit (node:events:519:28)
+    at Object.flush (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:62:16)
+    at processNodeWithBuffer (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Socket/messages-recv.js:842:12)
+[2026-04-07T01:04:12.677Z] [+] Enquete Registrada na Memória: Enquete 26833773 (ID: AC17FA419CF17F92FB8FA57E036CB464)
+[2026-04-07T01:04:16.483Z] [INFO] Recebido update de enquete. Procurando ID AC17FA419CF17F92FB8FA57E036CB464
+[2026-04-07T01:04:16.485Z] [DEBUG] pollAggregated: [{"name":"1","voters":["198152627994764@lid"]},{"name":"2","voters":[]}]
+[2026-04-07T01:04:16.486Z] [BAILEYS] Decifrou Voto (Poll: Enquete 26833773 | Eleitor: 120363041701998287)
+[2026-04-07T01:04:16.536Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T01:04:22.481Z] [INFO] Recebido update de enquete. Procurando ID AC17FA419CF17F92FB8FA57E036CB464
+[2026-04-07T01:04:22.483Z] [DEBUG] pollAggregated: [{"name":"1","voters":["198152627994764@lid"]},{"name":"2","voters":["198152627994764@lid"]}]
+[2026-04-07T01:04:22.484Z] [BAILEYS] Decifrou Voto (Poll: Enquete 26833773 | Eleitor: 120363041701998287)
+[2026-04-07T01:04:22.493Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T01:04:24.760Z] [INFO] Recebido update de enquete. Procurando ID AC17FA419CF17F92FB8FA57E036CB464
+[2026-04-07T01:04:24.761Z] [DEBUG] pollAggregated: [{"name":"1","voters":["198152627994764@lid"]},{"name":"2","voters":[]}]
+[2026-04-07T01:04:24.761Z] [BAILEYS] Decifrou Voto (Poll: Enquete 26833773 | Eleitor: 120363041701998287)
+[2026-04-07T01:04:24.765Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-07T01:18:42.202Z] [INFO] Recebido update de enquete. Procurando ID 3EB0CC0E259E9F063DAB
+[2026-04-07T01:18:42.202Z] [-] Voto ignorado: Tentou votar em uma enquete (3EB0CC0E259E9F063DAB) que não está na nossa memória.
+[2026-04-15T13:13:23.275Z] [+] Enquete Registrada na Memória: Bliter triplo (ID: 3EB09370734DD1CD6197D481D92E077D444FB7BF)
+[2026-04-15T13:13:44.401Z] [+] Enquete Registrada na Memória: exemplo (ID: 3EB0BF7688F74A3CBF8098394E5C1C41E06703E9)
+[2026-04-15T13:16:17.205Z] [+] Enquete Registrada na Memória: Bliter triplo (ID: 3EB0680C3E96A2B69D438322D9478C1C930555E6)
+[2026-04-15T13:16:38.324Z] [+] Enquete Registrada na Memória: exemplo (ID: 3EB0542108D937ECB3027D8B068AF79F52FE48BB)
+[2026-04-15T13:17:31.346Z] [+] Enquete Registrada na Memória: Bliter triplo (ID: 3EB0DCDA2185CF6C3718AD445331EFE0EBE62EE1)
+[2026-04-15T13:17:45.518Z] [INFO] Recebido update de enquete. Procurando ID 3EB0DCDA2185CF6C3718AD445331EFE0EBE62EE1
+[2026-04-15T13:17:45.535Z] [ERRO] Falha ao processar voto:
+Error: Unsupported state or unable to authenticate data
+    at Decipheriv.final (node:internal/crypto/cipher:184:29)
+    at aesDecryptGCM (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/crypto.js:61:58)
+    at decryptPollVote (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/process-message.js:86:23)
+    at EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:93:43)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.<anonymous> (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:35:16)
+    at EventEmitter.emit (node:events:519:28)
+    at Object.flush (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:62:16)
+    at processNodeWithBuffer (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Socket/messages-recv.js:842:12)
+[2026-04-15T13:17:52.597Z] [+] Enquete Registrada na Memória: exemplo (ID: 3EB0C42A847466F941842A3AAEBC476AB46A651F)
+[2026-04-15T13:18:35.395Z] [INFO] Recebido update de enquete. Procurando ID 3EB0C42A847466F941842A3AAEBC476AB46A651F
+[2026-04-15T13:18:35.396Z] [ERRO] Falha ao processar voto:
+Error: Unsupported state or unable to authenticate data
+    at Decipheriv.final (node:internal/crypto/cipher:184:29)
+    at aesDecryptGCM (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/crypto.js:61:58)
+    at decryptPollVote (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/process-message.js:86:23)
+    at EventEmitter.<anonymous> (C:\Users\Carlo\OneDrive\Área de Trabalho\Dashboard Leilão\baileys-poll-listener\index.js:93:43)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.<anonymous> (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:35:16)
+    at EventEmitter.emit (node:events:519:28)
+    at Object.flush (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Utils/event-buffer.js:62:16)
+    at processNodeWithBuffer (file:///C:/Users/Carlo/OneDrive/%C3%81rea%20de%20Trabalho/Dashboard%20Leil%C3%A3o/baileys-poll-listener/node_modules/@whiskeysockets/baileys/lib/Socket/messages-recv.js:842:12)
+[2026-04-15T13:21:38.346Z] [+] Enquete Registrada na Memória: Bliter triplo (ID: 3EB09680D63156EFC21ED2D5E6E801481BD8D75A)
+[2026-04-15T13:21:59.624Z] [+] Enquete Registrada na Memória: exemplo (ID: 3EB06CC49E947F73B81B96CB306AEE1EB7A1E49E)
+[2026-04-15T13:22:07.053Z] [INFO] Recebido update de enquete. Procurando ID 3EB09680D63156EFC21ED2D5E6E801481BD8D75A
+[2026-04-15T13:22:07.056Z] [DEBUG] pollAggregated: [{"name":"R$ 36","voters":["553194374607@s.whatsapp.net"]},{"name":"R$ 40","voters":[]},{"name":"R$ 46","voters":[]},{"name":"É minha por R$ 52","voters":[]}]
+[2026-04-15T13:22:07.057Z] [BAILEYS] Decifrou Voto (Poll: Bliter triplo | Eleitor: 553194374607)
+[2026-04-15T13:22:07.078Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-15T13:22:18.765Z] [INFO] Recebido update de enquete. Procurando ID 3EB06CC49E947F73B81B96CB306AEE1EB7A1E49E
+[2026-04-15T13:22:18.766Z] [DEBUG] pollAggregated: [{"name":"R$ 135","voters":[]},{"name":"R$ 150","voters":["553194374607@s.whatsapp.net"]},{"name":"R$ 173","voters":[]},{"name":"É minha por R$ 195","voters":[]}]
+[2026-04-15T13:22:18.766Z] [BAILEYS] Decifrou Voto (Poll: exemplo | Eleitor: 553194374607)
+[2026-04-15T13:22:18.771Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-15T13:24:07.594Z] [+] Enquete Registrada na Memória: Bliter triplo (ID: 3EB00C6677F395760B303518C1753DE7D3019DBC)
+[2026-04-15T13:24:28.951Z] [+] Enquete Registrada na Memória: exemplo (ID: 3EB0A617DD05B361A36454CCA8E5ADB25FD3C614)
+[2026-04-15T13:24:50.408Z] [+] Enquete Registrada na Memória: teste (ID: 3EB0F4C81CFA4092DB1D5922EF3077ECCEC62E24)
+[2026-04-15T13:25:05.362Z] [INFO] Recebido update de enquete. Procurando ID 3EB0A617DD05B361A36454CCA8E5ADB25FD3C614
+[2026-04-15T13:25:05.364Z] [DEBUG] pollAggregated: [{"name":"R$ 135","voters":[]},{"name":"R$ 150","voters":[]},{"name":"R$ 173","voters":["553194374607@s.whatsapp.net"]},{"name":"É minha por R$ 195","voters":[]}]
+[2026-04-15T13:25:05.365Z] [BAILEYS] Decifrou Voto (Poll: exemplo | Eleitor: 553194374607)
+[2026-04-15T13:25:05.372Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-15T13:25:07.102Z] [INFO] Recebido update de enquete. Procurando ID 3EB00C6677F395760B303518C1753DE7D3019DBC
+[2026-04-15T13:25:07.103Z] [DEBUG] pollAggregated: [{"name":"R$ 36","voters":[]},{"name":"R$ 40","voters":["553194374607@s.whatsapp.net"]},{"name":"R$ 46","voters":[]},{"name":"É minha por R$ 52","voters":[]}]
+[2026-04-15T13:25:07.103Z] [BAILEYS] Decifrou Voto (Poll: Bliter triplo | Eleitor: 553194374607)
+[2026-04-15T13:25:07.109Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-15T13:28:45.842Z] [+] Enquete Registrada na Memória: teste (ID: 3EB0CA7A73E62DA6E976)
+[2026-04-15T15:07:10.943Z] [+] Enquete Registrada na Memória: Teste (ID: AC6133549901ECD018D7BA208C3B251F)
+[2026-04-15T15:07:29.508Z] [INFO] Recebido update de enquete. Procurando ID AC6133549901ECD018D7BA208C3B251F
+[2026-04-15T15:07:29.510Z] [DEBUG] pollAggregated: [{"name":"1","voters":["57836147064913@lid"]},{"name":"2","voters":[]}]
+[2026-04-15T15:07:29.511Z] [BAILEYS] Decifrou Voto (Poll: Teste | Eleitor: 120363043391966798)
+[2026-04-15T15:07:29.573Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-15T15:07:31.343Z] [INFO] Recebido update de enquete. Procurando ID AC6133549901ECD018D7BA208C3B251F
+[2026-04-15T15:07:31.347Z] [DEBUG] pollAggregated: [{"name":"1","voters":["57836147064913@lid"]},{"name":"2","voters":["57836147064913@lid"]}]
+[2026-04-15T15:07:31.349Z] [BAILEYS] Decifrou Voto (Poll: Teste | Eleitor: 120363043391966798)
+[2026-04-15T15:07:31.375Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-15T15:07:39.699Z] [INFO] Recebido update de enquete. Procurando ID AC6133549901ECD018D7BA208C3B251F
+[2026-04-15T15:07:39.700Z] [DEBUG] pollAggregated: [{"name":"1","voters":["57836147064913@lid","8774836318402@lid"]},{"name":"2","voters":["57836147064913@lid"]}]
+[2026-04-15T15:07:39.700Z] [BAILEYS] Decifrou Voto (Poll: Teste | Eleitor: 120363043391966798)
+[2026-04-15T15:07:39.709Z] [WEBHOOK] Status HTTP do nosso servidor local: 200
+[2026-04-15T15:07:47.695Z] [INFO] Recebido update de enquete. Procurando ID AC6133549901ECD018D7BA208C3B251F
+[2026-04-15T15:07:47.697Z] [DEBUG] pollAggregated: [{"name":"1","voters":["57836147064913@lid","8774836318402@lid","104616914087949@lid"]},{"name":"2","voters":["57836147064913@lid"]}]
+[2026-04-15T15:07:47.697Z] [BAILEYS] Decifrou Voto (Poll: Teste | Eleitor: 120363043391966798)
+[2026-04-15T15:07:47.709Z] [WEBHOOK] Status HTTP do nosso servidor local: 200

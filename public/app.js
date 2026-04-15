@@ -149,22 +149,28 @@ function saveSettings(e) {
 function switchTab(tab) {
     const btnSetup = document.getElementById('tab-setup');
     const btnResults = document.getElementById('tab-results');
+    const btnEnvios = document.getElementById('tab-envios');
     const btnConfig = document.getElementById('tab-config');
     const secSetup = document.getElementById('section-setup');
     const secResults = document.getElementById('section-results');
+    const secEnvios = document.getElementById('section-envios');
     const secConfig = document.getElementById('section-config');
 
     // Reseta todas
-    [btnSetup, btnResults, btnConfig].forEach(btn => btn && (btn.className = 'h-full px-2 tab-inactive flex items-center transition-colors'));
-    [secSetup, secResults, secConfig].forEach(sec => sec && sec.classList.add('hidden'));
+    [btnSetup, btnResults, btnEnvios, btnConfig].forEach(btn => btn && (btn.className = 'h-full px-2 tab-inactive flex items-center transition-colors'));
+    [secSetup, secResults, secEnvios, secConfig].forEach(sec => sec && sec.classList.add('hidden'));
 
     if (tab === 'setup') {
-        btnSetup.className = 'h-full px-2 tab-active flex items-center transition-colors';
-        secSetup.classList.remove('hidden');
+        if(btnSetup) btnSetup.className = 'h-full px-2 tab-active flex items-center transition-colors';
+        if(secSetup) secSetup.classList.remove('hidden');
     } else if (tab === 'results') {
-        btnResults.className = 'h-full px-2 tab-active flex items-center transition-colors';
-        secResults.classList.remove('hidden');
+        if(btnResults) btnResults.className = 'h-full px-2 tab-active flex items-center transition-colors';
+        if(secResults) secResults.classList.remove('hidden');
         loadWinners();
+    } else if (tab === 'envios') {
+        if(btnEnvios) btnEnvios.className = 'h-full px-2 tab-active flex items-center transition-colors';
+        if(secEnvios) secEnvios.classList.remove('hidden');
+        loadEnvios();
     } else if (tab === 'config') {
         if(btnConfig) btnConfig.className = 'h-full px-2 tab-active flex items-center transition-colors';
         if(secConfig) secConfig.classList.remove('hidden');
@@ -678,16 +684,16 @@ function renderWinners(clientes, leilaoId) {
         return;
     }
 
-    // 2. Renderizar cards HTML
     clientes.forEach(cliente => {
         const isPago = cliente.status_pagamento === 'pago';
         const tagHTML = isPago ? 
             `<button id="status-btn-${cliente.telefone}" onclick="togglePagamento('${leilaoId}', '${cliente.telefone}', 'pago')" class="text-[10px] font-extrabold uppercase bg-emerald-50 text-emerald-600 border border-emerald-200 px-2.5 py-1 rounded shadow-sm hover:bg-emerald-100 transition-colors">🟢 Pago</button>` : 
             `<button id="status-btn-${cliente.telefone}" onclick="togglePagamento('${leilaoId}', '${cliente.telefone}', 'pendente')" class="text-[10px] font-extrabold uppercase bg-rose-50 text-rose-600 border border-rose-200 px-2.5 py-1 rounded shadow-sm hover:bg-rose-100 transition-colors">🔴 Pendente</button>`;
             
-        const cobrarHTML = `<button id="cobrar-btn-${cliente.telefone}" class="${isPago ? 'hidden' : 'flex'} w-full bg-wapp hover:bg-wapp-hover text-white font-semibold py-3 px-4 rounded-xl shadow-sm transition-all items-center justify-center gap-2 transform active:scale-95" onclick='handleSendCobranca(event, ${JSON.stringify(cliente)})'>
-             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-             Disparar Cobrança (n8n)
+        const clientStr = JSON.stringify(cliente).replace(/'/g, "&#39;");
+        const cobrarHTML = `<button id="cobrar-btn-${cliente.telefone}" class="${isPago ? 'hidden' : 'flex'} w-full bg-wapp hover:bg-wapp-hover text-white font-semibold py-3 px-4 rounded-xl shadow-sm transition-all items-center justify-center gap-2 transform active:scale-95" onclick='handleSendCobranca(event, ${clientStr})'>
+             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.183-.573c.978.58 1.711.927 3.15.927 3.199 0 5.765-2.586 5.765-5.766s-2.566-5.769-5.767-5.769zM12.031 16.5c-1.025 0-1.782-.284-2.559-.72l-.183-.102-1.282.336.342-1.251-.112-.178c-.461-.734-.73-1.545-.73-2.418 0-2.486 2.023-4.51 4.51-4.51 2.486 0 4.512 2.024 4.512 4.51s-2.026 4.51-4.51 4.51zm2.463-3.15c-.135-.068-.8-.396-.924-.442-.124-.045-.215-.068-.305.068-.09.135-.35.442-.429.532-.079.09-.158.102-.293.033-.135-.068-.572-.211-1.09-.675-.403-.361-.675-.807-.754-.942-.079-.135-.008-.208.06-.276.061-.061.135-.158.203-.238.068-.079.09-.135.135-.226.045-.09.023-.17-.011-.238-.034-.068-.305-.735-.418-1.006-.111-.264-.223-.228-.305-.232-.079-.004-.17-.005-.26-.005s-.238.034-.362.17c-.124.135-.474.463-.474 1.131 0 .667.485 1.312.553 1.402.068.09 1.005 1.54 2.433 2.152.34.146.605.233.813.298.342.108.653.093.899.056.273-.041.8-.396.912-.78.113-.384.113-.712.079-.78-.033-.068-.124-.102-.259-.17z"/></svg>
+             Enviar Mensagem (WhatsApp)
          </button>`;
 
         const cardHTML = `
@@ -746,50 +752,21 @@ function renderWinners(clientes, leilaoId) {
 }
 
 async function handleSendCobranca(e, clientData) {
-    const btn = e.currentTarget;
-    const originalContent = btn.innerHTML;
+    let msg = `Olá! Passando para atualizar sobre o PokéLeilão. Você arrematou as seguintes cartas:\n\n`;
+    clientData.cartas.forEach(c => {
+        msg += `- ${c.nome} (R$ ${c.valor})\n`;
+    });
+    msg += `\nTotal devido: R$ ${clientData.subtotal}\n`;
     
-    // Bloqueia e mostra loading
-    btn.innerHTML = `<svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Repassando...`;
-    btn.disabled = true;
-
-    try {
-        const payload = {
-            cliente: clientData.telefone,
-            total_devido: clientData.subtotal,
-            detalhes_fatura: clientData.cartas,
-            timestamp: new Date().toISOString()
-        };
-
-        const token = localStorage.getItem('poke_token');
-        const response = await fetch('/api/send-cobranca', {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(payload)
-        });
-
-        const result = await response.json();
-        
-        if (response.ok) {
-            showToast(`Cobrança de ${formatCurrency(clientData.subtotal)} enviada para ${formatPhoneDisplay(clientData.telefone)}`, 'success');
-            
-            // Sucesso visual
-            btn.innerHTML = `<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Enviado`;
-            btn.classList.add('bg-slate-800', 'hover:bg-slate-700', 'cursor-default');
-            btn.classList.remove('bg-wapp', 'hover:bg-wapp-hover', 'active:scale-95');
-        } else {
-            showToast(result.message || 'Erro do servidor', 'error');
-            btn.innerHTML = originalContent;
-            btn.disabled = false;
-        }
-    } catch (error) {
-        showToast('Erro de Conexão com a Aplicação Node.', 'error');
-        btn.innerHTML = originalContent;
-        btn.disabled = false;
+    const phone = clientData.telefone.replace(/\D/g, '');
+    let url = '';
+    // if phone resembles a valid number (e.g. 553183693473), attach it, else just general whatsapp link
+    if (phone.length >= 10) {
+        url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
+    } else {
+        url = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
     }
+    window.open(url, '_blank');
 }
 
 /* =======================================================
@@ -827,7 +804,10 @@ async function loadCobrancasModal() {
                     <div class="flex flex-col p-4 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors gap-3">
                         <div class="flex justify-between items-start">
                             <h4 class="font-bold text-slate-800 text-sm">${cob.nome_leilao}</h4>
-                            <span class="text-xs font-bold bg-indigo-50 text-indigo-600 px-2 py-1 rounded">R$ ${totalReceber.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+                            <div class="flex gap-2 items-center">
+                                <span class="text-xs font-bold bg-indigo-50 text-indigo-600 px-2 py-1 rounded">R$ ${totalReceber.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+                                <button onclick="deleteCobranca('${cob.id}')" class="text-xs bg-red-50 text-red-500 hover:bg-red-100 hover:text-red-700 font-bold px-2 py-1 rounded transition-colors" title="Excluir Histórico">✖</button>
+                            </div>
                         </div>
                         <p class="text-xs text-slate-500">${cob.clientes.length} ganhadores (${pagos} pagos) • Finalizado em: ${dateStr}</p>
                         <button onclick='applyCobranca(\"${cob.id}\")' class="w-full bg-white border border-slate-300 hover:border-wapp hover:text-wapp text-slate-600 text-xs font-bold py-2 px-4 rounded-lg transition-colors mt-1">
@@ -851,11 +831,35 @@ function closeCobrancasModal() {
     modal.classList.remove('flex');
 }
 
+async function deleteCobranca(id) {
+    if (!confirm('Tem certeza que deseja excluir esse leilão do histórico? Isso não pode ser desfeito.')) return;
+    try {
+        const token = localStorage.getItem('poke_token');
+        const res = await fetch('/api/cobrancas/' + id, {
+            method: 'DELETE',
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (res.ok) {
+            showToast('Leilão removido!', 'success');
+            loadCobrancasModal();
+            // check if the currently opened results correspond to this one, maybe clear it?
+        } else {
+            const data = await res.json();
+            showToast(data.message || 'Erro ao remover', 'error');
+        }
+    } catch(e) {
+        showToast('Erro ao deletar', 'error');
+    }
+}
+
 function applyCobranca(id) {
     const cob = LOCAL_COBRANCAS_CACHE[id];
     if(!cob) return;
     
     closeCobrancasModal();
+    
+    // Limpa a tela para garantir que mostrará apenas esse leilão
+    document.getElementById('winners-container').innerHTML = '';
     
     // Atualiza a tela de resultados com os clientes desse histórico
     renderWinners(cob.clientes, cob.id);
@@ -926,47 +930,129 @@ async function togglePagamento(leilaoId, telefone, currentStatus) {
    ALERTAS E FEEDBACK (Toastify)
 
    ======================================================= */
-async function handleSendCobranca(e, clientData) {
-    const btn = e.currentTarget;
-    if (btn.disabled) return;
+/* =======================================================
+   GERENCIAMENTO DE ENVIOS
+   ======================================================= */
+async function loadEnvios() {
+    const container = document.getElementById('envios-container');
+    const loader = document.getElementById('envios-loading');
     
-    // UI Loading state
-    const originalHtml = btn.innerHTML;
+    container.innerHTML = '';
+    loader.classList.remove('hidden');
+
+    try {
+        const token = localStorage.getItem('poke_token');
+        const res = await fetch('/api/cobrancas', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        const data = await res.json();
+        
+        loader.classList.add('hidden');
+        
+        if(data.success && data.cobrancas.length > 0) {
+            // Agrupar cartas por cliente que estejam pagas e NÃO enviadas
+            const enviosAgrupados = {}; // { "553199...": { telefone, cartas: [], subtotal: 0, leilaoIds: new Set() } }
+            
+            data.cobrancas.forEach(cob => {
+                cob.clientes.forEach(cliente => {
+                    if (cliente.status_pagamento === 'pago' && cliente.status_envio !== 'enviado') {
+                        if (!enviosAgrupados[cliente.telefone]) {
+                            enviosAgrupados[cliente.telefone] = {
+                                telefone: cliente.telefone,
+                                cartas: [],
+                                subtotal: 0,
+                                leilaoIds: new Set()
+                            };
+                        }
+                        
+                        enviosAgrupados[cliente.telefone].cartas.push(...cliente.cartas);
+                        enviosAgrupados[cliente.telefone].subtotal += cliente.subtotal;
+                        enviosAgrupados[cliente.telefone].leilaoIds.add(cob.id);
+                    }
+                });
+            });
+            
+            const clientesEnvio = Object.values(enviosAgrupados);
+            
+            if (clientesEnvio.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-10 flex flex-col items-center bg-white rounded-xl border border-dashed border-slate-300">
+                        <svg class="w-12 h-12 text-emerald-300 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path></svg>
+                        <p class="text-slate-500 font-medium">Tudo zerado! Nenhuma carta pendente de envio.</p>
+                    </div>`;
+                return;
+            }
+            
+            clientesEnvio.forEach(cliente => {
+                const arrLeiloes = Array.from(cliente.leilaoIds);
+                const leiloesStr = JSON.stringify(arrLeiloes).replace(/'/g, "&#39;");
+                
+                const cardHTML = `
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-shadow">
+                        <div class="bg-indigo-50 border-b border-indigo-100 px-6 py-5 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                                    📦
+                                </div>
+                                <p class="font-bold text-slate-800 text-lg">${formatPhoneDisplay(cliente.telefone)}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="px-6 py-4 flex-grow">
+                            <p class="text-xs font-semibold uppercase text-slate-400 mb-2">Cartas para Empacotar (${cliente.cartas.length})</p>
+                            <ul class="space-y-1.5 overflow-y-auto no-scrollbar max-h-[160px]">
+                                ${cliente.cartas.map(c => `
+                                    <li class="flex justify-between text-sm items-center">
+                                        <span class="text-slate-700 truncate" title="${c.nome}">• ${c.nome}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="p-4 border-t border-slate-100 mt-auto">
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl shadow-sm transition-colors flex items-center justify-center gap-2" onclick='marcarEnviado(event, "${cliente.telefone}", ${leiloesStr})'>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Marcar como Enviado
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', cardHTML);
+            });
+            
+        } else {
+            container.innerHTML = '<p class="text-sm text-slate-500 col-span-full text-center py-4">Nenhum histórico encontrado para envios.</p>';
+        }
+    } catch(e) {
+        loader.classList.add('hidden');
+        container.innerHTML = '<p class="text-sm text-red-500 col-span-full text-center py-4">Erro ao buscar envios.</p>';
+    }
+}
+
+async function marcarEnviado(e, telefone, leilaoIds) {
+    if (!confirm('Deseja marcar os pacotes desse cliente como entregues/enviados? Eles sairão desta lista.')) return;
+    
+    const btn = e.currentTarget;
     btn.disabled = true;
-    btn.innerHTML = `<div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div> Enviando...`;
+    btn.innerHTML = 'Atualizando...';
     
     try {
         const token = localStorage.getItem('poke_token');
-        const res = await fetch('/api/send-cobranca', {
+        const res = await fetch('/api/cobrancas/envio', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(clientData)
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+            body: JSON.stringify({ telefone, leilaoIds })
         });
         
-        const result = await res.json();
-        if (res.ok && result.success) {
-            showToast(`Cobrança enviada para ${clientData.telefone}!`, 'success');
-            // Muda a cor do botão para verde indicando sucesso temporário
-            btn.classList.add('bg-emerald-500');
-            btn.classList.remove('bg-wapp', 'hover:bg-wapp-hover');
-            btn.innerHTML = `<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Sucesso`;
-            setTimeout(() => {
-                btn.disabled = false;
-                btn.classList.remove('bg-emerald-500');
-                btn.classList.add('bg-wapp', 'hover:bg-wapp-hover');
-                btn.innerHTML = originalHtml;
-            }, 3000);
+        if (res.ok) {
+            showToast('Pedido marcado como enviado sucesso!', 'success');
+            loadEnvios(); // recarrega a lista
         } else {
-            showToast('Erro ao disparar cobrança.', 'error');
-            btn.innerHTML = originalHtml;
+            showToast('Falha ao atualizar', 'error');
             btn.disabled = false;
         }
-    } catch (error) {
-        showToast('Erro de conexão.', 'error');
-        btn.innerHTML = originalHtml;
+    } catch(err) {
+        showToast('Erro de rede', 'error');
         btn.disabled = false;
     }
 }

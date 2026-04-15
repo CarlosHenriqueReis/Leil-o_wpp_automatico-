@@ -132,24 +132,8 @@ app.post('/api/start-leilao', authenticateToken, async (req, res) => {
         
         console.log('[POST /api/start-leilao] Início do leilão solicitado.');
 
-        // Converter imagens para base64 para o N8N não precisar fazer download
-        if (payload.arrayLotes && Array.isArray(payload.arrayLotes)) {
-            for (const lote of payload.arrayLotes) {
-                if (lote.imagem && lote.imagem.includes('/uploads/')) {
-                    try {
-                        const filename = lote.imagem.split('/uploads/').pop().split('?')[0];
-                        const filePath = path.join(uploadDir, filename);
-                        
-                        if (fs.existsSync(filePath)) {
-                            const imgBuffer = fs.readFileSync(filePath);
-                            lote.imagem = imgBuffer.toString('base64');
-                        }
-                    } catch (imgErr) {
-                        console.error(`[start-leilao] ❌ Erro ao converter imagem: ${imgErr.message}`);
-                    }
-                }
-            }
-        }
+        // A imagem agora segue como URL crua originária do frontend
+        // Sem conversão para base64 para aliviar o payload.
 
         // Dispara o Webhook se a URL estiver configurada
         if (webhookUrl && webhookUrl.startsWith('http')) {
@@ -167,55 +151,47 @@ app.post('/api/start-leilao', authenticateToken, async (req, res) => {
 
 
 
-/**
- * ROTA 2: Cobrança dos Lances Vencedores
- * Recebe o JSON agrupado do cliente (telefone, cartas e total) e dispara a cobrança.
- */
-app.post('/api/send-cobranca', authenticateToken, async (req, res) => {
-    try {
-        const payload = req.body;
-        const webhookUrl = process.env.WEBHOOK_COBRANCA;
 
-        console.log('[POST /api/send-cobranca] Envio de cobrança solicitado.');
-        console.log('Payload:', JSON.stringify(payload, null, 2));
-
-        // Dispara o Webhook se a URL estiver configurada corretamente
-        if (webhookUrl && webhookUrl.startsWith('http')) {
-            console.log(`Enviando cobrança ao n8n: ${webhookUrl}`);
-            await axios.post(webhookUrl, payload);
-        } else {
-            console.warn('Variável WEBHOOK_COBRANCA não encontrada ou inválida. Simulando sucesso do servidor.');
-        }
-
-        return res.status(200).json({ success: true, message: 'Cobrança encaminhada com sucesso via n8n!' });
-    } catch (error) {
-        console.error('Erro na rota /api/send-cobranca:', error.message);
-        return res.status(500).json({ success: false, message: 'Erro de comunicação ao enviar a cobrança.' });
-    }
-});
 
 /**
  * ROTA WEBHOOK: Registrar Enquete (chamada pelo N8N após enviar cada poll)
- * Salva a associação pollId -> carta no enquetes.json
- * Não requer autenticação pois é chamada pela rede interna do Docker
+ * Associa o pollId da mensagem com o nomeDaCarta da enquete
+ * Atualiza enquetes.json e lances.json para sabermos de onde vêm os votos
  */
 app.post('/api/webhook/registra-enquete', async (req, res) => {
     try {
-        const { pollId, nomeDaCarta, valorBase } = req.body;
-        if (!pollId || !nomeDaCarta) {
-            return res.status(400).json({ success: false, message: 'pollId e nomeDaCarta são obrigatórios.' });
+        const payload = req.body;
+        if (!payload || !payload.pollId || !payload.nomeDaCarta) {
+            return res.status(400).json({ success: false, message: 'Dados insuficientes. Faltam pollId ou nomeDaCarta.' });
         }
+        
+        // 1. Salva no enquetes.json (histórico de enquetes ativas)
         const enquetes = JSON.parse(fs.readFileSync(ENQUETES_FILE, 'utf8'));
-        // Remove duplicata caso reenvie
-        const idx = enquetes.findIndex(e => e.pollId === pollId);
-        const entry = { pollId, nomeDaCarta, valorBase: valorBase || 0, criadoEm: new Date().toISOString() };
-        if (idx >= 0) enquetes[idx] = entry; else enquetes.push(entry);
+        const idx = enquetes.findIndex(e => e.pollId === payload.pollId);
+        const entry = { 
+            pollId: payload.pollId, 
+            nomeDaCarta: payload.nomeDaCarta, 
+            valorBase: payload.valorBase || 0, 
+            criadoEm: new Date().toISOString() 
+        };
+        if (idx >= 0) enquetes[idx] = entry; 
+        else enquetes.push(entry);
         fs.writeFileSync(ENQUETES_FILE, JSON.stringify(enquetes, null, 2));
-        console.log(`[ENQUETE REGISTRADA] ${nomeDaCarta} — pollId: ${pollId}`);
-        return res.status(200).json({ success: true });
+
+        // 2. Salva no lances.json para compatibilidade com o parse dos votos da Evolution
+        const lancesDB = JSON.parse(fs.readFileSync(LANCES_FILE, 'utf8'));
+        if (!lancesDB[payload.pollId]) {
+            lancesDB[payload.pollId] = { nome_carta: payload.nomeDaCarta, votos: [] };
+        } else {
+            lancesDB[payload.pollId].nome_carta = payload.nomeDaCarta;
+        }
+        fs.writeFileSync(LANCES_FILE, JSON.stringify(lancesDB, null, 2));
+
+        console.log(`[ENQUETE REGISTRADA E MAPEADA] ID: ${payload.pollId} = ${payload.nomeDaCarta}`);
+        return res.status(200).json({ success: true, message: 'Enquete mapeada internamente.' });
     } catch (error) {
-        console.error('Erro ao registrar enquete:', error.message);
-        return res.status(500).json({ success: false });
+        console.error('[ERRO REGISTRA] Falha ao parear nome e enquete:', error.message);
+        return res.status(500).json({ success: false, message: 'Erro interno.' });
     }
 });
 
@@ -250,46 +226,65 @@ app.get('/api/webhook/debug-payload', authenticateToken, (req, res) => {
 });
 
 /**
- * ROTA WEBHOOK: Registrar Voto — valida o pollId, identifica a carta e salva o lance.
+ * ROTA WEBHOOK BAILEYS: Registrar Voto Direto (Decriptografado)
  */
-app.post('/api/webhook/voto', async (req, res) => {
+app.post('/api/webhook/baileys', (req, res) => {
     try {
-        const { pollId, votante, opcaoEscolhida } = req.body;
-        if (!pollId || !votante || !opcaoEscolhida) {
-            return res.status(400).json({ success: false, message: 'Campos obrigatórios faltando.' });
+        const { pollId, pollNome, telefone, votos } = req.body;
+        
+        if (!pollId || !telefone || !votos) {
+            return res.status(400).json({ success: false, message: 'Campos incorretos do baileys' });
         }
-        // Verifica se o pollId pertence a uma enquete do nosso leilão
-        const enquetes = JSON.parse(fs.readFileSync(ENQUETES_FILE, 'utf8'));
-        const enquete = enquetes.find(e => e.pollId === pollId);
-        if (!enquete) {
-            console.log(`[VOTO IGNORADO] pollId desconhecido: ${pollId}`);
-            return res.status(200).json({ success: true, ignorado: true });
+        
+        const lancesDB = JSON.parse(fs.readFileSync(LANCES_FILE, 'utf8'));
+        
+        if (!lancesDB[pollId]) {
+            lancesDB[pollId] = { nome_carta: pollNome || "Desconhecida", votos: [] };
+        } else if (pollNome) {
+            lancesDB[pollId].nome_carta = pollNome;
         }
-        // Extrai o valor numérico da opção escolhida (ex: "R$ 150" -> 150)
-        const valorStr = opcaoEscolhida.replace(/[^0-9,\.]/g, '').replace(',', '.');
-        const valor = parseFloat(valorStr) || 0;
-        // Salva/atualiza o lance no lances.json
-        let lances = JSON.parse(fs.readFileSync(LANCES_FILE, 'utf8'));
-        if (!Array.isArray(lances)) lances = [];
-        // Remove lance anterior do mesmo votante na mesma carta (último voto vence)
-        const filtrado = lances.filter(l => !(l.votante === votante && l.nomeDaCarta === enquete.nomeDaCarta));
-        filtrado.push({
-            pollId,
-            nomeDaCarta: enquete.nomeDaCarta,
-            votante: votante.replace(/\D/g, ''),
-            opcaoEscolhida,
-            valor,
-            ts: new Date().toISOString()
-        });
-        fs.writeFileSync(LANCES_FILE, JSON.stringify(filtrado, null, 2));
-        console.log(`[LANCE REGISTRADO] ${enquete.nomeDaCarta} — ${votante} → ${opcaoEscolhida} (R$ ${valor})`);
-        return res.status(200).json({ success: true, carta: enquete.nomeDaCarta, valor });
-    } catch (error) {
-        console.error('Erro ao registrar voto:', error.message);
-        return res.status(500).json({ success: false });
+        // Limpa TODOS os votos atuais (reset), já que o Baileys nos manda o espelho ATUALIZADO total da enquete toda vez
+        lancesDB[pollId].votos = [];
+        
+        console.log('[DEBUG LANCE] Estrutura do array votos recebido:', JSON.stringify(votos, null, 2));
+
+        // Cadastra os votos reais de acordo com a foto completa da enquete processada pelo baileys
+        for (const votoObj of votos) {
+            const opcaoStr = votoObj.name;
+            const valorParsed = parseFloat(opcaoStr.replace(/[^0-9,.]/g, '').replace(',', '.')) || 0;
+            
+            if (votoObj.voters && votoObj.voters.length > 0) {
+                for (const voterJid of votoObj.voters) {
+                    let voterGidTratado = voterJid.split('@')[0];
+                    
+                    // Se recebemos o nome real do Baileys, priorizamos ele para exibir (fundamental para Comunidades que usam LID oculto)
+                    if (req.body.voterNames && req.body.voterNames[voterJid]) {
+                        voterGidTratado = req.body.voterNames[voterJid];
+                        // Sinaliza que foi lido via LID
+                        if (voterJid.includes('@lid')) {
+                            voterGidTratado += " (Oculto na Comunidade)";
+                        }
+                    }
+
+                    lancesDB[pollId].votos.push({
+                        telefone: voterGidTratado,
+                        opcaoStr,
+                        valorParsed,
+                        timestamp: new Date().toISOString()
+                    });
+                }
+            }
+        }
+        
+        fs.writeFileSync(LANCES_FILE, JSON.stringify(lancesDB, null, 2));
+        console.log(`[LANCE BAILEYS] Enquete '${pollNome}' atualizada! Foram lidas ${votos.length} opções.`);
+        
+        res.status(200).json({ success: true });
+    } catch(e) {
+        console.error('[ERRO BAILEYS WEBHOOK]', e);
+        res.status(500).json({ success: false });
     }
 });
-
 /**
  * ROTA: Retornar lances atuais (para o dashboard consultar)
  */
@@ -439,6 +434,55 @@ app.post('/api/cobrancas/:leilaoId/pago', authenticateToken, (req, res) => {
     }
 });
 
+app.post('/api/cobrancas/envio', authenticateToken, (req, res) => {
+    try {
+        const { telefone, leilaoIds } = req.body;
+        
+        if (!telefone || !Array.isArray(leilaoIds)) {
+             return res.status(400).json({ success: false, message: 'Dados inválidos.' });
+        }
+        
+        let cobrancasDB = JSON.parse(fs.readFileSync(COBRANCAS_FILE, 'utf8'));
+        let updatedCount = 0;
+        
+        leilaoIds.forEach(leilaoId => {
+            const idx = cobrancasDB.findIndex(c => c.id === leilaoId);
+            if (idx !== -1) {
+                const clientIdx = cobrancasDB[idx].clientes.findIndex(c => c.telefone === telefone);
+                if (clientIdx !== -1) {
+                    cobrancasDB[idx].clientes[clientIdx].status_envio = 'enviado';
+                    updatedCount++;
+                }
+            }
+        });
+        
+        fs.writeFileSync(COBRANCAS_FILE, JSON.stringify(cobrancasDB, null, 2));
+        res.status(200).json({ success: true, message: `Status de envio atualizado em ${updatedCount} leilões.` });
+    } catch (e) {
+        res.status(500).json({ success: false, message: 'Erro ao atualizar envio.' });
+    }
+});
+
+app.delete('/api/cobrancas/:leilaoId', authenticateToken, (req, res) => {
+    if (req.user.role !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Sem permissão.' });
+    }
+    try {
+        const leilaoId = req.params.leilaoId;
+        let cobrancasDB = JSON.parse(fs.readFileSync(COBRANCAS_FILE, 'utf8'));
+        
+        const filtered = cobrancasDB.filter(c => c.id !== leilaoId);
+        if (filtered.length === cobrancasDB.length) {
+             return res.status(404).json({ success: false, message: 'Leilão não encontrado.' });
+        }
+        
+        fs.writeFileSync(COBRANCAS_FILE, JSON.stringify(filtered, null, 2));
+        res.status(200).json({ success: true, message: 'Leilão removido com sucesso!' });
+    } catch(e) {
+        res.status(500).json({ success: false, message: 'Erro ao remover leilão.' });
+    }
+});
+
 /**
  * ROTA 4: Upload de Imagens Direto no Servidor
  */
@@ -447,11 +491,16 @@ app.post('/api/upload', authenticateToken, upload.single('imagem'), (req, res) =
         if (!req.file) {
             return res.status(400).json({ success: false, message: 'Nenhuma imagem enviada.' });
         }
-        // URL base em produção
-        const baseUrl = 'https://pokeleilao.com.br';
-        const fileUrl = `${baseUrl}/uploads/${req.file.filename}`;
+        // Em produção seria a URL real do seu domínio
+        // Mas como estamos rodando localmente (Node no Windows, Evolution no Docker)
+        // O docker precisa ser direcionado ao 'host.docker.internal:3000' para achar a imagem.
+        const baseUrlFront = 'http://localhost:3000';
+        const baseUrlDocker = 'http://host.docker.internal:3000';
         
-        res.status(200).json({ success: true, url: fileUrl, urlDocker: fileUrl });
+        const fileUrlFront = `${baseUrlFront}/uploads/${req.file.filename}`;
+        const fileUrlDocker = `${baseUrlDocker}/uploads/${req.file.filename}`;
+        
+        res.status(200).json({ success: true, url: fileUrlFront, urlDocker: fileUrlDocker });
     } catch (error) {
         console.error('Erro no upload:', error.message);
         res.status(500).json({ success: false, message: 'Falha no upload.' });
@@ -600,40 +649,7 @@ app.post('/api/webhook/votos', (req, res) => {
     }
 });
 
-/**
- * ==========================================
- * ROTA N8N -> SALVAR ID E NOME DA ENQUETE
- * ==========================================
- * O n8n vai bater aqui para nos dizer qual o nome real do
- * lote cujo mensagem acabou de enviar para a Evolution API
- */
-app.post('/api/webhook/registra-enquete', (req, res) => {
-    try {
-        const payload = req.body;
-        // Esperamos um JSON no formato: {"pollId": "BA3F92X8", "nomeDaCarta": "Leafeon-V"}
-        if (!payload || !payload.pollId || !payload.nomeDaCarta) {
-            return res.status(400).json({ success: false, message: 'Dados insuficientes. Faltam pollId ou nomeDaCarta.' });
-        }
 
-        const lancesDB = JSON.parse(fs.readFileSync(LANCES_FILE, 'utf8'));
-
-        // Se essa enquete já tinha votos fantasmas captados antes dessa rota ser chamada, não apaga. Só atualiza nome.
-        if (!lancesDB[payload.pollId]) {
-            lancesDB[payload.pollId] = { "nome_carta": payload.nomeDaCarta, "votos": [] };
-        } else {
-            lancesDB[payload.pollId].nome_carta = payload.nomeDaCarta;
-        }
-
-        fs.writeFileSync(LANCES_FILE, JSON.stringify(lancesDB, null, 2));
-
-        console.log(`[!] Enquete registrada com nome. ID: ${payload.pollId} = ${payload.nomeDaCarta}`);
-        return res.status(200).json({ success: true, message: 'Enquete mapeada internamente.' });
-
-    } catch (e) {
-        console.error('[ERRO REGISTRA] Falha ao parear nome e enquete via n8n:', e);
-        return res.status(500).json({ success: false, message: 'Erro interno.' });
-    }
-});
 
 
 
